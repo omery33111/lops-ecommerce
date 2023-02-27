@@ -10,6 +10,20 @@
 [![Pull Requests](https://img.shields.io/github/issues-pr/omery33111/lops-ecommerce.svg?labelColor=24292E&logo=github&logoColor=white)](https://github.com/omery33111/lops-ecommerce/pulls)
 
 
+Table of Contents
+====================
+- [Description](#description) 🖐️
+- [Technologies](#technologies) 🛠️
+- [Features](#features) 📕
+  - [Feature List](#feature-list) 📄
+  - [Profile Hall](#profile-hall) ✏️
+  - [Admin Hall](#admin-hall) 🖊️
+- [Running Instructions](#running-instructions) 🖱️
+  - [Back-end adjustment](#back-end-adjustment) 🖥️
+  - [Front-end adjustment](#front-end-adjustment) 🖥️
+- [Admin & Staff](#admin-&-staff) 🤵
+- [Contact](#contact) 📞
+
 
 ## Description
 LOPS the one-stop-shop for fashionable items for men.
@@ -129,9 +143,8 @@ Password: staff123
  ```
 
 
-## Contact ✏️
+### Contact ✏️
 
 📧 omery33111@gmail.com
 
 🐱 https://github.com/omery33111
-

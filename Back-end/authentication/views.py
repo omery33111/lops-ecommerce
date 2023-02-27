@@ -7,10 +7,12 @@ from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
 
 from django.contrib.auth.models import User
+from shop.decorators.log import logger_decorator
 
 
 
 # ------------------------- HOME PAGE START ------------------------- #
+@logger_decorator
 @api_view(["GET"])
 @permission_classes([IsAuthenticated])
 def index(request):
@@ -22,6 +24,7 @@ def index(request):
 # ------------------------- AUTHENTICATION START ------------------------- #
 
 # ------------- REGISTERATION:
+@logger_decorator
 @api_view(["POST"])
 def register(request):
     username = request.data["username"]
@@ -43,6 +46,7 @@ def register(request):
 
 
 # ------------- LOGIN:
+@logger_decorator
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     @classmethod
     def get_token(cls, user):

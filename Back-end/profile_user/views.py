@@ -6,10 +6,12 @@ from rest_framework import status
 from profile_user.serializers import ProfileSerializer
 
 from .models import Profile
+from shop.decorators.log import logger_decorator
 
 
 
 # ------------------------- PROFILE START ------------------------- #
+@logger_decorator
 @api_view(["GET"])
 @permission_classes([IsAuthenticated])
 def profile(request):
@@ -26,6 +28,7 @@ def profile(request):
         # return Response(serializer.data)
 
 
+@logger_decorator
 @api_view(["PUT"])
 @permission_classes([IsAuthenticated])
 def profile_update(request):

@@ -8,6 +8,7 @@ from .serializers import OrderSerializer
 
 
 from .models import Order
+from shop.decorators.log import logger_decorator
 
 
 
@@ -16,6 +17,7 @@ class IsStaff(BasePermission):
         return request.user.is_authenticated and request.user.is_staff
 
 
+@logger_decorator
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def order(request):
@@ -30,6 +32,7 @@ def order(request):
     return Response(serializer.errors, status = status.HTTP_400_BAD_REQUEST)
 
 
+@logger_decorator
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def orders_peruser(request):
@@ -38,6 +41,7 @@ def orders_peruser(request):
     return Response(serializer.data)
 
 
+@logger_decorator
 @permission_classes([IsAuthenticated, IsStaff])
 @api_view(["GET"])
 def get_orders(request):

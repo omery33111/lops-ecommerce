@@ -5,10 +5,12 @@ from rest_framework import status
 
 from .serializers import ShippingSerializer
 from .models import Shipping
+from shop.decorators.log import logger_decorator
 
 
 
 # ------------------------- SHIPPING START ------------------------- #
+@logger_decorator
 @api_view(["POST", "GET"])
 @permission_classes([IsAuthenticated])
 def shipping(request):
@@ -28,6 +30,7 @@ def shipping(request):
         return Response(serializer.data, status = status.HTTP_200_OK)
 
 
+@logger_decorator
 @api_view(["DELETE"])
 @permission_classes([IsAuthenticated])
 def shipping_delete(request, pk = -1):
@@ -40,6 +43,7 @@ def shipping_delete(request, pk = -1):
             return Response(status = status.HTTP_404_NOT_FOUND)
 
 
+@logger_decorator
 @api_view(["GET"])
 @permission_classes([IsAuthenticated])
 def shipping_get(request, pk = -1):
@@ -49,6 +53,7 @@ def shipping_get(request, pk = -1):
         return Response(serializer.data, status = status.HTTP_200_OK)
         
 
+@logger_decorator
 @api_view(["PUT"])
 @permission_classes([IsAuthenticated])
 def shipping_update(request, pk = -1):

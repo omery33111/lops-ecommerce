@@ -9,7 +9,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.permissions import BasePermission
 
 from .models import Category
-
+from shop.decorators.log import logger_decorator
 
 
 
@@ -19,6 +19,7 @@ class IsStaff(BasePermission):
     
 
 # ------------------------- CATEGORIES START ------------------------- #
+@logger_decorator
 @api_view(["POST", "PUT", "DELETE"])
 @permission_classes([IsAuthenticated, IsStaff])
 def categories(request, pk = -1):
@@ -53,7 +54,7 @@ def categories(request, pk = -1):
 
 
         
-
+@logger_decorator
 @api_view(["GET"])
 def get_categories(request):
     if request.method == "GET":
@@ -65,6 +66,7 @@ def get_categories(request):
 
 
 # ------------------------- SINGLE CATEGORY START ------------------------- #
+@logger_decorator
 @api_view(["GET"])
 def single_category(request, pk = -1):
     if request.method == "GET":
@@ -76,6 +78,7 @@ def single_category(request, pk = -1):
 
 
 # ------------------------- CATEGORY PRODUCTS START ------------------------- #
+@logger_decorator
 @api_view(["GET"])
 def category_products(request, pk):
     try:

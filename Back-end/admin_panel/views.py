@@ -15,6 +15,7 @@ from reviews.models import Review
 from order.models import Order
 
 from django.contrib.auth.models import User
+from shop.decorators.log import logger_decorator
 
 
 
@@ -24,6 +25,7 @@ class IsStaff(BasePermission):
     
 
 # ------------------------- ADMIN PANEL START ------------------------- #
+@logger_decorator
 @api_view(["GET"])
 @permission_classes([IsAuthenticated, IsStaff])
 def user_details_profiles(request):
@@ -35,6 +37,7 @@ def user_details_profiles(request):
         return Response(status = status.HTTP_404_NOT_FOUND)
     
 
+@logger_decorator
 @api_view(["GET"])
 @permission_classes([IsAuthenticated])
 def user_details_single_profile(request, pk = -1):
@@ -43,6 +46,7 @@ def user_details_single_profile(request, pk = -1):
     return Response(serializer.data, status = status.HTTP_200_OK)
 
 
+@logger_decorator
 @api_view(["PUT"])
 @permission_classes([IsAuthenticated, IsStaff])
 def user_details_update_profile(request, pk = -1):
@@ -56,6 +60,7 @@ def user_details_update_profile(request, pk = -1):
         return Response(serializer.errors, status = status.HTTP_400_BAD_REQUEST)
 
 
+@logger_decorator
 @api_view(["GET"])
 @permission_classes([IsAuthenticated, IsStaff])
 def user_details_addresses(request, pk = -1):
@@ -68,6 +73,7 @@ def user_details_addresses(request, pk = -1):
         return Response(status = status.HTTP_404_NOT_FOUND)
     
 
+@logger_decorator
 @api_view(["PUT"])
 @permission_classes([IsAuthenticated, IsStaff])
 def user_details_update_address(request, pk = -1):
@@ -81,6 +87,7 @@ def user_details_update_address(request, pk = -1):
         return Response(serializer.errors, status = status.HTTP_400_BAD_REQUEST)
     
 
+@logger_decorator
 @api_view(["GET"])
 @permission_classes([IsAuthenticated, IsStaff])
 def user_details_reviews(request, pk = -1):
@@ -94,6 +101,7 @@ def user_details_reviews(request, pk = -1):
     
     
 
+@logger_decorator
 @api_view(["GET"])
 @permission_classes([IsAuthenticated, IsStaff])
 def user_details_single_review(request, pk = -1):
@@ -102,6 +110,7 @@ def user_details_single_review(request, pk = -1):
     return Response(serializer.data)
     
 
+@logger_decorator
 @api_view(["PUT"])
 @permission_classes([IsAuthenticated, IsStaff])
 def user_details_update_review(request, pk = -1):
@@ -115,6 +124,7 @@ def user_details_update_review(request, pk = -1):
         return Response(serializer.errors, status = status.HTTP_400_BAD_REQUEST)
     
 
+@logger_decorator
 @api_view(["GET"])
 @permission_classes([IsAuthenticated, IsStaff])
 def user_details_orders(request, pk = -1):
