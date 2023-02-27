@@ -12,7 +12,6 @@ const Carrousel = () => {
           className="d-block w-10"
           src={require('../../images/fashion1.png')}
           alt="First slide"
-          width="1519"
           height="400"
         />
         <Carousel.Caption>
@@ -25,6 +24,7 @@ const Carrousel = () => {
           className="d-block w-10"
           src={require('../../images/fashion2.png')}
           alt="Second slide"
+          height="400"
         />
         <Carousel.Caption>
           <h4>OUR PRODUCTS</h4>
@@ -36,6 +36,7 @@ const Carrousel = () => {
           className="d-block w-10"
           src={require('../../images/fashion3.png')}
           alt="Third slide"
+          height="400"
         />
         <Carousel.Caption>
           <h4>CONTACT US</h4>
