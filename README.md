@@ -1,8 +1,13 @@
 ![image](https://user-images.githubusercontent.com/110463400/221566612-e7814606-87d7-467c-bf2a-d0d671c10690.png)
 
-
 #
 
+
+[![Live Netlify Server](https://img.shields.io/badge/Live%20on-Netlify-00ad9f.svg)](https://deluxe-dango-2d860f.netlify.app/) 
+
+[![Last Commit on GitHub](https://img.shields.io/github/last-commit/omery33111/lops-ecommerce.svg)](https://github.com/omery33111/lops-ecommerce/commits/main)
+
+[![Pull Requests](https://img.shields.io/github/issues-pr/omery33111/lops-ecommerce.svg?labelColor=24292E&logo=github&logoColor=white)](https://github.com/omery33111/lops-ecommerce/pulls)
 
 
 
@@ -124,7 +129,7 @@ Password: staff123
  ```
 
 
-### Contact ✏️
+## Contact ✏️
 
 📧 omery33111@gmail.com
 
