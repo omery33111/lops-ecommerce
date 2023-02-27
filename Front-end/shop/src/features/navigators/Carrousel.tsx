@@ -21,7 +21,7 @@ const Carrousel = () => {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img
+        <img style={{width: "100%"}}
           className="d-block w-10"
           src={require('../../images/fashion2.png')}
           alt="Second slide"
@@ -32,7 +32,7 @@ const Carrousel = () => {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img
+        <img style={{width: "100%"}}
           className="d-block w-10"
           src={require('../../images/fashion3.png')}
           alt="Third slide"
