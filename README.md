@@ -18,6 +18,7 @@
   - [Profile Hall](#profile-hall) ✏️
   - [Admin Hall](#admin-hall) 🖊️
 - [Running Instructions](#running-instructions) 🖱️
+  - [Deployments](#deployments) ✅
   - [Back-end adjustment](#back-end-adjustment) 🖥️
   - [Front-end adjustment](#front-end-adjustment) 🖥️
 - [Admin & Staff](#admin--staff) 🤵
@@ -90,6 +91,15 @@ In the products section, staff members have full control over product and catego
 * Post, update and delete categories.
 
 ## Running Instructions
+### Deployments
+The front-end of my website is hosted by [Netlify](https://deluxe-dango-2d860f.netlify.app/) while the database back-end is hosted on [Render](https://render.com/), allowing for seamless integration and efficient website management.
+
+#### Docker
+Unlock the power of containerization with just one command! Simply enter the following command to open your app in Docker and experience the convenience of modern application deployment.
+ ```
+docker-compose up
+ ```
+#
 
 In order to make the software work properly, the steps below must be followed:
 
@@ -147,3 +157,4 @@ Password: staff123
 📧 omery33111@gmail.com
 
 🐱 https://github.com/omery33111
+
