@@ -8,7 +8,7 @@ const Carrousel = () => {
     <div><br/>
     <Carousel variant="white">
       <Carousel.Item>
-        <img
+        <img style={{width: "100%"}}
           className="d-block w-10"
           src={require('../../images/fashion1.png')}
           alt="First slide"
