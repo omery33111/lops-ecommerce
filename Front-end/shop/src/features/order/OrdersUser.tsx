@@ -6,6 +6,7 @@ import { logoutAsync, reset } from '../authentication/authenticationSlice';
 import { getOrdersUserAsync, selectOrdersUser} from './orderSlice';
 import { Rating } from '@mui/material';
 import { postReviewAsync } from '../reviews/reviewsSlice';
+import ProfileNavigator from '../navigators/ProfileNavigator';
 
 
 
@@ -67,6 +68,19 @@ const handleProductSelect = (id: any) => {
 };
 
 
+const [isScrolling, setIsScrolling] = useState(false);
+
+useEffect(() => {
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 110) {
+      setIsScrolling(true);
+    } else {
+      setIsScrolling(false);
+    }
+  });
+}, [dispatch]);
+
+
 
   return (
     <div>
@@ -77,10 +91,21 @@ const handleProductSelect = (id: any) => {
         <br />
         <br />
         <h5>YOUR ORDERS</h5>
-        <div style={{ position: "absolute", float: "left", transform: "translateX(732px) translateY(-30px)", width: "40.5%"}}>CLICK TO POST REVIEW</div>
+        { isScrolling ? (<div style = {{position: "absolute", top: 299}}><ProfileNavigator /></div>) : (<div style = {{position: "absolute"}}><ProfileNavigator /></div>) }
+        {user_orders.length === 0 ? ("") : (<div style={{ position: "absolute", float: "left", transform: "translateX(732px) translateY(-30px)", width: "40.5%"}}>CLICK TO POST REVIEW</div>)}
         <div style={{ width: "75%" }}>
-          {user_orders.length === 0 ? (
-            <Alert variant="info" className="d-none d-lg-block">
+          
+        </div>
+            
+        <table style={{ width: "70%", height: "100px" }}>
+  <thead>
+    <tr style = {{backgroundColor: "#5A5A5A", color: "white"}}>
+      <th style={{ textAlign: "center" }}>Product ID</th>
+      <th style={{ textAlign: "center" }}>Price</th>
+    </tr>
+  </thead>
+  {user_orders.length === 0 ? (
+            <Alert variant="info" className="d-none d-lg-block" style = {{position: "absolute", width: "908px"}}>
               <Alert.Heading>
                 You have not placed any orders yet.
               </Alert.Heading>
@@ -91,15 +116,6 @@ const handleProductSelect = (id: any) => {
           ) : (
             ""
           )}
-        </div>
-            
-        <table style={{ width: "70%", height: "100px" }}>
-  <thead>
-    <tr>
-      <th style={{ textAlign: "center" }}>Product ID</th>
-      <th style={{ textAlign: "center" }}>Price</th>
-    </tr>
-  </thead>
   <tbody style={{ overflowY: "auto"}}>
     {[...user_orders].reverse().map((order) => (
       <tr
@@ -129,26 +145,8 @@ const handleProductSelect = (id: any) => {
 
 
 
-        <div style = {{ position: "fixed", width: "380px", top: 305, right: 38 }}>
-        <ListGroup>
-          <Link to="/profile" style={{ textDecoration: "none" }}>
-            <ListGroup.Item><b>My profile</b></ListGroup.Item>
-          </Link>
-          <Link to="/shipping" style={{ textDecoration: "none" }}>
-            <ListGroup.Item><b>Shipping addresses</b></ListGroup.Item>
-          </Link>
-          <Link to="/reviews/reviews_user" style={{ textDecoration: "none" }}>
-            <ListGroup.Item><b>Reviews</b></ListGroup.Item>
-          </Link>
-          <Link to="" style={{ textDecoration: "none" }}>
-            <ListGroup.Item><b>Recent orders</b></ListGroup.Item>
-          </Link>
-          <ListGroup.Item style={{ textDecoration: "none" }}>
-            <Button variant="none" onClick={() => onLogout()}>Logout</Button>
-          </ListGroup.Item><br/>
-        </ListGroup>
-        </div>
-  </Container>
+
+  
 
                 {selectedOrder && (
   <div style={{ textAlign: "center", display: "flex", justifyContent: "center", alignItems: "center", height: "50vh" }}>
@@ -192,14 +190,13 @@ const handleProductSelect = (id: any) => {
     </Form>
   </div>
 )}
-                    <br /><br />
-                    <br /><br />
-  
-  
-  
-  
-  <br/><br/><br/><br/><br/><br/><br/><br/>
+
+  <div style = {{height: "400px"}} />
+
+
+  </Container>
 </div>
+
   );
 };
 

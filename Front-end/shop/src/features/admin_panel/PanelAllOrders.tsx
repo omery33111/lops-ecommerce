@@ -9,7 +9,6 @@ import AdminProdNavigator from '../navigators/AdminProdNavigator';
 
 
 const AllOrders = () => {
-    const myServer = "https://ecommerce-lops.onrender.com"
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
 
@@ -22,14 +21,18 @@ const AllOrders = () => {
   }, [dispatch]);
 
 
-  const onLogout = () => {
-    dispatch(logoutAsync());
-    dispatch(reset());
-    navigate("/");
-  };
 
+  const [isScrolling, setIsScrolling] = useState(false);
 
-
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 110) {
+        setIsScrolling(true);
+      } else {
+        setIsScrolling(false);
+      }
+    });
+  }, [dispatch]);
 
 
   return (
@@ -41,6 +44,7 @@ const AllOrders = () => {
       <div style = {{height: "100px"}}/>
       <h5>ORDER LIST</h5>
       <br />
+      { isScrolling ? (<div style = {{position: "absolute", top: 380}}><AdminProdNavigator /></div>) : (<div style = {{position: "absolute"}}><AdminProdNavigator /></div>) }
 
 
 
@@ -56,7 +60,7 @@ const AllOrders = () => {
   </thead>
   <div>
   {orders.length === 0 ? (
-    <Alert variant="info" className="d-none d-lg-block" style = {{position: "absolute", transform: "translateX(0px) translateY(0px)", width: "63.6%"}}>
+    <Alert variant="info" className="d-none d-lg-block" style = {{position: "absolute", width: "965px"}}>
       <Alert.Heading>THERE ARE NO ORDERS YET!</Alert.Heading>
       <b>You are welcome to browse the collections and find your item.</b>
     </Alert>
@@ -78,7 +82,7 @@ const AllOrders = () => {
 
   <div style = {{height: "134px"}}/>
 
-       <AdminProdNavigator />
+  
         
   </Container>
 </div>

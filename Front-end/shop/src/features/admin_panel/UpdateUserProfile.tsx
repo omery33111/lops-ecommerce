@@ -62,6 +62,7 @@ const UpdateUserProfile = () => {
             <div style = {{height: "100px"}}/>
             <h5>PROFILE DETAILS</h5>
             <br/>
+            <div style = {{position: "absolute", top: 380}}><AdminNavigator /></div>
             <Card style = {{ width: "960px", height: "250px"}}>
               <Form onSubmit={handleSubmit}>
                 <Card.Body>
@@ -135,7 +136,6 @@ const UpdateUserProfile = () => {
 
         <div style = {{height: "130px"}}/>
 
-        <AdminNavigator />
     </div>
   )
 }

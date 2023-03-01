@@ -45,6 +45,18 @@ const PanelProducts = () => {
     }
   }, [myDivRef, limit]);
 
+
+  const [isScrolling, setIsScrolling] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 110) {
+        setIsScrolling(true);
+      } else {
+        setIsScrolling(false);
+      }
+    });
+  }, [dispatch]);
   
 
   return (
@@ -56,6 +68,7 @@ const PanelProducts = () => {
         <div style = {{height: "100px"}}/>
         <h5>PRODUCT LIST</h5>
         <br/>
+        { isScrolling ? (<div style = {{position: "absolute", top: 380}}><AdminProdNavigator /></div>) : (<div style = {{position: "absolute"}}><AdminProdNavigator /></div>) }
         <Col xs={9}>
         <Table striped bordered hover>
   <thead>
@@ -102,7 +115,6 @@ const PanelProducts = () => {
   </tbody>
 </Table>
 
-    <AdminProdNavigator />
 
 
 

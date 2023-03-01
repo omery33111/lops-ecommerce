@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
-import { Container, Table, Row, Col, Button, ListGroup } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Container, Table, Row, Col, Button, Alert } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { logoutAsync, reset } from "../authentication/authenticationSlice";
+import ProfileNavigator from "../navigators/ProfileNavigator";
 import {
   deleteAddressAsync,
   getAddressesAsync,
@@ -20,11 +20,19 @@ const Shipping = () => {
     dispatch(getAddressesAsync());
   }, []);
 
-  const onLogout = () => {
-    dispatch(logoutAsync());
-    dispatch(reset());
-    navigate("/")
-  };
+
+
+  const [isScrolling, setIsScrolling] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 110) {
+        setIsScrolling(true);
+      } else {
+        setIsScrolling(false);
+      }
+    });
+  }, [dispatch]);
 
   return (
     <div>
@@ -35,8 +43,16 @@ const Shipping = () => {
         <br />
         <br />
         <h5>ADDRESSES</h5>
+        { isScrolling ? (<div style = {{position: "absolute", top: 299}}><ProfileNavigator /></div>) : (<div style = {{position: "absolute"}}><ProfileNavigator /></div>) }
         <Row>
           <Col xs={9}>
+          <Button
+              onClick={() => navigate("/shipping/shipping_post")}
+              variant="warning"
+              style={{ float: "right", position: "absolute", transform: " translateX(844px) translateY(-40px) " }}
+            >
+              NEW ADDRESS
+            </Button>
             <Table striped bordered hover>
               <thead>
                 <tr style={{ backgroundColor: "#5A5A5A", color: "white" }}>
@@ -50,6 +66,12 @@ const Shipping = () => {
                   <th style={{ textAlign: "center" }}></th>
                 </tr>
               </thead>
+              {addresses.length === 0 ? (
+                <Alert variant="info" style = {{position: "absolute", width: "965px"}}><br/>
+                  <Alert.Heading>USER HAS NO ADDRESSES YET!</Alert.Heading>
+                  <b>The requested user has no addresses yet.</b>
+                </Alert>
+              ) : ("")}
               <tbody>
                 {addresses.map((address) => (
                   <tr key={address.id} style={{ backgroundColor: "white" }}>
@@ -94,51 +116,14 @@ const Shipping = () => {
               </tbody>
             </Table>
 
-            <Button
-              onClick={() => navigate("/shipping/shipping_post")}
-              variant="warning"
-              style={{ float: "right" }}
-            >
-              NEW ADDRESS
-            </Button>
+           
           </Col>
 
-        <Col xs={3}>
-          <ListGroup variant="flush" style = {{position: "fixed", width: "25%"}}>
-
-          <Link to="/profile" style={{ textDecoration: "none" }}>
-          <ListGroup.Item><b>My profile</b></ListGroup.Item>
-          </Link>
           
-          <Link to="/shipping" style={{ textDecoration: "none" }}>
-          <ListGroup.Item><b>Shipping addresses</b></ListGroup.Item>
-          </Link>
-
-          <Link to="/reviews/reviews_user" style={{ textDecoration: "none" }}>
-          <ListGroup.Item><b>Reviews</b></ListGroup.Item>
-          </Link>
-
-          <Link to="/order/orders_user" style={{ textDecoration: "none" }}>
-                <ListGroup.Item><b>Recent orders</b></ListGroup.Item>
-              </Link>
-
-          <ListGroup.Item style={{ textDecoration: "none" }}><Button variant = "none" onClick={() => onLogout()} >Logout</Button></ListGroup.Item><br/>
-
-          </ListGroup>
-        </Col>
 
         </Row>
       </Container>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+      <div style = {{height: "470px"}}/>
     </div>
   );
 };

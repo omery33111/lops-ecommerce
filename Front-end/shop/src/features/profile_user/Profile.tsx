@@ -1,10 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Card, Col, Container, ListGroup, Row } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { logoutAsync, reset, selectUser } from "../authentication/authenticationSlice";
 import { getProfileAsync } from "./profileSlice";
 import { BsFillPencilFill } from "react-icons/bs";
+import ProfileNavigator from "../navigators/ProfileNavigator";
 
 
 
@@ -24,11 +25,19 @@ const Profile = () => {
 
   const { first_name, last_name, location, bio, picture } = useAppSelector((state) => state.profile);
   
-  const onLogout = () => {
-    dispatch(logoutAsync());
-    dispatch(reset());
-    navigate("/");
-  };
+
+
+  const [isScrolling, setIsScrolling] = useState(false);
+
+useEffect(() => {
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 110) {
+      setIsScrolling(true);
+    } else {
+      setIsScrolling(false);
+    }
+  });
+}, [dispatch]);
 
   return (
     <div>
@@ -41,8 +50,9 @@ const Profile = () => {
             <br />
             <br />
             <h5>YOUR PROFILE</h5>
-            <div style={{textAlign: 'right', position: "absolute", transform: " translateX(835px) translateY(-25px) "}}>USERNAME: <b>{username}</b></div>
-            <Card style = {{ width: "63.55%", height: "250px", position: "absolute", transform: " translateX(0px) translateY(0px) "}}>
+            { isScrolling ? (<div style = {{position: "absolute", top: 299}}><ProfileNavigator /></div>) : (<div style = {{position: "absolute"}}><ProfileNavigator /></div>) }
+            <div style={{position: "absolute", transform: " translateX(805px) translateY(-25px) "}}>USERNAME: <b>{username}</b></div>
+            <Card style = {{ width: "970px", height: "250px", position: "absolute", transform: " translateX(0px) translateY(0px) "}}>
                 <Card.Body>
                     <Row style = {{display: "flex", alignItems: "center", height: "100%"}}>
                     <Col md={4}>
@@ -78,54 +88,10 @@ const Profile = () => {
           </Col>
 
 
-
-  
-
-
-
-          <Col md={3}><br/><br/><br/><br/><br/><br/><br/><br/>
-          <div style = {{ position: "fixed", width: "380px", top: 305, right: 38 }}>
-            <ListGroup variant="flush">
-              <Link to="/profile" style={{ textDecoration: "none" }}>
-                <ListGroup.Item><b>My profile</b></ListGroup.Item>
-              </Link>
-
-              <Link to="/shipping" style={{ textDecoration: "none" }}>
-                <ListGroup.Item><b>Shipping addresses</b></ListGroup.Item>
-              </Link>
-
-              <Link to="/reviews/reviews_user" style={{ textDecoration: "none" }}>
-                <ListGroup.Item><b>Reviews</b></ListGroup.Item>
-              </Link>
-
-              <Link to="/order/orders_user" style={{ textDecoration: "none" }}>
-                <ListGroup.Item><b>Recent orders</b></ListGroup.Item>
-              </Link>
-              
-                <ListGroup.Item style={{ textDecoration: "none" }}><Button variant = "none" onClick={() => onLogout()} >Logout</Button></ListGroup.Item><br/>
-            </ListGroup>
-            </div>
-            
-          </Col>
         </Row>
         
       </Container>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+    <div style = {{height: "470px"}}/>
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Alert, Col, Container, Row, Table, Image } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
@@ -26,6 +26,20 @@ const PanelReviews = () => {
     }, [number, dispatch]);
     
 
+
+    const [isScrolling, setIsScrolling] = useState(false);
+
+    useEffect(() => {
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 110) {
+          setIsScrolling(true);
+        } else {
+          setIsScrolling(false);
+        }
+      });
+    }, [dispatch]);
+
+    
   return (
     <div>
         
@@ -38,6 +52,10 @@ const PanelReviews = () => {
         <NavUserProfile/>
         <br/>
         <Row>
+        
+        { isScrolling ? (<div style = {{position: "absolute", top: 380}}><AdminNavigator /></div>) : (<div style = {{position: "absolute"}}><AdminNavigator /></div>) }
+        
+        
 
 
 
@@ -55,7 +73,7 @@ const PanelReviews = () => {
       </tr>
     </thead>
     {reviews.length === 0 ? (
-      <Alert variant="info" style = {{position: "absolute", transform: "translateX(0px) translateY(0px)", width: "63.6%"}}>
+      <Alert variant="info" style = {{position: "absolute", width: "965px"}}>
         <Alert.Heading>USER HAS NO REVIEWS YET!</Alert.Heading>
         <b>The requested user has not posted any reviews.</b>
       </Alert>
@@ -104,10 +122,10 @@ const PanelReviews = () => {
 
           
 
-          <AdminNavigator />
+          
 
 
-          <div style = {{height: "160px"}}/>
+          <div style = {{height: "350px"}}/>
           </Container>
 
 

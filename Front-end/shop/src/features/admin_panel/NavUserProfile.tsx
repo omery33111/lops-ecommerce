@@ -19,7 +19,7 @@ const NavUserProfile = () => {
       }
     }, [number, dispatch]);
   return (
-        <div style={{ position: "absolute", transform: "translateX(350px) translateY(-187px)", width: "40.5%", height: "100px"}}>
+    <div style = {{ position: "absolute", width: "610px", top: 180, left: "30.8%" }}>
           <Link to = {`/admin_panel/user_details_update_profile/${single_profile.user}`} style = {{textDecoration: "none"}}>
           <div style={{ color: "black", textAlign: 'left', position: "absolute", transform: " translateX(0px) translateY(-25px) "}}><b>CLICK TO EDIT PROFILE</b></div>
 

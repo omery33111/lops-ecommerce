@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button, Card, Col, Container, Form, ListGroup, Row } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { logoutAsync, reset, selectUser } from "../authentication/authenticationSlice";
+import ProfileNavigator from "../navigators/ProfileNavigator";
 import { patchProfileAsync } from "./profileSlice";
 
 const ProfileUpdate = () => {
@@ -36,11 +37,18 @@ const ProfileUpdate = () => {
     setPicture(event.target.files ? event.target.files[0] : undefined);
   }
 
-  const onLogout = () => {
-    dispatch(logoutAsync());
-    dispatch(reset());
-    navigate("/");
-  };
+
+  const [isScrolling, setIsScrolling] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 110) {
+        setIsScrolling(true);
+      } else {
+        setIsScrolling(false);
+      }
+    });
+  }, [dispatch]);
 
   return (
     <div>
@@ -53,8 +61,9 @@ const ProfileUpdate = () => {
             <br />
             <br />
             <h5>PROFILE DETAILS</h5>
-            <div style={{textAlign: 'right', position: "absolute", transform: " translateX(835px) translateY(-25px) "}}>USERNAME: <b>{username}</b></div>
-            <Card style = {{ width: "63.52%", height: "250px", position: "absolute", transform: " translateX(0px) translateY(0px) "}}>
+            { isScrolling ? (<div style = {{position: "absolute", top: 299}}><ProfileNavigator /></div>) : (<div style = {{position: "absolute"}}><ProfileNavigator /></div>) }
+            <div style={{textAlign: 'right', position: "absolute", transform: " translateX(805px) translateY(-25px) "}}>USERNAME: <b>{username}</b></div>
+            <Card style = {{ width: "970px", height: "250px", position: "absolute", transform: " translateX(0px) translateY(0px) "}}>
               <Form onSubmit={handleSubmit}>
                 <Card.Body>
                   <Row
@@ -128,56 +137,9 @@ const ProfileUpdate = () => {
             
           </Col>
 
-          <Col md={3}>
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br/>
-            <div style = {{ position: "fixed", width: "380px", top: 305, right: 38 }}>
-            <ListGroup variant="flush">
-              <Link to="/profile" style={{ textDecoration: "none" }}>
-                <ListGroup.Item><b>My profile</b></ListGroup.Item>
-              </Link>
-
-              <Link to="/shipping" style={{ textDecoration: "none" }}>
-                <ListGroup.Item><b>Shipping addresses</b></ListGroup.Item>
-              </Link>
-
-              <Link to="/reviews/reviews_user" style={{ textDecoration: "none" }}>
-                <ListGroup.Item><b>Reviews</b></ListGroup.Item>
-              </Link>
-
-              <Link to="/order/orders_user" style={{ textDecoration: "none" }}>
-                <ListGroup.Item><b>Recent orders</b></ListGroup.Item>
-              </Link>
-              
-                <ListGroup.Item style={{ textDecoration: "none" }}><Button variant = "none" onClick={() => onLogout()} >Logout</Button></ListGroup.Item><br/>
-            </ListGroup>
-            </div>
-          </Col>
-        </Row>
+          </Row>
       </Container>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+      <div style = {{height: "500px"}}/>
     </div>
 
   );

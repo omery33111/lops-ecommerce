@@ -3,15 +3,17 @@ import { Link } from 'react-router-dom'
 import { useAppSelector } from '../../app/hooks';
 import { selectSingleProfile } from '../admin_panel/panelSlice';
 
+
+
 const AdminNavigator = () => {
     
 
     const single_profile = useAppSelector(selectSingleProfile)
-    
+
  
   return (
 
-          <div style = {{ position: "fixed", width: "380px", top: 380, right: 32 }}>
+          <div style = {{ position: "fixed", width: "20%", right: "5%"}}>
             <ListGroup variant="flush">
 
               <Link to={`/admin_panel/user_details_addresses/${single_profile.user}`} style={{ textDecoration: "none" }}>

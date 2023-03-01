@@ -54,6 +54,19 @@ const UpdateProduct = () => {
       setPicture(event.target.files ? event.target.files[0] : undefined);
     };
 
+
+    const [isScrolling, setIsScrolling] = useState(false);
+
+    useEffect(() => {
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 110) {
+          setIsScrolling(true);
+        } else {
+          setIsScrolling(false);
+        }
+      });
+    }, [dispatch]);
+
     
   return (
     <div>
@@ -66,6 +79,7 @@ const UpdateProduct = () => {
             <div style = {{height: "100px"}}/>
             <h5>PRODUCT DETAILS</h5>
             <br/>
+            { isScrolling ? (<div style = {{position: "absolute", top: 380}}><AdminProdNavigator /></div>) : (<div style = {{position: "absolute"}}><AdminProdNavigator /></div>) }
             <Form onSubmit={handleSubmit}>
             <Row className="justify-content-left mt-3">
 
@@ -119,22 +133,24 @@ const UpdateProduct = () => {
               </Row>
               
               <Row className="justify-content-center mt-3">
-                <Button style = {{width: "475px", position: "absolute", left: 111}} variant="warning" type="submit">
+                <Button style = {{width: "475px", position: "absolute", transform:  "translateX(-250px"}} variant="warning" type="submit">
                   Complete Edit
                 </Button>
                 <br/><br/>
                 
             </Row>
             
-            <Button
+            <Row className="justify-content-center mt-3">
+            <Button 
              onClick={() => {
               navigate(`/admin_panel/product_details/`);
             }}
                     variant="secondary"
-                    style={{ width: "100px", position: "absolute", left: 295}}
+                    style = {{width: "100px", position: "absolute", transform:  "translateX(-250px"}}
                   >
                     CANCLE
                   </Button>
+                  </Row>
 
             <br/>
           </Form>
@@ -145,7 +161,6 @@ const UpdateProduct = () => {
 
         <div style = {{height: "130px"}}/>
 
-        <AdminProdNavigator />
     </div>
   )
 }

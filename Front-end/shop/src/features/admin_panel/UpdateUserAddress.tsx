@@ -63,6 +63,20 @@ const UpdateUserAddress = () => {
   }, [number, dispatch]);
 
 
+  const [isScrolling, setIsScrolling] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 110) {
+        setIsScrolling(true);
+      } else {
+        setIsScrolling(false);
+      }
+    });
+  }, [dispatch]);
+
+
+
   return (
     <div>
       <Container>
@@ -72,6 +86,7 @@ const UpdateUserAddress = () => {
         <div style = {{height: "100px"}}/>
         <h5>ADDRESS DETAILS</h5>
         <br/>
+        { isScrolling ? (<div style = {{position: "absolute", top: 380}}><AdminNavigator /></div>) : (<div style = {{position: "absolute"}}><AdminNavigator /></div>) }
         <Row className="justify-content-left mt-3">
           <Col md={7}>
             <Form onSubmit={handleSubmit}>
@@ -167,7 +182,6 @@ const UpdateUserAddress = () => {
                     CANCLE
                   </Button>
 
-                <AdminNavigator />
 
               </Row>
               <br />

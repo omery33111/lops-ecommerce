@@ -54,6 +54,19 @@ const Cart = () => {
       observer.current.observe(myDivRef.current);
     }
   }, [myDivRef, limit]);
+
+
+  const [isScrolling, setIsScrolling] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 110) {
+        setIsScrolling(true);
+      } else {
+        setIsScrolling(false);
+      }
+    });
+  }, [dispatch]);
   
       
 
@@ -79,7 +92,7 @@ const Cart = () => {
     ) : (
     <Container>
        <Row style={{ display: "flex" }}>
-    <Col xs={12} md={7}>
+       <Col xs={12} md={7}>
         <div style={{ width: "900px" }}>
     {myCart.map((product) =>
     <div key = {product.id}>
@@ -132,34 +145,80 @@ const Cart = () => {
         </div>)}
         </div>
         </Col>
-        </Row>
 
 
-                
-              <div style={{ position: "fixed", width: "100%", float: "right", height: "", top: 273, right: -1050 }}>
-                <Card style = {{ width: '400px' }}>
-                  <Card.Body>
-                    <Link to = "/order/order_post">
-                  <Button style = {{width: "100%"}} variant = "warning">GO TO CHECKOUT</Button><br/><br/>
-                  </Link>
-                  <Card.Title><h5>Total of {myCart.length} items.</h5></Card.Title>
-                  <Card.Text><b>Total price: {total + (total >= 50 ? 0 : 5)}$</b></Card.Text>
-                  <hr/>
-                  <Card.Text>
-                  <b>Items price: {total}$</b>
-                  </Card.Text>
-                  <Card.Text>
-                  <b>Shipping price: {total >= 50 ? 0 : 5}$ {total >= 50 ? "(order over 50$!)" : ""}</b>
-                  </Card.Text>
-                  </Card.Body>
-                </Card>
-              </div>
+        <Col xs={4}>
+          {isScrolling? (
+            
+
+            <Card style={{ position: "fixed", width: "25%", right: "5%", top: 273 }}>
+      <Card.Body>
+        <Link to="/order/order_post">
+          <Button style={{ width: "100%" }} variant="warning">
+            GO TO CHECKOUT
+          </Button>
+          <br />
+          <br />
+        </Link>
+        <Card.Title>
+          <h5>Total of {myCart.length} items.</h5>
+        </Card.Title>
+        <Card.Text>
+          <b>Total price: {total + (total >= 50 ? 0 : 5)}$</b>
+        </Card.Text>
+        <hr />
+        <Card.Text>
+          <b>Items price: {total}$</b>
+        </Card.Text>
+        <Card.Text>
+          <b>
+            Shipping price: {total >= 50 ? 0 : 5}$
+            {total >= 50 ? "(order over 50$!)" : ""}
+          </b>
+        </Card.Text>
+      </Card.Body>
+    </Card>
+
+          ) : 
+          
+          
+          (<Card style={{ position: "fixed", width: "25%", right: "5%" }}>
+      <Card.Body>
+        <Link to="/order/order_post">
+          <Button style={{ width: "100%" }} variant="warning">
+            GO TO CHECKOUT
+          </Button>
+          <br />
+          <br />
+        </Link>
+        <Card.Title>
+          <h5>Total of {myCart.length} items.</h5>
+        </Card.Title>
+        <Card.Text>
+          <b>Total price: {total + (total >= 50 ? 0 : 5)}$</b>
+        </Card.Text>
+        <hr />
+        <Card.Text>
+          <b>Items price: {total}$</b>
+        </Card.Text>
+        <Card.Text>
+          <b>
+            Shipping price: {total >= 50 ? 0 : 5}$
+            {total >= 50 ? "(order over 50$!)" : ""}
+          </b>
+        </Card.Text>
+      </Card.Body>
+    </Card>)}
+
+  </Col>
+</Row>
         
         </Container>
 )}
 
 
-</Container><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+</Container>
+<div style = {{height: "350px"}}/>
     </div>
   )
 }

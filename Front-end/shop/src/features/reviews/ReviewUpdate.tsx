@@ -6,6 +6,7 @@ import { Rating } from '@mui/material';
 import { patchReviewAsync, selectSingleReview } from "./reviewsSlice";
 import { getSingleReviewAsync, selectSingleUserReview } from "../admin_panel/panelSlice";
 import { logoutAsync, reset } from "../authentication/authenticationSlice";
+import ProfileNavigator from "../navigators/ProfileNavigator";
 
 
 
@@ -42,12 +43,20 @@ const ReviewUpdate = () => {
     }
   }, [number, dispatch]);
 
-  
-  const onLogout = () => {
-    dispatch(logoutAsync());
-    dispatch(reset());
-    navigate("/");
-  };
+
+
+
+  const [isScrolling, setIsScrolling] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 110) {
+        setIsScrolling(true);
+      } else {
+        setIsScrolling(false);
+      }
+    });
+  }, [dispatch]);
   
 
 
@@ -60,6 +69,7 @@ const ReviewUpdate = () => {
             <br />
             <br />
             <h5>REVIEW DETAILS</h5>
+            { isScrolling ? (<div style = {{position: "absolute", top: 299}}><ProfileNavigator /></div>) : (<div style = {{position: "absolute"}}><ProfileNavigator /></div>) }
         <Row className="justify-content-left mt-3">
           <Col md={7}>
           <Form onSubmit={handleSubmit} style={{ width: "43%" }}><br/>
@@ -92,7 +102,7 @@ const ReviewUpdate = () => {
               />
             </Form.Group>
             <br />
-            <Button variant="warning" type="submit" style={{ width: "150px", position: "absolute", left: 190}}>
+            <Button variant="warning" type="submit" style={{ width: "150px", position: "absolute", transform: " translateX(77px) translateY(0px) "}}>
               SUBMIT REVIEW
             </Button>
             
@@ -110,30 +120,10 @@ const ReviewUpdate = () => {
         </Row>
       </Container>
       
-      <div style = {{ position: "fixed", width: "380px", top: 305, right: 38 }}>
-            <ListGroup variant="flush">
-              <Link to="/profile" style={{ textDecoration: "none" }}>
-                <ListGroup.Item><b>My profile</b></ListGroup.Item>
-              </Link>
-
-              <Link to="/shipping" style={{ textDecoration: "none" }}>
-                <ListGroup.Item><b>Shipping addresses</b></ListGroup.Item>
-              </Link>
-
-              <Link to="/reviews/reviews_user" style={{ textDecoration: "none" }}>
-                <ListGroup.Item><b>Reviews</b></ListGroup.Item>
-              </Link>
-
-              <Link to="/order/orders_user" style={{ textDecoration: "none" }}>
-                <ListGroup.Item><b>Recent orders</b></ListGroup.Item>
-              </Link>
-              
-                <ListGroup.Item style={{ textDecoration: "none" }}><Button variant = "none" onClick={() => onLogout()} >Logout</Button></ListGroup.Item><br/>
-            </ListGroup>
-            </div>
+      
 
       
-      <div style = {{height: "134px"}}/>
+      <div style = {{height: "334px"}}/>
     
     </div>
   );

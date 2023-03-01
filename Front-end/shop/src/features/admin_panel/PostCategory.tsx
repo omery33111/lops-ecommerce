@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Button, Col, Container, Form, Row } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
@@ -32,6 +32,18 @@ const PostCategory = () => {
     navigate("/admin_panel/category_details/");
   };
   
+
+  const [isScrolling, setIsScrolling] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 110) {
+        setIsScrolling(true);
+      } else {
+        setIsScrolling(false);
+      }
+    });
+  }, [dispatch]);
   
   return (
     <div>
@@ -44,6 +56,7 @@ const PostCategory = () => {
             <div style = {{height: "100px"}}/>
             <h5>ADD CATEGORY</h5>
             <br/>
+            { isScrolling ? (<div style = {{position: "absolute", top: 380}}><AdminProdNavigator /></div>) : (<div style = {{position: "absolute"}}><AdminProdNavigator /></div>) }
             <Form onSubmit={handleSubmit}>
            <Form.Group controlId="formCategory" style = {{position: "absolute", transform: " translateX(-20px) translateY(6px) "}}>
              <Form.Control
@@ -54,7 +67,7 @@ const PostCategory = () => {
             />
           </Form.Group><br/>
           <br/><br/>
-          <Button style = {{width: "203px", position: "absolute", left: 90}} variant="warning" type="submit">
+          <Button style = {{width: "203px", position: "absolute", transform: "translateX(-20px)"}} variant="warning" type="submit">
                   Create New Category
           </Button>
           <Button
@@ -71,9 +84,8 @@ const PostCategory = () => {
             
         </Container>
 
-        <div style = {{height: "130px"}}/>
+        <div style = {{height: "330px"}}/>
 
-        <AdminProdNavigator />
     </div>
   )
 }

@@ -114,7 +114,7 @@ const Orders = () => {
           
       <Container>
         <Row>
-          <Col xs={4}>
+          <Col xs = {4}>
             <br />
             <br />
             <h2>CHECKOUT</h2>
@@ -148,18 +148,15 @@ const Orders = () => {
     </Row>
   </Card>
 ))}
-          </Col>
+
+</Col>
+          
           
 
 
-          <Col xs={4}>
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <h5 style = {{marginLeft: "60px"}}>SHIPPING ADDRESS</h5>
-            <Accordion style = {{marginLeft: "60px"}}>
+         <Col xs={7} style={{ padding: "9%", transform: " translateX(-4%)"}}>
+            <h5 >SHIPPING ADDRESS</h5>
+            <Accordion>
               {addresses.map((address) => (
                 <Accordion.Item key={address.id} eventKey="0" style={{ width: "400px"}}>
                   <Accordion.Header>{address.first_name} {address.last_name}</Accordion.Header>
@@ -267,22 +264,20 @@ const Orders = () => {
                 </Form>
 
 
-
                   </Accordion.Body>
                 </Accordion.Item>
               </Accordion>
-            
 
-          </Col>
+              
+            </Col>
+
+        
           
 
-          <Col xs={4}>
+      
             
-            <br />
-            <br />
-            <div style={{ position: "fixed", width: "100%", float: "right", height: "", top: 273, right: -1050 }}>
               
-              <Card style={{ width: '400px' }}>
+            <Card style={{ position: "fixed", width: "25%", right: "5%", top: 273 }}>
                 <Card.Body>
                     <FormGroup>
                       <Link to="/order/order_post">
@@ -318,11 +313,11 @@ const Orders = () => {
                   </Card.Text>
                 </Card.Body>
               </Card>
-            </div>
-          </Col>
-        </Row>
+
+              </Row>
       </Container>
-      <br/><br/><br/><br/><br/><br/>
+      
+      <div style = {{height: "350px"}}/>
     </div>
   );
 };

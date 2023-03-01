@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Button, Col, Container, Form, Row } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
@@ -47,7 +47,19 @@ const PostProduct = () => {
       setPicture(event.target.files ? event.target.files[0] : undefined);
     };
 
-    
+
+    const [isScrolling, setIsScrolling] = useState(false);
+
+    useEffect(() => {
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 110) {
+          setIsScrolling(true);
+        } else {
+          setIsScrolling(false);
+        }
+      });
+    }, [dispatch]);
+
   return (
     <div>
         <Container>
@@ -59,6 +71,7 @@ const PostProduct = () => {
             <div style = {{height: "100px"}}/>
             <h5>ADD PRODUCT</h5>
             <br/>
+            { isScrolling ? (<div style = {{position: "absolute", top: 380}}><AdminProdNavigator /></div>) : (<div style = {{position: "absolute"}}><AdminProdNavigator /></div>) }
             <Form onSubmit={handleSubmit}>
             <Row className="justify-content-left mt-3">
 
@@ -112,7 +125,7 @@ const PostProduct = () => {
               </Row>
               
               <Row className="justify-content-center mt-3">
-                <Button style = {{width: "475px", position: "absolute", left: 111}} variant="warning" type="submit">
+                <Button style = {{width: "475px", position: "absolute", transform:  "translateX(-250px"}} variant="warning" type="submit">
                   Create New Product
                 </Button>
                 <Button
@@ -133,7 +146,6 @@ const PostProduct = () => {
 
         <div style = {{height: "130px"}}/>
 
-        <AdminProdNavigator />
     </div>
   )
 }

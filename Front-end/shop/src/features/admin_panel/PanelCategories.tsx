@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Button, Col, Container, Table } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
@@ -17,6 +17,19 @@ const PanelCategories = () => {
   useEffect(() => {
     dispatch(getCategoryAsync());
   }, [dispatch]);
+
+
+  const [isScrolling, setIsScrolling] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 110) {
+        setIsScrolling(true);
+      } else {
+        setIsScrolling(false);
+      }
+    });
+  }, [dispatch]);
   
 
   return (
@@ -28,6 +41,7 @@ const PanelCategories = () => {
         <div style = {{height: "100px"}}/>
         <h5>CATEGORY LIST</h5>
         <br/>
+        { isScrolling ? (<div style = {{position: "absolute", top: 380}}><AdminProdNavigator /></div>) : (<div style = {{position: "absolute"}}><AdminProdNavigator /></div>) }
         <Col xs={9}>
         <Table striped bordered hover>
   <thead>
@@ -65,7 +79,6 @@ const PanelCategories = () => {
   </tbody>
 </Table>
 
-    <AdminProdNavigator />
 
 
           </Col>

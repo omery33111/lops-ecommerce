@@ -42,6 +42,10 @@ const UpdateUserReview = () => {
       dispatch(getSingleReviewAsync(number));
     }
   }, [number, dispatch]);
+
+
+
+
   
 
 
@@ -54,6 +58,7 @@ const UpdateUserReview = () => {
         <div style = {{height: "100px"}}/>
         <h5>REVIEW DETAILS</h5>
         <br/>
+       <div style = {{position: "absolute", top: 380}}><AdminNavigator /></div>
         <Row className="justify-content-left mt-3">
           <Col md={7}>
           <Form onSubmit={handleSubmit} style={{ width: "43%" }}><br/>
@@ -86,7 +91,7 @@ const UpdateUserReview = () => {
               />
             </Form.Group>
             <br />
-            <Button variant="warning" type="submit" style={{ width: "150px", position: "absolute", left: 190}}>
+            <Button variant="warning" type="submit" style={{ width: "150px", position: "absolute", transform: " translateX(80px) "}}>
               SUBMIT REVIEW
             </Button>
             
@@ -104,8 +109,6 @@ const UpdateUserReview = () => {
         </Row>
       </Container>
       
-      <AdminNavigator />
-
       
       <div style = {{height: "134px"}}/>
     

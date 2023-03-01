@@ -8,7 +8,7 @@ const AdminProdNavigator = () => {
 
   return (
 
-          <div style = {{ position: "fixed", width: "380px", top: 380, right: 32 }}>
+          <div style = {{ position: "fixed", width: "20%", right: "5%" }}>
             <ListGroup variant="flush">
               <Link to="/admin_panel/order_details" style={{ textDecoration: "none" }}>
                 <ListGroup.Item><b>Orders</b></ListGroup.Item>

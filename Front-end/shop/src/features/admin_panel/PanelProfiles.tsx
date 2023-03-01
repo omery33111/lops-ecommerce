@@ -48,6 +48,19 @@ const PanelProfiles = () => {
 
   const navigate = useNavigate();
 
+
+  const [isScrolling, setIsScrolling] = useState(false);
+
+useEffect(() => {
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 110) {
+      setIsScrolling(true);
+    } else {
+      setIsScrolling(false);
+    }
+  });
+}, [dispatch]);
+
   return (
     <div>
       <Container>
@@ -57,6 +70,35 @@ const PanelProfiles = () => {
         <div style = {{height: "100px"}}/>
         <h5>PROFILE LIST</h5>
         <br/>
+
+        {isScrolling ? (
+          
+
+          <div style = {{ position: "fixed", width: "20%", right: "5%", top: 380 }}>
+            <ListGroup variant="flush">
+              <Link to="/admin_panel/panel_main" style={{ textDecoration: "none" }}>
+                <ListGroup.Item><b>BACK TO MENU</b></ListGroup.Item>
+              </Link>
+            </ListGroup>
+          </div>
+
+
+        ) :
+        
+        
+        (
+        <div style = {{ position: "fixed", width: "20%", right: "5%" }}>
+            <ListGroup variant="flush">
+              <Link to="/admin_panel/panel_main" style={{ textDecoration: "none" }}>
+                <ListGroup.Item><b>BACK TO MENU</b></ListGroup.Item>
+              </Link>
+            </ListGroup>
+          </div>
+          )}
+        
+
+
+
         <Col xs={9}>
         <Table striped bordered hover>
   <thead>
@@ -93,13 +135,7 @@ const PanelProfiles = () => {
 </Table>
 
 
-<div style = {{ position: "fixed", width: "380px", top: 380, right: 32 }}>
-            <ListGroup variant="flush">
-              <Link to="/admin_panel/panel_main" style={{ textDecoration: "none" }}>
-                <ListGroup.Item><b>BACK TO MAIN</b></ListGroup.Item>
-              </Link>
-            </ListGroup>
-          </div>
+
 
 
           </Col>

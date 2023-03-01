@@ -4,7 +4,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../app/hooks";
 import { Address } from "../../models/Shipping";
 import { logoutAsync, reset } from "../authentication/authenticationSlice";
+import ProfileNavigator from "../navigators/ProfileNavigator";
 import { postAddressAsync } from "./shippingSlice";
+
+
 
 const ShippingAdd = () => {
   const dispatch = useAppDispatch();
@@ -70,6 +73,7 @@ const ShippingAdd = () => {
         <br />
         <br />
         <h5>CREATE ADDRESSES</h5>
+        { isScrolling ? (<div style = {{position: "absolute", top: 299}}><ProfileNavigator /></div>) : (<div style = {{position: "absolute"}}><ProfileNavigator /></div>) }
         <Row className="justify-content-left mt-3">
           <Col md={7}>
             <Form onSubmit={handleSubmit}>
@@ -166,30 +170,10 @@ const ShippingAdd = () => {
                 </Link>
                 </Row>
                 </Form>
-                <Col xs={3}>
-          <ListGroup variant="flush" style = {{position: "fixed", width: "25%", transform: isScrolling? (" translateX(990px) translateY(-356px) ") : (" translateX(990px) translateY(-412px) ")}}>
-
-          <Link to="/profile" style={{ textDecoration: "none" }}>
-          <ListGroup.Item><b>My profile</b></ListGroup.Item>
-          </Link>
-          
-          <Link to="/shipping" style={{ textDecoration: "none" }}>
-          <ListGroup.Item><b>Shipping addresses</b></ListGroup.Item>
-          </Link>
-
-          <Link to="/reviews/reviews_user" style={{ textDecoration: "none" }}>
-          <ListGroup.Item><b>Reviews</b></ListGroup.Item>
-          </Link>
-
-          <Link to="/order/orders_user" style={{ textDecoration: "none" }}>
-                <ListGroup.Item><b>Recent orders</b></ListGroup.Item>
-              </Link>
-
-          <ListGroup.Item style={{ textDecoration: "none" }}><Button variant = "none" onClick={() => onLogout()} >Logout</Button></ListGroup.Item><br/>
-
-          </ListGroup>
-        </Col>
               
+              <br />
+              <br />
+              <br />
               <br />
             
           </Col>

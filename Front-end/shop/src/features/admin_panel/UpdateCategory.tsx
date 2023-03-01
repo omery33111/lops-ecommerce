@@ -35,6 +35,19 @@ const [category_name, setCategoryName] = useState<string>('');
   setCategoryName('');
   navigate("/admin_panel/category_details/");
 };
+
+
+const [isScrolling, setIsScrolling] = useState(false);
+
+useEffect(() => {
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 110) {
+      setIsScrolling(true);
+    } else {
+      setIsScrolling(false);
+    }
+  });
+}, [dispatch]);
     
   return (
     <div>
@@ -47,6 +60,7 @@ const [category_name, setCategoryName] = useState<string>('');
             <div style = {{height: "100px"}}/>
             <h5>CATEGORY DETAILS</h5>
             <br/>
+            { isScrolling ? (<div style = {{position: "absolute", top: 380}}><AdminProdNavigator /></div>) : (<div style = {{position: "absolute"}}><AdminProdNavigator /></div>) }
             <Form onSubmit={handleSubmit}>
            <Form.Group controlId="formCategory" style = {{position: "absolute", transform: " translateX(-20px) translateY(6px) "}}>
              <Form.Control
@@ -57,17 +71,16 @@ const [category_name, setCategoryName] = useState<string>('');
             />
           </Form.Group><br/>
           <br/><br/>
-          <Button style = {{width: "203px", position: "absolute", left: 90}} variant="warning" type="submit">
+          <Button style = {{width: "203px", position: "absolute", transform: "translateX(-20px)"}} variant="warning" type="submit">
                   Complete Edit
           </Button>
-          <br/><br/>
         </Form>
         <Button
                   onClick={() => {
                     navigate("/admin_panel/category_details/");
                   }}
                     variant="secondary"
-                    style={{ width: "100px", position: "absolute", left: 139}}
+                    style={{ width: "100px", position: "absolute", transform: " translateX(28px) translateY(50px) "}}
                   >
                     CANCLE
                   </Button>
@@ -75,9 +88,8 @@ const [category_name, setCategoryName] = useState<string>('');
             
         </Container>
 
-        <div style = {{height: "130px"}}/>
+        <div style = {{height: "330px"}}/>
 
-        <AdminProdNavigator />
     </div>
   )
 }

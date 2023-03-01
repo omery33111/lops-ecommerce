@@ -7,6 +7,7 @@
   import { Link, useNavigate } from 'react-router-dom';
   import { logoutAsync, reset } from '../authentication/authenticationSlice';
   import { BsFillPencilFill } from "react-icons/bs";
+import ProfileNavigator from '../navigators/ProfileNavigator';
 
 
 
@@ -66,6 +67,19 @@
   }, [myDivRef, limit]);
 
 
+  const [isScrolling, setIsScrolling] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 110) {
+        setIsScrolling(true);
+      } else {
+        setIsScrolling(false);
+      }
+    });
+  }, [dispatch]);
+
+
     return (
   <div>
     <Container>
@@ -75,6 +89,7 @@
         <br />
         <br />
         <h5>YOUR RATINGS <BsStarFill/></h5>
+        { isScrolling ? (<div style = {{position: "absolute", top: 299}}><ProfileNavigator /></div>) : (<div style = {{position: "absolute"}}><ProfileNavigator /></div>) }
   <div style = {{width: "75%"}}>
     {user_reviews.length === 0 ? (
       <Alert variant="info" className="d-none d-lg-block">
@@ -131,29 +146,12 @@
           ))}
 
 
-          <div style = {{ position: "fixed", width: "380px", top: 305, right: 38 }}>
-          <ListGroup>
-            <Link to="/profile" style={{ textDecoration: "none" }}>
-              <ListGroup.Item><b>My profile</b></ListGroup.Item>
-            </Link>
-            <Link to="/shipping" style={{ textDecoration: "none" }}>
-              <ListGroup.Item><b>Shipping addresses</b></ListGroup.Item>
-            </Link>
-            <Link to="/reviews/reviews_user" style={{ textDecoration: "none" }}>
-              <ListGroup.Item><b>Reviews</b></ListGroup.Item>
-            </Link>
-            <Link to="/order/orders_user" style={{ textDecoration: "none" }}>
-                  <ListGroup.Item><b>Recent orders</b></ListGroup.Item>
-                </Link>
-            <ListGroup.Item style={{ textDecoration: "none" }}>
-              <Button variant="none" onClick={() => onLogout()}>Logout</Button>
-            </ListGroup.Item><br/>
-          </ListGroup>
-          </div>
+   
 
 
 
-    </Container><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    </Container>
+    <div style = {{height: "400px"}} />
   </div>
     );
   };

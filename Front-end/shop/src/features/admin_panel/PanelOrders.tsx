@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Alert, Col, Container, Row, Table } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
@@ -23,6 +23,20 @@ const PanelOrders = () => {
       }
     }, [number, dispatch]);
     
+
+
+    const [isScrolling, setIsScrolling] = useState(false);
+
+    useEffect(() => {
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 110) {
+          setIsScrolling(true);
+        } else {
+          setIsScrolling(false);
+        }
+      });
+    }, [dispatch]);
+
     
     
   return (
@@ -37,6 +51,7 @@ const PanelOrders = () => {
         <NavUserProfile/>
         <br/>
         <Row>
+        {isScrolling ? (<div style = {{position: "absolute", top: 380}}><AdminNavigator /></div>) : (<div style = {{position: "absolute"}}><AdminNavigator /></div>) }
 
 
 
@@ -53,7 +68,7 @@ const PanelOrders = () => {
               </thead>
               
               {orders.length === 0 ? (
-                <Alert variant="info" style = {{position: "absolute", transform: "translateX(0px) translateY(0px)", width: "63.6%"}}><br/>
+                <Alert variant="info" style = {{position: "absolute", width: "965px"}}><br/>
                   <Alert.Heading>USER HAS NO ORDERS YET!</Alert.Heading>
                   <b>The requested user has not made any orders yet.</b>
                 </Alert>
@@ -74,10 +89,8 @@ const PanelOrders = () => {
           </Col>
           </Row>
 
-          <div style = {{height: "160px"}}/>
+          <div style = {{height: "350px"}}/>
           
-
-          <AdminNavigator />
 
 
           </Container>
