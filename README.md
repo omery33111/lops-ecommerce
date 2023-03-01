@@ -5,7 +5,7 @@
 [![Docker Logo](https://img.shields.io/badge/docker-black?style=for-the-badge&logo=docker)]() 
 
 
-[![Live Netlify Server](https://img.shields.io/badge/Live%20on-Netlify-00ad9f.svg)](https://deluxe-dango-2d860f.netlify.app/) 
+[![Live Netlify Server](https://img.shields.io/badge/Live%20on-Netlify-00ad9f.svg)](https://gentle-profiterole-1c86e3.netlify.app/) 
 
 [![Last Commit on GitHub](https://img.shields.io/github/last-commit/omery33111/lops-ecommerce.svg)](https://github.com/omery33111/lops-ecommerce/commits/main)
 
