@@ -7,12 +7,11 @@ import { BsTrash } from "react-icons/bs";
 import { useEffect, useRef, useState } from 'react';
 import Box from '@mui/material/Box';
 import LinearProgress from '@mui/material/LinearProgress';
+import { myServer } from '../../endpoints/endpoints';
 
 
 
 const WishList = () => {
-    const myServer = "https://ecommerce-lops.onrender.com"
-
     const dispatch = useAppDispatch();
     const navigate = useNavigate()
     
@@ -30,6 +29,8 @@ const WishList = () => {
   
     const [showSpinner, setShowSpinner] = useState(false)
   
+
+    
     useEffect(() => {
       if (observer.current) {
         observer.current.disconnect();

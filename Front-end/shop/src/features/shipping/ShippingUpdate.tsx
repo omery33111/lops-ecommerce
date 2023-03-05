@@ -1,18 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Button, Col, Container, Form, ListGroup, Row } from "react-bootstrap";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Button, Col, Container, Form, Row } from "react-bootstrap";
+import { Link, useParams } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { logoutAsync, reset } from "../authentication/authenticationSlice";
 import ProfileNavigator from "../navigators/ProfileNavigator";
-import {
-  getSingleAddressAsync,
-  patchAddressAsync,
-  selectSingleAddress,
-} from "./shippingSlice";
+import { getSingleAddressAsync, patchAddressAsync, selectSingleAddress } from "./shippingSlice";
 
 const ShippingUpdate = () => {
   const dispatch = useAppDispatch();
-  const navigate = useNavigate();
 
   const singleAddress = useAppSelector(selectSingleAddress);
 
@@ -62,12 +56,6 @@ const ShippingUpdate = () => {
       dispatch(getSingleAddressAsync(number));
     }
   }, [number, dispatch]);
-
-  const onLogout = () => {
-    dispatch(logoutAsync());
-    dispatch(reset());
-    navigate("/")
-  };
 
 
   const [isScrolling, setIsScrolling] = useState(false);

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Button, Col, Container, Form, Row } from 'react-bootstrap'
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { Category } from '../../models/Category';
 import { selectCategories } from '../category/categorySlice';

@@ -7,11 +7,11 @@ import AdminNavigator from '../navigators/AdminNavigator';
 import { Review } from '../../models/Reviews';
 import { deleteReviewAsync } from '../reviews/reviewsSlice';
 import NavUserProfile from './NavUserProfile';
+import { myServer } from '../../endpoints/endpoints';
 
 
 
 const PanelReviews = () => {
-  const myServer = "https://ecommerce-lops.onrender.com"
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
 

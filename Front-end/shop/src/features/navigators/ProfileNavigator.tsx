@@ -6,7 +6,6 @@ import { logoutAsync, reset } from '../authentication/authenticationSlice';
 
 
 const ProfileNavigator = () => {
-
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
   

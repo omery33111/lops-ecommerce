@@ -13,12 +13,11 @@ import { BsCheckLg } from "react-icons/bs";
 import { HiArrowRight } from "react-icons/hi";
 import { BsFillPencilFill } from "react-icons/bs";
 import { addWish } from '../wishlist/wishListSlice';
+import { myServer } from '../../endpoints/endpoints';
 
 
 
 const CategoryProducts = () => {
-  const myServer = "https://ecommerce-lops.onrender.com"
-
   const dispatch = useAppDispatch();
   const navigate = useNavigate()
 
@@ -33,19 +32,12 @@ const CategoryProducts = () => {
   useEffect(() => {
     if (number !== undefined) {
       dispatch(getCategoryProductsAsync(number));
-    }
-  }, [number]);
-
-
-  useEffect(() => {
-    if (number !== undefined) {
       dispatch(getSingleCategoryAsync(number));
     }
-  }, [number]);
+  }, [number, dispatch]);
 
 
     const singleCategory = useAppSelector(selectCategory)
-    
 
     
     const [category, setCategory] = useState<string>(singleCategory.id);

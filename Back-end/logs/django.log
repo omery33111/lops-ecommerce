@@ -1,3 +1,28 @@
 2023-02-27 21:37:45,193 [INFO] View function view returned response <Response status_code=401, "text/html; charset=utf-8">
 2023-02-27 21:37:46,147 [INFO] View function view returned response <Response status_code=401, "text/html; charset=utf-8">
 2023-02-27 21:37:46,147 [INFO] View function view returned response <Response status_code=401, "text/html; charset=utf-8">
+2023-03-05 22:27:19,137 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-05 22:27:19,148 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-05 22:27:19,148 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-05 22:27:19,198 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-05 22:27:19,198 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-05 22:27:19,198 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-05 22:27:19,226 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-05 22:27:19,226 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-05 22:27:19,226 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-05 22:27:19,226 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-05 22:28:28,209 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'Admin', 'password': 'admin123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-05 22:28:28,209 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'Admin', 'password': 'admin123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-05 22:28:28,209 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'Admin', 'password': 'admin123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-05 22:28:28,209 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'Admin', 'password': 'admin123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-05 22:28:28,209 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'Admin', 'password': 'admin123'}):
+    username = CharField()
+    password = PasswordField()

@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { Card, Col, ListGroup, Row } from 'react-bootstrap'
 import { Link, useParams } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
+import { myServer } from '../../endpoints/endpoints';
 import { getSingleProfileAsync, selectSingleProfile } from './panelSlice';
 
 const NavUserProfile = () => {
-  const myServer = "https://ecommerce-lops.onrender.com"
     const dispatch = useAppDispatch();
 
     const single_profile = useAppSelector(selectSingleProfile)

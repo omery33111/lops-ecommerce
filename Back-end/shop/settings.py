@@ -124,21 +124,29 @@ WSGI_APPLICATION = 'shop.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
  
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'shop',
-        'USER': 'root',
-        'PASSWORD': 'A1a2a3a4a5',
-        'HOST': 'localhost',
-        'PORT': '3306',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'shop.sqlite3'
+#     }
+# }
 
 
 # DATABASES = {
-#    "default": dj_database_url.parse("postgres://shop_gumg_user:e75rmoIKre57FL4IWcwLMAiBQ2HKQfH5@dpg-cftt99ha6gdotc8huklg-a.oregon-postgres.render.com/shop_gumg")
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'shop',
+#         'USER': 'root',
+#         'PASSWORD': 'A1a2a3a4a5',
+#         'HOST': 'localhost',
+#         'PORT': '3306',
+#     }
 # }
+
+
+DATABASES = {
+   "default": dj_database_url.parse("postgres://shop_gumg_user:e75rmoIKre57FL4IWcwLMAiBQ2HKQfH5@dpg-cftt99ha6gdotc8huklg-a.oregon-postgres.render.com/shop_gumg")
+}
 
 
 LOG_DIR = os.path.join(BASE_DIR, 'logs')

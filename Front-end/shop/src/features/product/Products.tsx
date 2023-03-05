@@ -9,10 +9,10 @@ import { addWish } from '../wishlist/wishListSlice'
 import { FaHeart } from "react-icons/fa";
 import Stack from '@mui/material/Stack';
 import CircularProgress from '@mui/material/CircularProgress';
+import { myServer } from '../../endpoints/endpoints'
 
 
 const Products = () => {
-  const myServer = "https://ecommerce-lops.onrender.com"
 
   const navigate = useNavigate();
   const dispatch = useAppDispatch();

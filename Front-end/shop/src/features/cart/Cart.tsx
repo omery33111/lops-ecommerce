@@ -1,16 +1,16 @@
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Alert, Button, Card, Col, Container, Row } from 'react-bootstrap'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
 import { selectIsLogged } from '../authentication/authenticationSlice'
-import { addProduct, deleteProduct, initCart, removeProduct, selectCart } from './cartSlice'
+import { addProduct, deleteProduct, removeProduct, selectCart } from './cartSlice'
 import { BsPlusLg } from "react-icons/bs";
 import { FaMinus } from "react-icons/fa";
 import { Link } from 'react-router-dom'
+import { myServer } from '../../endpoints/endpoints'
 
 
 
 const Cart = () => {
-  const myServer = "https://ecommerce-lops.onrender.com"
   const myCart = useAppSelector(selectCart);
   const isLogged = useAppSelector(selectIsLogged);
   const [total, setTotal] = useState(0);
@@ -25,35 +25,6 @@ const Cart = () => {
     const roundedTotal = Math.round((tempTotal + Number.EPSILON) * 100) / 100;
     setTotal(roundedTotal);
   }, [myCart]);
-
-  const observer = useRef<IntersectionObserver | null>(null);
-  const myDivRef = useRef<HTMLDivElement>(null);
-
-  const [offset, setOffset] = useState(0);
-  const [limit, setLimit] = useState(12);
-
-  const [showSpinner, setShowSpinner] = useState(false)
-
-  useEffect(() => {
-    if (observer.current) {
-      observer.current.disconnect();
-    }
-    
-    observer.current = new IntersectionObserver(entries => {
-      const firstEntry = entries[0];
-      if (firstEntry.isIntersecting) {
-        setShowSpinner(true);
-        setTimeout(() => {
-          setLimit(limit + 12);
-          setShowSpinner(false)
-        }, 300);
-      }
-    });
-    
-    if (myDivRef.current) {
-      observer.current.observe(myDivRef.current);
-    }
-  }, [myDivRef, limit]);
 
 
   const [isScrolling, setIsScrolling] = useState(false);

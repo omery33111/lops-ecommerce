@@ -1,18 +1,17 @@
-  import React, { useEffect, useRef, useState } from 'react';
-  import { Alert, Button, Card, Container, ListGroup, Modal } from 'react-bootstrap';
+  import { useEffect, useState } from 'react';
+  import { Alert, Button, Card, Container, Modal } from 'react-bootstrap';
   import { useAppDispatch, useAppSelector } from '../../app/hooks';
   import { deleteReviewUserAsync, getReviewsUserAsync, selectUserReviews } from './reviewsSlice';
   import { BsTrash } from "react-icons/bs";
   import { BsStarFill } from "react-icons/bs";
-  import { Link, useNavigate } from 'react-router-dom';
-  import { logoutAsync, reset } from '../authentication/authenticationSlice';
+  import { useNavigate } from 'react-router-dom';
   import { BsFillPencilFill } from "react-icons/bs";
 import ProfileNavigator from '../navigators/ProfileNavigator';
+import { myServer } from '../../endpoints/endpoints';
 
 
 
   const UserReviews = () => {
-      const myServer = "https://ecommerce-lops.onrender.com"
       const dispatch = useAppDispatch();
       const navigate = useNavigate();
 
@@ -29,42 +28,6 @@ import ProfileNavigator from '../navigators/ProfileNavigator';
       dispatch(getReviewsUserAsync());
     }, [dispatch]);
 
-
-  const onLogout = () => {
-    dispatch(logoutAsync());
-    dispatch(reset());
-    navigate("/")
-  };
-
-
-  const observer = useRef<IntersectionObserver | null>(null);
-  const myDivRef = useRef<HTMLDivElement>(null);
-
-  const [offset, setOffset] = useState(0);
-  const [limit, setLimit] = useState(6);
-
-  const [showSpinner, setShowSpinner] = useState(false)
-
-  useEffect(() => {
-    if (observer.current) {
-      observer.current.disconnect();
-    }
-    
-    observer.current = new IntersectionObserver(entries => {
-      const firstEntry = entries[0];
-      if (firstEntry.isIntersecting) {
-        setShowSpinner(true);
-        setTimeout(() => {
-          setLimit(limit + 6);
-          setShowSpinner(false)
-        }, 300);
-      }
-    });
-    
-    if (myDivRef.current) {
-      observer.current.observe(myDivRef.current);
-    }
-  }, [myDivRef, limit]);
 
 
   const [isScrolling, setIsScrolling] = useState(false);
@@ -103,7 +66,7 @@ import ProfileNavigator from '../navigators/ProfileNavigator';
 
 
 
-  {[...user_reviews].reverse().slice(0, offset + limit).map((review) => (
+  {[...user_reviews].reverse().map((review) => (
             <div key={review.id}>
               <Card style={{ height: '240px', width: "74.5%"}}>
                 <Card.Title style={{ position: 'absolute', transform: ' translateX(15px) translateY(10px) ' }}>

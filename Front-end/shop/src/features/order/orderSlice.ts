@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { RootState } from '../../app/store';
-import { Order, OrderState } from '../../models/Order';
+import { OrderState } from '../../models/Order';
 import { getOrders, getOrdersUser, postOrder } from './orderAPI';
 
 

@@ -154,7 +154,7 @@ Password: staff123
  ```
 
 
-### Contact ✏️
+### Contact
 
 📧 omery33111@gmail.com
 

@@ -63,7 +63,8 @@ const Register = () => {
     return (
         <div className="container d-flex justify-content-center">
           <form className="form-group col-md-6" onSubmit={onSubmit}>
-            <br/><br/><h1 className="text-center">
+          <div style = {{height: "150px"}} />
+            <h1 className="text-center">
               <AiOutlineUser /> Register
             </h1>
             <p className="text-center">Enter user details to create an account</p>
@@ -120,7 +121,8 @@ const Register = () => {
               <Button type="submit" className="btn btn-dark">
                 Submit
               </Button>
-            </div><br/><br/>
+            </div>
+            <div style = {{height: "300px"}} />
           </form>
         </div>
       )

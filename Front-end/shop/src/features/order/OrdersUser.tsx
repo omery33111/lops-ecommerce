@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Alert, Button, Container, Form, ListGroup } from 'react-bootstrap';
+import { Alert, Button, Container, Form } from 'react-bootstrap';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
-import { Link, useNavigate } from 'react-router-dom';
-import { logoutAsync, reset } from '../authentication/authenticationSlice';
 import { getOrdersUserAsync, selectOrdersUser} from './orderSlice';
 import { Rating } from '@mui/material';
 import { postReviewAsync } from '../reviews/reviewsSlice';
@@ -11,9 +9,7 @@ import ProfileNavigator from '../navigators/ProfileNavigator';
 
 
 const OrdersUser = () => {
-    const myServer = "https://ecommerce-lops.onrender.com"
     const dispatch = useAppDispatch();
-    const navigate = useNavigate();
 
   const user_orders = useAppSelector(selectOrdersUser);
 
@@ -23,12 +19,6 @@ const OrdersUser = () => {
   }, [dispatch]);
 
 
-
-const onLogout = () => {
-  dispatch(logoutAsync());
-  dispatch(reset());
-  navigate("/")
-};
 
 const [selectedOrder, setSelectedOrder] = useState<any>(null);
 const [showReviews, setShowReviews] = useState(false);
@@ -99,49 +89,75 @@ useEffect(() => {
             
         <table style={{ width: "70%", height: "100px" }}>
   <thead>
-    <tr style = {{backgroundColor: "#5A5A5A", color: "white"}}>
+    <tr style={{ backgroundColor: "#5A5A5A", color: "white" }}>
       <th style={{ textAlign: "center" }}>Product ID</th>
       <th style={{ textAlign: "center" }}>Price</th>
     </tr>
   </thead>
   {user_orders.length === 0 ? (
-            <Alert variant="info" className="d-none d-lg-block" style = {{position: "absolute", width: "908px"}}>
-              <Alert.Heading>
-                You have not placed any orders yet.
-              </Alert.Heading>
-              <b>
-                You are welcome to browse the collections and find your item.
-              </b>
-            </Alert>
-          ) : (
-            ""
-          )}
-  <tbody style={{ overflowY: "auto"}}>
+    <Alert
+      variant="info"
+      className="d-none d-lg-block"
+      style={{ position: "absolute", width: "908px" }}
+    >
+      <Alert.Heading>You have not placed any orders yet.</Alert.Heading>
+      <b>You are welcome to browse the collections and find your item.</b>
+    </Alert>
+  ) : (
+    ""
+  )}
+  <tbody style={{ overflowY: "auto" }}>
     {[...user_orders].reverse().map((order) => (
-      <tr
-        key={order.id}
-        style={{
-          backgroundColor: "#f5f5f5",
-          borderRadius: "5px",
-          padding: "10px",
-          cursor: "pointer",
-        }}
-        onClick={() => {
-          handleProductSelect(order.product)
-          setShowReviews(true)
-          if (selectedOrder && selectedOrder.id === order.id) {
-            setSelectedOrder(null)
-          } else {
-            setSelectedOrder(order)
-          }
-        }}
-      >
-        <td style={{ width: "70%", textAlign: "center" }}>{order.product}</td>
-        <td style={{ width: "30%", textAlign: "center" }}>${order.price}</td>
+      <tr key={order.id}>
+        <td style={{ width: "70%", textAlign: "center" }}>
+          <div
+            style={{
+              backgroundColor: "#f5f5f5",
+              borderRadius: "5px",
+              padding: "10px",
+              cursor: "pointer",
+              width: "100%",
+            }}
+            onClick={() => {
+              handleProductSelect(order.product);
+              setShowReviews(true);
+              if (selectedOrder && selectedOrder.id === order.id) {
+                setSelectedOrder(null);
+              } else {
+                setSelectedOrder(order);
+              }
+            }}
+          >
+            {order.product}
+          </div>
+        </td>
+        <td style={{ width: "30%", textAlign: "center" }}>
+          <div
+            style={{
+              backgroundColor: "#f5f5f5",
+              borderRadius: "5px",
+              padding: "10px",
+              cursor: "pointer",
+              width: "100%",
+            }}
+            onClick={() => {
+              handleProductSelect(order.product);
+              setShowReviews(true);
+              if (selectedOrder && selectedOrder.id === order.id) {
+                setSelectedOrder(null);
+              } else {
+                setSelectedOrder(order);
+              }
+            }}
+          >
+            ${order.price}
+          </div>
+        </td>
       </tr>
     ))}
   </tbody>
 </table>
+
 
 
 
@@ -151,7 +167,7 @@ useEffect(() => {
                 {selectedOrder && (
   <div style={{ textAlign: "center", display: "flex", justifyContent: "center", alignItems: "center", height: "50vh" }}>
     <Form onSubmit={handleSubmit} encType="multipart/form-data" style={{ width: "43%" }}>
-      <div style={{ position: "absolute", transform: " translateX(-30px) translateY(2px) " }}>
+      <div style={{ position: "absolute", transform: "translateX(-70px)" }}>
         
       <b>Rate This Product:</b>
       <Rating

@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Button, Col, Container, Form, ListGroup, Row } from "react-bootstrap";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Button, Col, Container, Form, Row } from "react-bootstrap";
+import { useNavigate, useParams } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { Rating } from '@mui/material';
-import { patchReviewAsync, selectSingleReview } from "./reviewsSlice";
+import { patchReviewAsync } from "./reviewsSlice";
 import { getSingleReviewAsync, selectSingleUserReview } from "../admin_panel/panelSlice";
-import { logoutAsync, reset } from "../authentication/authenticationSlice";
 import ProfileNavigator from "../navigators/ProfileNavigator";
 
 

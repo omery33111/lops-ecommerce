@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Button, Col, Container, Table } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
+import { myServer } from '../../endpoints/endpoints';
 import { Product } from '../../models/Product';
 import AdminProdNavigator from '../navigators/AdminProdNavigator';
 import { deleteProductAsync, selectProducts } from '../product/productSlice';
@@ -10,7 +11,6 @@ import { deleteProductAsync, selectProducts } from '../product/productSlice';
 
 
 const PanelProducts = () => {
-  const myServer = "https://ecommerce-lops.onrender.com"
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 

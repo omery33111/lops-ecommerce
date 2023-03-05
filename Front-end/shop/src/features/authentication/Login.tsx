@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { FaSignInAlt } from 'react-icons/fa'
 import { useAppSelector, useAppDispatch } from "../../app/hooks";
 import { useNavigate } from 'react-router-dom';
 import { loginAsync, reset } from "./authenticationSlice"
 import { Button } from 'react-bootstrap';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -56,9 +56,12 @@ const Login = () => {
 
   return (
     <div className="container d-flex justify-content-center">
+      
       <ToastContainer />
+      
   <form className="form-group col-md-6" onSubmit={onSubmit}>
-  <br/><br/><h1 className="text-center">
+  <div style = {{height: "150px"}} />
+  <h1 className="text-center">
       <FaSignInAlt /> Login
     </h1>
     <p className="text-center">Enter your user details</p>
@@ -94,9 +97,12 @@ const Login = () => {
       <Button style = {{width: "50%"}} href = '/register' className="btn btn-warning">
         Register
       </Button>
-    </div><br/><br/><br/><br/>
+    </div>
+    <div style = {{height: "300px"}} />
   </form>
+  
 </div>
+
 
   )
 }

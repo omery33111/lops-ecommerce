@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Accordion, Alert, Button, Card, Col, Container, Form, FormGroup, Modal, Row } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { myServer } from "../../endpoints/endpoints";
 import { Address } from "../../models/Shipping";
 import { selectIsLogged } from "../authentication/authenticationSlice";
 import { initCart, selectCart } from "../cart/cartSlice";
@@ -12,7 +13,6 @@ import PaypalButton from "./PaypalButton";
 
 
 const Orders = () => {
-  const myServer = "https://ecommerce-lops.onrender.com"
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const cart = useAppSelector(selectCart);
@@ -49,6 +49,7 @@ const Orders = () => {
     }
   }
 
+
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
@@ -59,7 +60,7 @@ const Orders = () => {
     const roundedTotal = Math.round((tempTotal + Number.EPSILON) * 100) / 100;
     setTotal(roundedTotal);
     dispatch(updateTotal(roundedTotal))
-  }, [cart]);
+  }, [dispatch, cart]);
 
   useEffect(() => {
     dispatch(initCart());
@@ -133,7 +134,7 @@ const Orders = () => {
   <Card key={item.id} style={{ width: "460px", backgroundColor: "#F8F9FA", border: "none", marginBottom: "10px" }}>
     <Row>
       <Col xs={4} style={{ padding: "10px" }}>
-        <img src={myServer + item.picture} style={{ maxWidth: "100%", marginBottom: "20px", transform: " translateX(15px) translateY(10px) "}} />
+        <img src={myServer + item.picture} alt = "orderpic" style={{ maxWidth: "100%", marginBottom: "20px", transform: " translateX(15px) translateY(10px) "}} />
       </Col>
       <Col xs={4} style={{ padding: "10px" }}>
         <Link to={`/single_product/${item.id}`} style = {{textDecoration: "none", color: "black"}}>
@@ -166,7 +167,7 @@ const Orders = () => {
                       <p className="text-warning">Selected</p>
                     )}
                     <a style={{ color: "red", float: "right", textDecoration: "none", marginTop: "-10px"}}
-                    href="#" onClick={() => address.id && dispatch(deleteAddressAsync(address.id))}>
+                    href="" onClick={() => address.id && dispatch(deleteAddressAsync(address.id))}>
                         Delete
                     </a>
                   </Accordion.Body>

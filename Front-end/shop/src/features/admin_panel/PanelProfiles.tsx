@@ -3,13 +3,13 @@ import { useEffect, useRef, useState } from 'react';
 import { Button, Col, Container, ListGroup, Table } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
+import { myServer } from '../../endpoints/endpoints';
 import Profile from '../../models/Profile';
 import { getProfilesAsync, selectProfiles } from './panelSlice';
 
 
 
 const PanelProfiles = () => {
-  const myServer = "https://ecommerce-lops.onrender.com"
   const dispatch = useAppDispatch();
   const profiles = useAppSelector(selectProfiles);
 

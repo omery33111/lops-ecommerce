@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { Form, Button, Card, Modal } from 'react-bootstrap';
+import { Button, Card, Modal } from 'react-bootstrap';
 import { Link, useParams } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
 import { deleteReviewAsync, getReviewsProductAsync, selectProductReviews } from './reviewsSlice';
@@ -7,11 +7,11 @@ import { BsTrash } from "react-icons/bs";
 import { selectSingleProduct } from '../product/productSlice';
 import Stack from '@mui/material/Stack';
 import CircularProgress from '@mui/material/CircularProgress';
+import { myServer } from '../../endpoints/endpoints';
 
 
 
 const Reviews = () => {
-    const myServer = "https://ecommerce-lops.onrender.com"
     const product_reviews = useAppSelector(selectProductReviews)
     const single_product = useAppSelector(selectSingleProduct)
 

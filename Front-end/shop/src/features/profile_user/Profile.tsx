@@ -1,23 +1,21 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Button, Card, Col, Container, ListGroup, Row } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { logoutAsync, reset, selectUser } from "../authentication/authenticationSlice";
+import { selectUser } from "../authentication/authenticationSlice";
 import { getProfileAsync } from "./profileSlice";
 import { BsFillPencilFill } from "react-icons/bs";
 import ProfileNavigator from "../navigators/ProfileNavigator";
+import { myServer } from "../../endpoints/endpoints";
 
 
 
 const Profile = () => {
-  const myServer = "https://ecommerce-lops.onrender.com"
     const navigate = useNavigate();
 
   const dispatch = useAppDispatch();
 
   const username = useAppSelector(selectUser);
-
-  const storedIsStaff = JSON.parse(localStorage.getItem('is_staff') as string)
 
   useEffect(() => {
     dispatch(getProfileAsync());

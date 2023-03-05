@@ -17,11 +17,11 @@ import { searchProductsAsync, selectSearchProduct, updateSearchProduct } from ".
 import { OverlayTrigger, Dropdown, Image } from 'react-bootstrap';
 import { BsTrash } from "react-icons/bs";
 import { useLocation } from 'react-router-dom';
+import { myServer } from "../../endpoints/endpoints";
 
 
 
 const MyNavbar = () => {
-  const myServer = "https://ecommerce-lops.onrender.com"
   const dispatch = useAppDispatch();
 
   const myCart = useAppSelector(selectCart);

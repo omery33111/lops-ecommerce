@@ -1,22 +1,12 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 import { RootState } from '../../app/store';
 import { WishListState } from '../../models/WishList';
-import { getProducts } from '../product/productAPI';
 
 
 
 const initialState: WishListState = {
     wishList: [],
 };
-
-
-
-// export const displayWishListAsync = createAsyncThunk('wishlist/getProducts', async () =>
-// {
-//     const response = await getProducts();
-//     return response.data;
-// }
-// );
 
 
 

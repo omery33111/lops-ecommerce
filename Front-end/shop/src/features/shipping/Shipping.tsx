@@ -3,11 +3,7 @@ import { Container, Table, Row, Col, Button, Alert } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import ProfileNavigator from "../navigators/ProfileNavigator";
-import {
-  deleteAddressAsync,
-  getAddressesAsync,
-  selectAddress,
-} from "./shippingSlice";
+import { deleteAddressAsync, getAddressesAsync, selectAddress } from "./shippingSlice";
 
 const Shipping = () => {
   const dispatch = useAppDispatch();
@@ -18,7 +14,7 @@ const Shipping = () => {
 
   useEffect(() => {
     dispatch(getAddressesAsync());
-  }, []);
+  }, [dispatch]);
 
 
 
@@ -103,7 +99,7 @@ const Shipping = () => {
                       |{" "}
                       <a
                         style={{ color: "red", textDecoration: "none" }}
-                        href="#"
+                        href=""
                         onClick={() =>
                           address.id && dispatch(deleteAddressAsync(address.id))
                         }

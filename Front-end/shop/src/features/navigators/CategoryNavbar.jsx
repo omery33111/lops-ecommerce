@@ -21,11 +21,11 @@ import { Card } from "react-bootstrap";
 import { OverlayTrigger, Dropdown, Image } from 'react-bootstrap';
 import { BsTrash } from "react-icons/bs";
 import { removeProduct } from "../cart/cartSlice";
+import { myServer } from '../../endpoints/endpoints';
 
 
 
 const CategoryNavbar = () => {
-  const myServer = "https://ecommerce-lops.onrender.com"
   const dispatch = useAppDispatch()
 
   const categories = useAppSelector(selectCategories);

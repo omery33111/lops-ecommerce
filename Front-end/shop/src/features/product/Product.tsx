@@ -1,24 +1,23 @@
 import React, { useEffect, useState } from 'react'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
 import { deleteProductAsync, getSingleProductAsync, patchProductAsync, selectSingleProduct } from './productSlice'
-import { Accordion, Button, Col, Container, Dropdown, Figure, Form, Modal, OverlayTrigger, Row, Tooltip } from 'react-bootstrap'
+import { Accordion, Button, Col, Container, Dropdown, Form, Modal, OverlayTrigger, Row, Tooltip } from 'react-bootstrap'
 import { addProduct } from '../cart/cartSlice'
 import { Link, useParams } from 'react-router-dom'
 import { BsFillPencilFill } from "react-icons/bs";
 import { BsTrash } from "react-icons/bs";
-import { selectCategories, selectCategory } from '../category/categorySlice'
+import { selectCategories } from '../category/categorySlice'
 import { getReviewsProductAsync } from '../reviews/reviewsSlice'
 import ProductReviews from '../reviews/ProductReviews'
+import { myServer } from '../../endpoints/endpoints'
 
 
 
 const Product = () => {
-  const myServer = "https://ecommerce-lops.onrender.com"
   const dispatch = useAppDispatch();
 
   const single_product = useAppSelector(selectSingleProduct);
   const categories = useAppSelector(selectCategories);
-  const singleCategory = useAppSelector(selectCategory);
 
   const storedIsStaff = JSON.parse(localStorage.getItem('is_staff') as string)
 
