@@ -12,7 +12,13 @@ const UpdateUserProfile = () => {
     const navigate = useNavigate();
 
     
-    const { number } = useParams();
+    const { id } = useParams();
+
+    useEffect(() => {
+      if (id !== undefined) {
+      dispatch(getSingleProfileAsync(id));
+      }
+  }, [id, dispatch]);
 
     const single_profile = useAppSelector(selectSingleProfile)
 
@@ -38,14 +44,6 @@ const UpdateUserProfile = () => {
         navigate(`/admin_panel/user_details_addresses/${single_profile.user}`);
       };
   
-      
-        useEffect(() => {
-            if (number !== undefined) {
-            dispatch(getSingleProfileAsync(number));
-            }
-        }, [number, dispatch]);
-        
-        
   
   
         const handlePictureChange = (event: React.ChangeEvent<HTMLInputElement>) => {

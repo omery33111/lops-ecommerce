@@ -17,13 +17,13 @@ const PanelReviews = () => {
 
     const reviews = useAppSelector(selectReviews)
 
-    const { number } = useParams();
+    const { id } = useParams();
 
     useEffect(() => {
-      if (number !== undefined) {
-        dispatch(getAllReviewsAsync(number));
+      if (id !== undefined) {
+        dispatch(getAllReviewsAsync(id));
       }
-    }, [number, dispatch]);
+    }, [id, dispatch]);
     
 
 

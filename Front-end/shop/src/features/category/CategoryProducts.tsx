@@ -26,15 +26,15 @@ const CategoryProducts = () => {
   const storedIsStaff = JSON.parse(localStorage.getItem('is_staff') as string)
   
 
-  const { number } = useParams();
+  const { id } = useParams();
   
 
   useEffect(() => {
-    if (number !== undefined) {
-      dispatch(getCategoryProductsAsync(number));
-      dispatch(getSingleCategoryAsync(number));
+    if (id !== undefined) {
+      dispatch(getCategoryProductsAsync(id));
+      dispatch(getSingleCategoryAsync(id));
     }
-  }, [number, dispatch]);
+  }, [id, dispatch]);
 
 
     const singleCategory = useAppSelector(selectCategory)

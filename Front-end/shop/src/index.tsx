@@ -55,14 +55,14 @@ root.render(
 
             <Route path = "/single_product">
               <Route index element = {<Product />} />
-              <Route path = ":number" element = {<Product />} />
+              <Route path = ":id" element = {<Product />} />
             </Route>
 
             <Route path = "category/categories" element = {<Category />} />
             
             <Route path = "/category/category_products">
               <Route index element = {<CategoryProducts />} />
-              <Route path = ":number" element = {<CategoryProducts />} />
+              <Route path = ":id" element = {<CategoryProducts />} />
             </Route>
 
             <Route path = "register" element = {<Register />} />
@@ -82,22 +82,22 @@ root.render(
 
             <Route path = "/shipping/shipping_update">
               <Route index element = {<ShippingUpdate />} />
-              <Route path = ":number" element = {<ShippingUpdate />} />
+              <Route path = ":id" element = {<ShippingUpdate />} />
             </Route>
 
             <Route path = "/reviews/reviews_product">
               <Route index element = {<ProductReviews />} />
-              <Route path = ":number" element = {<ProductReviews />} />
+              <Route path = ":id" element = {<ProductReviews />} />
             </Route>
 
             <Route path = "/reviews/review_update">
               <Route index element = {<ReviewUpdate />} />
-              <Route path = ":number" element = {<ReviewUpdate />} />
+              <Route path = ":id" element = {<ReviewUpdate />} />
             </Route>
             
             <Route path = "/reviews/reviews_user">
               <Route index element = {<UserReviews />} />
-              <Route path = ":number" element = {<UserReviews />} />
+              <Route path = ":id" element = {<UserReviews />} />
             </Route>
 
             <Route path = "order/order_post" element = {<Orders />} />
@@ -110,32 +110,32 @@ root.render(
 
             <Route path = "/admin_panel/user_details_addresses">
               <Route index element = {<AddressesPanel />} />
-              <Route path = ":number" element = {<AddressesPanel />} />
+              <Route path = ":id" element = {<AddressesPanel />} />
             </Route>
 
             <Route path = "/admin_panel/user_details_reviews">
               <Route index element = {<ReviewsPanel />} />
-              <Route path = ":number" element = {<ReviewsPanel />} />
+              <Route path = ":id" element = {<ReviewsPanel />} />
             </Route>
 
             <Route path = "/admin_panel/user_details_orders">
               <Route index element = {<OrdersPanel />} />
-              <Route path = ":number" element = {<OrdersPanel />} />
+              <Route path = ":id" element = {<OrdersPanel />} />
             </Route>
 
             <Route path = "/admin_panel/user_details_update_profile">
               <Route index element = {<ProfileUserUpdate />} />
-              <Route path = ":number" element = {<ProfileUserUpdate />} />
+              <Route path = ":id" element = {<ProfileUserUpdate />} />
             </Route>
 
             <Route path = "/admin_panel/user_details_update_address">
               <Route index element = {<AddressUserUpdate />} />
-              <Route path = ":number" element = {<AddressUserUpdate />} />
+              <Route path = ":id" element = {<AddressUserUpdate />} />
             </Route>
 
             <Route path = "/admin_panel/user_details_update_review">
               <Route index element = {<ReviewUserUpdate />} />
-              <Route path = ":number" element = {<ReviewUserUpdate />} />
+              <Route path = ":id" element = {<ReviewUserUpdate />} />
             </Route>
 
             <Route path = "/admin_panel/order_details" element = {<PanelAllOrders />} />
@@ -146,14 +146,14 @@ root.render(
 
             <Route path = "/admin_panel/update_product">
               <Route index element = {<UpdateProduct />} />
-              <Route path = ":number" element = {<UpdateProduct />} />
+              <Route path = ":id" element = {<UpdateProduct />} />
             </Route>
 
             <Route path = "/admin_panel/category_details" element = {<PanelCategories />} />
 
             <Route path = "/admin_panel/update_category">
               <Route index element = {<UpdateCategory />} />
-              <Route path = ":number" element = {<UpdateCategory />} />
+              <Route path = ":id" element = {<UpdateCategory />} />
             </Route>
 
             <Route path = "/admin_panel/post_category/" element = {<PostCategory />} />

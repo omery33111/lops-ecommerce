@@ -5,7 +5,7 @@
 [![Docker Logo](https://img.shields.io/badge/docker-black?style=for-the-badge&logo=docker)]() 
 
 
-[![Live Netlify Server](https://img.shields.io/badge/Live%20on-Netlify-00ad9f.svg)](https://gentle-profiterole-1c86e3.netlify.app/) 
+[![Live Netlify Server](https://img.shields.io/badge/Live%20on-Netlify-00ad9f.svg)](https://capable-choux-d166a2.netlify.app/)
 
 [![Last Commit on GitHub](https://img.shields.io/github/last-commit/omery33111/lops-ecommerce.svg)](https://github.com/omery33111/lops-ecommerce/commits/main)
 
@@ -94,7 +94,7 @@ In the products section, staff members have full control over product and catego
 
 ## Running Instructions
 ### Deployments
-The front-end of my website is hosted by [Netlify](https://deluxe-dango-2d860f.netlify.app/) while the database back-end is hosted on [Render](https://render.com/), allowing for seamless integration and efficient website management.
+The front-end of my website is hosted by [Netlify](https://capable-choux-d166a2.netlify.app/) while the database back-end is hosted on [Render](https://render.com/), allowing for seamless integration and efficient website management.
 
 #### Docker
 Unlock the power of containerization with just one command! Simply enter the following command to open your app in Docker and experience the convenience of modern application deployment.

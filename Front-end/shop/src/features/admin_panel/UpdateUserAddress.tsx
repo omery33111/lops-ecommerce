@@ -54,13 +54,13 @@ const UpdateUserAddress = () => {
     setCountry(singleAddress.country);
   }, [singleAddress]);
 
-  const { number } = useParams();
+  const { id } = useParams();
 
   useEffect(() => {
-    if (number !== undefined) {
-      dispatch(getSingleAddressAsync(number));
+    if (id !== undefined) {
+      dispatch(getSingleAddressAsync(id));
     }
-  }, [number, dispatch]);
+  }, [id, dispatch]);
 
 
   const [isScrolling, setIsScrolling] = useState(false);

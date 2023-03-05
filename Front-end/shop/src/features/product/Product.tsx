@@ -26,14 +26,14 @@ const Product = () => {
     single_product.price <= 50 ? "Free Shipping! - 0$" : "Express Shipping - 5$"
     );
 
-  const { number } = useParams();
+  const { id } = useParams();
 
     useEffect(() => {
-      if (number !== undefined) {
-        dispatch(getSingleProductAsync(number));
-        dispatch(getReviewsProductAsync(Number(number)));
+      if (id !== undefined) {
+        dispatch(getSingleProductAsync(id));
+        dispatch(getReviewsProductAsync(Number(id)));
       }
-    }, [number, dispatch]);
+    }, [id, dispatch]);
 
   const [showModal, setShowModal] = useState(false);
   const handleClose = () => setShowModal(false);

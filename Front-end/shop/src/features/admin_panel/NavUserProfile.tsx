@@ -11,13 +11,14 @@ const NavUserProfile = () => {
     const single_profile = useAppSelector(selectSingleProfile)
 
 
-    const { number } = useParams();
+    const { id } = useParams();
 
     useEffect(() => {
-      if (number !== undefined) {
-        dispatch(getSingleProfileAsync(number));
+      if (id !== undefined) {
+        dispatch(getSingleProfileAsync(id));
       }
-    }, [number, dispatch]);
+    }, [id, dispatch]);
+    
   return (
     <div style = {{ position: "absolute", width: "610px", top: 180, left: "30.8%" }}>
           <Link to = {`/admin_panel/user_details_update_profile/${single_profile.user}`} style = {{textDecoration: "none"}}>

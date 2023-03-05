@@ -34,13 +34,13 @@ const ReviewUpdate = () => {
   };
 
 
-  const { number } = useParams();
+  const { id } = useParams();
 
   useEffect(() => {
-    if (number !== undefined) {
-      dispatch(getSingleReviewAsync(number));
+    if (id !== undefined) {
+      dispatch(getSingleReviewAsync(id));
     }
-  }, [number, dispatch]);
+  }, [id, dispatch]);
 
 
 

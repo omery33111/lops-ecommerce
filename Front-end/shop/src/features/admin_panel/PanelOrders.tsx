@@ -15,13 +15,13 @@ const PanelOrders = () => {
     const orders = useAppSelector(selectOrders)
 
 
-    const { number } = useParams();
+    const { id } = useParams();
 
     useEffect(() => {
-      if (number !== undefined) {
-        dispatch(getAllOrdersAsync(number));
+      if (id !== undefined) {
+        dispatch(getAllOrdersAsync(id));
       }
-    }, [number, dispatch]);
+    }, [id, dispatch]);
     
 
 

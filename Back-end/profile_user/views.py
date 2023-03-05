@@ -42,3 +42,5 @@ def profile_update(request):
             return Response(serializer.data)
         return Response(serializer.errors, status = status.HTTP_400_BAD_REQUEST)
 # ------------------------- PROFILE END ------------------------- #
+
+

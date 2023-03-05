@@ -15,13 +15,13 @@ const PanelAddresses = () => {
 
     const addresses = useAppSelector(selectAddresses)
 
-    const { number } = useParams();
+    const { id } = useParams();
 
     useEffect(() => {
-      if (number !== undefined) {
-        dispatch(getAllAddressesAsync(number));
+      if (id !== undefined) {
+        dispatch(getAllAddressesAsync(id));
       }
-    }, [number, dispatch]);
+    }, [id, dispatch]);
 
 
     const [isScrolling, setIsScrolling] = useState(false);

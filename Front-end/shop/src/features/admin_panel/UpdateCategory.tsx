@@ -15,13 +15,13 @@ const UpdateCategory = () => {
   const category = useAppSelector(selectCategory)
 
 
-  const { number } = useParams();
+  const { id } = useParams();
 
   useEffect(() => {
-    if (number !== undefined) {
-      dispatch(getSingleCategoryAsync(number));
+    if (id !== undefined) {
+      dispatch(getSingleCategoryAsync(id));
     }
-  }, [number, dispatch]);
+  }, [id, dispatch]);
 
 const [category_name, setCategoryName] = useState<string>('');
 

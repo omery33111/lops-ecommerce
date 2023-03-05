@@ -17,13 +17,13 @@ const UpdateProduct = () => {
     const single_product = useAppSelector(selectSingleProduct)
 
 
-    const { number } = useParams();
+    const { id } = useParams();
 
     useEffect(() => {
-      if (number !== undefined) {
-        dispatch(getSingleProductAsync(number));
+      if (id !== undefined) {
+        dispatch(getSingleProductAsync(id));
       }
-    }, [number, dispatch]);
+    }, [id, dispatch]);
 
 
     const [category, setCategory] = useState<number>(1);
