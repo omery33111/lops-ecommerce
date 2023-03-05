@@ -20,6 +20,8 @@ SECRET_KEY = 'django-insecure-ifo8u$qv@&7z7b%u5&^p$lci6@7a(j^x61p7pw8#zi15v66!&6
 DEBUG = True
  
 ALLOWED_HOSTS = ['*']
+
+
  
  
  
@@ -132,21 +134,21 @@ WSGI_APPLICATION = 'shop.wsgi.application'
 # }
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'shop',
-        'USER': 'root',
-        'PASSWORD': 'A1a2a3a4a5',
-        'HOST': 'localhost',
-        'PORT': '3306',
-    }
-}
-
-
 # DATABASES = {
-#    "default": dj_database_url.parse("postgres://shop_gumg_user:e75rmoIKre57FL4IWcwLMAiBQ2HKQfH5@dpg-cftt99ha6gdotc8huklg-a.oregon-postgres.render.com/shop_gumg")
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'shop',
+#         'USER': 'root',
+#         'PASSWORD': 'A1a2a3a4a5',
+#         'HOST': 'localhost',
+#         'PORT': '3306',
+#     }
 # }
+
+
+DATABASES = {
+   "default": dj_database_url.parse("postgres://shop_db_y4i5_user:uowFkpqh1O3nFUstCCDgHbtDMF2si9cM@dpg-cg2hf2qk728relpel930-a.oregon-postgres.render.com/shop_db_y4i5")
+}
 
 
 LOG_DIR = os.path.join(BASE_DIR, 'logs')

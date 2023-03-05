@@ -77,7 +77,7 @@ const AllOrders = () => {
   </tbody>
 </table>
 
-  <div style = {{height: "134px"}}/>
+  <div style = {{height: "334px"}}/>
 
   
         

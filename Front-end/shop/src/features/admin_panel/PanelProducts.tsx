@@ -132,7 +132,7 @@ const PanelProducts = () => {
         )}
         <div ref={myDivRef} />
 
-          <div style = {{height: "134px"}}/>
+          <div style = {{height: "334px"}}/>
 
       </Container>
     </div>

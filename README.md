@@ -134,9 +134,21 @@ To run the program with MySQL Workbench, mark lines 127-132, unmark lines 136-14
 | Step | Command | Explanation |
 | --- | --- | --- |
 | 1 | `cd ..` | Go back to the main directory |
-| 2 | `cd .\Front-end\shop\` | Navigate to the front-end directory |
+| 2 | `cd .\Front-end\shop\` | Navigate to the front-end directory|
 | 3 | `npm install` | Install the front-end dependencies |
-| 4 | `npm start` | Run the front-end server |
+| 4 | `django-react_redux_ts-ecommerce --> Front-end--> shop --> src --> endpoints --> endpoints.ts` | Go to the "endpoints.ts" file in the "endpoints" directory. |
+
+To successfully run your server on localhost, it's essential to ensure that your endpoints are correctly configured to direct you to the intended destination.
+
+Ensure to designate any external server as marked and remove the marking from the localhost server as shown:
+
+![image](https://user-images.githubusercontent.com/110463400/222989281-d7430ca6-ce1c-4292-8deb-6d3a425c63c1.png)
+
+
+
+| ...4 |  |  |
+| --- | --- | --- |
+| 5 | `npm start` | Run the front-end server |
 
 **Now you will be able to access LOPS in your local host** "http://localhost:3000".
 
@@ -159,4 +171,3 @@ Password: staff123
 📧 omery33111@gmail.com
 
 🐱 https://github.com/omery33111
-
