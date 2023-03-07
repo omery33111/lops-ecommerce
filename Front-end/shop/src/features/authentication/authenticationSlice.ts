@@ -96,7 +96,6 @@ export const authenticationSlice = createSlice({
         {
             state.isError = true
             state.message = action.payload as string
-            console.log(state.message)
         })
         .addCase(registerAsync.pending, (state) =>
         {
