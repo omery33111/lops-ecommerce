@@ -1,8 +1,8 @@
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { useEffect, useState } from "react";
-import { initCart, selectCart } from "../cart/cartSlice";
-import { postOrderAsync, selectSavedAddress, selectSavedTotal, selectSingleOrder } from "./orderSlice";
+import { selectCart } from "../cart/cartSlice";
+import { postOrderAsync, selectSavedAddress, selectSavedTotal } from "./orderSlice";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
@@ -63,10 +63,14 @@ const PaypalButton = () => {
           <PayPalButtons
             disabled={!savedAddress}
             createOrder={(data, actions) => {
+              let totalWithShipping = myTotal;
+              if (myTotal < 50) {
+                totalWithShipping += 5;
+              }
               return actions.order.create({
                 purchase_units: [
                   {
-                    amount: { value: String(myTotal) },
+                    amount: { value: String(totalWithShipping) },
                   },
                 ],
               });

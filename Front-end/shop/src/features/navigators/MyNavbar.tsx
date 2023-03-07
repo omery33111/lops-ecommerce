@@ -49,7 +49,7 @@ const MyNavbar = () => {
 
   return (
     <div>
-        <Navbar bg="black" variant="dark">
+        <Navbar bg="black" variant="dark" style = {{height: "70px"}}>
           <Container>
 
           
@@ -61,11 +61,11 @@ const MyNavbar = () => {
               </Link>
             </Navbar.Brand>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               
-              <Nav.Link style = {{color: "white"}}>
+              <Nav.Link style = {{color: "white", position: "absolute", left: 200, top: 10}}>
               <h4 onClick={() => setShowForm(!showForm)}><GoSearch/></h4>
               {showForm && (
 
-                <div style = {{position: "absolute", transform: " translateX(50px) translateY(-39px) "}}>
+                <div style = {{width: "200px", position: "absolute", transform: " translateX(50px) translateY(-39px) "}}>
                   <Form onChange={handleSubmit}>
                   <Form.Group controlId="formProductName">
                     <Form.Control
@@ -86,7 +86,7 @@ const MyNavbar = () => {
             
             
 
-            <Nav className="ml-auto">
+            <Nav className="ml-auto" style = {{position: "absolute", right: 150}}>
             <div onMouseEnter={() => setShowCart(true)} onMouseLeave={() => setShowCart(false)}>
   {myCart.length === 0 ? (
     

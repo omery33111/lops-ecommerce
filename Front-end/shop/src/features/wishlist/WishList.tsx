@@ -99,7 +99,9 @@ const WishList = () => {
 </div>
   </Figure>
 
-    </div>)}</div><br/><br/><br/>
+    </div>)}</div>'
+    
+    <div  style = {{height: "300px"}} />
 
 
     {wishList.length >= offset + limit && (

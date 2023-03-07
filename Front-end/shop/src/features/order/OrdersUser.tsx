@@ -167,8 +167,8 @@ useEffect(() => {
                 {selectedOrder && (
   <div style={{ textAlign: "center", display: "flex", justifyContent: "center", alignItems: "center", height: "50vh" }}>
     <Form onSubmit={handleSubmit} encType="multipart/form-data" style={{ width: "43%" }}>
+    <div style = {{height: "50px"}}/>
       <div style={{ position: "absolute", transform: "translateX(-70px)" }}>
-        
       <b>Rate This Product:</b>
       <Rating
         style={{ position: "absolute", transform: " translateX(10px) translateY(-2px) " }}
