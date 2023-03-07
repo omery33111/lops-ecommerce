@@ -24646,3 +24646,515 @@ profile_user.models.Profile.DoesNotExist: Profile matching query does not exist.
 2023-03-07 20:05:57,958 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
 2023-03-07 20:05:57,958 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
 2023-03-07 20:05:57,958 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:54:13,831 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:54:13,831 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:54:14,150 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:54:14,150 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:54:14,150 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:54:15,198 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:54:15,198 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:54:15,198 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:54:15,198 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:54:15,735 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:54:15,735 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:54:15,735 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:54:15,735 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:54:17,997 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:54:17,997 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:54:17,997 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:54:17,997 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:54:17,997 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:54:17,997 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:54:18,232 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:54:18,232 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:54:18,232 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:54:18,232 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:54:18,232 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:54:18,232 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:54:18,232 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:54:19,342 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:54:19,342 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:54:19,342 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:54:19,342 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:54:19,342 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:54:19,342 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:54:19,342 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:54:19,342 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:54:19,855 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:54:19,855 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:54:19,855 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:54:19,855 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:54:19,855 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:54:19,855 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:54:19,855 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:54:19,855 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:54:24,336 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'Admin', 'password': 'admin123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 20:54:24,336 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'Admin', 'password': 'admin123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 20:54:24,336 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'Admin', 'password': 'admin123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 20:54:24,336 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'Admin', 'password': 'admin123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 20:54:24,336 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'Admin', 'password': 'admin123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 20:54:24,336 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'Admin', 'password': 'admin123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 20:54:24,336 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'Admin', 'password': 'admin123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 20:54:24,336 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'Admin', 'password': 'admin123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 20:54:24,336 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'Admin', 'password': 'admin123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 20:54:58,432 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'omer', 'password': '123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 20:54:58,432 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'omer', 'password': '123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 20:54:58,432 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'omer', 'password': '123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 20:54:58,432 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'omer', 'password': '123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 20:54:58,432 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'omer', 'password': '123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 20:54:58,432 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'omer', 'password': '123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 20:54:58,432 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'omer', 'password': '123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 20:54:58,432 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'omer', 'password': '123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 20:54:58,432 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'omer', 'password': '123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 20:54:58,432 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'omer', 'password': '123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 20:55:01,393 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'Omer', 'password': '123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 20:55:01,393 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'Omer', 'password': '123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 20:55:01,393 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'Omer', 'password': '123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 20:55:01,393 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'Omer', 'password': '123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 20:55:01,393 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'Omer', 'password': '123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 20:55:01,393 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'Omer', 'password': '123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 20:55:01,393 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'Omer', 'password': '123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 20:55:01,393 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'Omer', 'password': '123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 20:55:01,393 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'Omer', 'password': '123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 20:55:01,393 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'Omer', 'password': '123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 20:55:01,393 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'Omer', 'password': '123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 20:55:21,133 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:21,133 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:21,133 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:21,133 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:21,133 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:21,133 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:21,133 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:21,133 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:21,133 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:21,133 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:21,133 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:21,133 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:22,693 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:22,693 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:22,693 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:22,693 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:22,693 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:22,693 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:22,693 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:22,693 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:22,693 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:22,693 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:22,693 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:22,693 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:22,693 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:26,123 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:26,123 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:26,123 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:26,123 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:26,123 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:26,123 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:26,123 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:26,123 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:26,123 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:26,123 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:26,123 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:26,123 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:26,123 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:26,123 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:27,667 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:27,667 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:27,667 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:27,667 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:27,667 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:27,667 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:27,667 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:27,667 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:27,667 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:27,667 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:27,667 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:27,667 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:27,667 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:27,667 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:27,667 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:33,149 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'AdminSecret', 'password': 'admin123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 20:55:33,149 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'AdminSecret', 'password': 'admin123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 20:55:33,149 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'AdminSecret', 'password': 'admin123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 20:55:33,149 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'AdminSecret', 'password': 'admin123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 20:55:33,149 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'AdminSecret', 'password': 'admin123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 20:55:33,149 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'AdminSecret', 'password': 'admin123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 20:55:33,149 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'AdminSecret', 'password': 'admin123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 20:55:33,149 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'AdminSecret', 'password': 'admin123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 20:55:33,149 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'AdminSecret', 'password': 'admin123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 20:55:33,149 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'AdminSecret', 'password': 'admin123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 20:55:33,149 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'AdminSecret', 'password': 'admin123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 20:55:33,149 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'AdminSecret', 'password': 'admin123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 20:55:33,149 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'AdminSecret', 'password': 'admin123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 20:55:33,149 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'AdminSecret', 'password': 'admin123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 20:55:33,149 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'AdminSecret', 'password': 'admin123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 20:55:33,149 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'AdminSecret', 'password': 'admin123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 20:55:42,688 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:42,688 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:42,688 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:42,688 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:42,688 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:42,688 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:42,688 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:42,688 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:42,688 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:42,688 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:42,688 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:42,688 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:42,688 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:42,688 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:42,688 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:42,688 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:42,688 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:42,688 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:42,907 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:42,907 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:42,907 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:42,907 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:42,907 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:42,907 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:42,907 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:42,907 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:42,907 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:42,907 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:42,907 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:42,907 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:42,907 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:42,907 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:42,907 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:42,907 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:42,907 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:42,907 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:42,907 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:44,034 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:44,034 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:44,034 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:44,034 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:44,034 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:44,034 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:44,034 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:44,034 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:44,034 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:44,034 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:44,034 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:44,034 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:44,034 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:44,034 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:44,034 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:44,034 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:44,034 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:44,034 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:44,034 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:44,034 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:44,480 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:44,480 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:44,480 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:44,480 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:44,480 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:44,480 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:44,480 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:44,480 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:44,480 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:44,480 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:44,480 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:44,480 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:44,480 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:44,480 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:44,480 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:44,480 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:44,480 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:44,480 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:44,480 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:55:44,480 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:06,385 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:06,385 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:06,385 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:06,385 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:06,385 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:06,385 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:06,385 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:06,385 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:06,385 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:06,385 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:06,385 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:06,385 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:06,385 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:06,385 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:06,385 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:06,385 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:06,385 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:06,385 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:06,385 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:06,385 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:06,385 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:06,385 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:06,685 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:06,685 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:06,685 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:06,685 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:06,685 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:06,685 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:06,685 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:06,685 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:06,685 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:06,685 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:06,685 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:06,685 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:06,685 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:06,685 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:06,685 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:06,685 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:06,685 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:06,685 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:06,685 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:06,685 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:06,685 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:06,685 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:06,685 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:07,726 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:07,726 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:07,726 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:07,726 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:07,726 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:07,726 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:07,726 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:07,726 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:07,726 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:07,726 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:07,726 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:07,726 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:07,726 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:07,726 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:07,726 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:07,726 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:07,726 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:07,726 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:07,726 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:07,726 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:07,726 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:07,726 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:07,726 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:07,726 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:08,286 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:08,286 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:08,286 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:08,286 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:08,286 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:08,286 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:08,286 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:08,286 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:08,286 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:08,286 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:08,286 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:08,286 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:08,286 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:08,286 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:08,286 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:08,286 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:08,286 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:08,286 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:08,286 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:08,286 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:08,286 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:08,286 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:08,286 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 20:56:08,286 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:42,045 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:42,045 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:42,300 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:42,300 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:42,300 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:43,664 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:43,664 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:43,664 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:43,664 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:44,091 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:44,091 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:44,091 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:44,091 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:46,143 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:46,143 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:46,143 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:46,143 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:46,143 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:47,698 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:47,698 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:47,698 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:47,698 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:47,698 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:47,698 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:50,317 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:50,317 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:50,317 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:50,317 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:50,317 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:50,317 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:50,317 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:50,317 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:50,578 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:50,578 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:50,578 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:50,578 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:50,578 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:50,578 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:50,578 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:50,578 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:50,578 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:51,686 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:51,686 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:51,686 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:51,686 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:51,686 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:51,686 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:51,686 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:51,686 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:51,686 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:51,686 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:52,189 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:52,189 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:52,189 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:52,189 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:52,189 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:52,189 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:52,189 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:52,189 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:52,189 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:01:52,189 [INFO] View function view returned response <Response status_code=200, "text/html; charset=utf-8">
+2023-03-07 21:02:00,699 [INFO] View function view returned response <Response status_code=201, "text/html; charset=utf-8">
+2023-03-07 21:02:00,699 [INFO] View function view returned response <Response status_code=201, "text/html; charset=utf-8">
+2023-03-07 21:02:00,699 [INFO] View function view returned response <Response status_code=201, "text/html; charset=utf-8">
+2023-03-07 21:02:00,699 [INFO] View function view returned response <Response status_code=201, "text/html; charset=utf-8">
+2023-03-07 21:02:00,699 [INFO] View function view returned response <Response status_code=201, "text/html; charset=utf-8">
+2023-03-07 21:02:00,699 [INFO] View function view returned response <Response status_code=201, "text/html; charset=utf-8">
+2023-03-07 21:02:00,699 [INFO] View function view returned response <Response status_code=201, "text/html; charset=utf-8">
+2023-03-07 21:02:00,699 [INFO] View function view returned response <Response status_code=201, "text/html; charset=utf-8">
+2023-03-07 21:02:00,699 [INFO] View function view returned response <Response status_code=201, "text/html; charset=utf-8">
+2023-03-07 21:02:00,699 [INFO] View function view returned response <Response status_code=201, "text/html; charset=utf-8">
+2023-03-07 21:02:00,699 [INFO] View function view returned response <Response status_code=201, "text/html; charset=utf-8">
+2023-03-07 21:02:23,164 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'Staff', 'password': 'staff123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 21:02:23,164 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'Staff', 'password': 'staff123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 21:02:23,164 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'Staff', 'password': 'staff123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 21:02:23,164 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'Staff', 'password': 'staff123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 21:02:23,164 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'Staff', 'password': 'staff123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 21:02:23,164 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'Staff', 'password': 'staff123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 21:02:23,164 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'Staff', 'password': 'staff123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 21:02:23,164 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'Staff', 'password': 'staff123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 21:02:23,164 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'Staff', 'password': 'staff123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 21:02:23,164 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'Staff', 'password': 'staff123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 21:02:23,164 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'Staff', 'password': 'staff123'}):
+    username = CharField()
+    password = PasswordField()
+2023-03-07 21:02:23,164 [INFO] View function MyTokenObtainPairSerializer returned response MyTokenObtainPairSerializer(<authentication.views.MyTokenObtainPairView object>, context={'request': <rest_framework.request.Request: POST '/authentication/login/'>, 'format': None, 'view': <authentication.views.MyTokenObtainPairView object>}, data={'username': 'Staff', 'password': 'staff123'}):
+    username = CharField()
+    password = PasswordField()
