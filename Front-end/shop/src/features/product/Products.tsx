@@ -5,11 +5,12 @@ import { postProductAsync, selectProducts } from './productSlice'
 import { useNavigate } from 'react-router-dom'
 import Carrousel from '../navigators/Carrousel'
 import { selectCategories } from '../category/categorySlice'
-import { addWish } from '../wishlist/wishListSlice'
 import { FaHeart } from "react-icons/fa";
+import { FaRegHeart } from "react-icons/fa";
 import Stack from '@mui/material/Stack';
 import CircularProgress from '@mui/material/CircularProgress';
 import { myServer } from '../../endpoints/endpoints'
+import { addWish, removeWish, selectWishList } from '../wishlist/wishListSlice'
 
 
 const Products = () => {
@@ -18,6 +19,7 @@ const Products = () => {
   const dispatch = useAppDispatch();
 
 
+  const wishlist = useAppSelector(selectWishList);
   const categories = useAppSelector(selectCategories);
   const products = useAppSelector(selectProducts);
   const storedIsStaff = JSON.parse(localStorage.getItem('is_staff') as string);
@@ -186,17 +188,19 @@ const Products = () => {
           {product.product_name}<br/>
           <b>$ {product.price}</b>
         </Figure.Caption>
-        <div style={{ position: "absolute", transform: "translateX(240px) translateY(-32px)" }}>
-          <Button variant='none'>
-            <h5>
-              <FaHeart style={{ color: "red" }} onClick={() => dispatch(addWish({ item: product }))} />
-            </h5>
-          </Button>
+        <div style={{ position: "absolute", transform: "translateX(245px) translateY(-32px)" }}>
+        <button type="button" style={{ border: "none", backgroundColor: "transparent" }}>
+          <h5>
+            {wishlist.find((item) => String(item.id) === String(product.id))
+              ? <FaHeart style={{ color: "red" }} onClick={() => dispatch(removeWish({ item: product }))}/>
+              : <FaRegHeart onClick={() => dispatch(addWish({ item: product }))}/>}
+          </h5>
+        </button>
+
         </div>
       </Figure>
     </div>
   )}
-  
 </div>
 
 

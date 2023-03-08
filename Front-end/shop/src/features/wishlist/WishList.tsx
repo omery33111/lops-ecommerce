@@ -81,16 +81,16 @@ const WishList = () => {
     <Figure>
     <button style = {{border: "none", background: "none", padding: 0}} onClick = {() => navigate("/single_product/" + product.id)}>
     <Figure.Image
-      width={250}
-      height={280}
+      width={280}
+      height={310}
       alt="180x280"
       src={myServer + product.picture}
     /></button>
     <Figure.Caption>
-    {product.description}<br/>
+    {product.product_name}<br/>
     <b>{product.price} $</b>
     </Figure.Caption>
-    <div style={{ position: "absolute", transform: "translateX(250px) translateY(-23px)" }}>
+    <div style={{ position: "absolute", transform: "translateX(250px) translateY(-32px)" }}>
     <Button variant='none'>
      <h5>
       <BsTrash onClick={() => dispatch(removeWish({ item: product }))} />

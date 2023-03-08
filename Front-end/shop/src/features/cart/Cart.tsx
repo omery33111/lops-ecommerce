@@ -71,10 +71,10 @@ const Cart = () => {
         <Row style = {{display: "flex", alignItems: "center", height: "100%"}}>
         <Col xs={4}>
         
-          <div style = {{position: "absolute", transform: " translateX(30px) translateY(-64px) "}}>
+          <div style = {{position: "absolute", transform: " translateX(40px) translateY(-84px) "}}>
           
           <Link to={`/single_product/${product.id}`} style={{ textDecoration: "none", color: "black"}}>
-        <Card.Img height = {130} src={myServer + product.picture} />
+        <Card.Img height = {170} src={myServer + product.picture} />
         </Link>
         </div>
         </Col>
@@ -86,7 +86,9 @@ const Cart = () => {
   </Card.Title>
   <Card.Text>
     <small>
+    <Link to={`/single_product/${product.id}`} style={{ textDecoration: "none", color: "black"}}>
       {product.description.length > 50 ? `${product.description.substr(0, 50)}...` : product.description}
+      </Link>
     </small>
   </Card.Text>
 </Col>

@@ -75,11 +75,11 @@ useEffect(() => {
           
 
           <div style = {{ position: "fixed", width: "20%", right: "5%", top: 380 }}>
-            <ListGroup variant="flush">
-              <Link to="/admin_panel/panel_main" style={{ textDecoration: "none" }}>
-                <ListGroup.Item><b>BACK TO MENU</b></ListGroup.Item>
+            <Button variant="warning" style = {{width: "100%"}}>
+              <Link to="/admin_panel/panel_main" style={{ textDecoration: "none", color: "black" }}>
+                <b>BACK TO MENU</b>
               </Link>
-            </ListGroup>
+            </Button>
           </div>
 
 
@@ -88,11 +88,11 @@ useEffect(() => {
         
         (
         <div style = {{ position: "fixed", width: "20%", right: "5%" }}>
-            <ListGroup variant="flush">
-              <Link to="/admin_panel/panel_main" style={{ textDecoration: "none" }}>
-                <ListGroup.Item><b>BACK TO MENU</b></ListGroup.Item>
+            <Button variant="warning" style = {{width: "100%"}}>
+              <Link to="/admin_panel/panel_main" style={{ textDecoration: "none", color: "black" }}>
+                <b>BACK TO MENU</b>
               </Link>
-            </ListGroup>
+            </Button>
           </div>
           )}
         

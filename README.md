@@ -20,7 +20,7 @@
   - [Profile Hall](#profile-hall) ✏️
   - [Admin Hall](#admin-hall) 🖊️
 - [Running Instructions](#running-instructions) 🖱️
-  - [Deployments](#deployments) ✅
+  - [Deployments](#deployments) ✈️
   - [Back-end adjustment](#back-end-adjustment) 🖥️
   - [Front-end adjustment](#front-end-adjustment) 🖥️
 - [Admin & Staff](#admin--staff) 🤵
@@ -68,10 +68,11 @@ In the products section, staff members have full control over product and catego
 
 ### Feature List
 
-* Authentication
+* Authentication system
 * Products & categories
 * Cart & wishlist
 * Order & PayPal checkout API
+* Review & rating
 
 
 #### Profile hall:
@@ -103,7 +104,7 @@ docker-compose up
  ```
 #
 
-In order to make the software work properly, the steps below must be followed:
+In order to make the software work properly in your local host, the steps below must be followed:
 
 ### Back-end adjustment
 
@@ -136,11 +137,11 @@ To run the program with MySQL Workbench, mark lines 127-132, unmark lines 136-14
 | 1 | `cd ..` | Go back to the main directory |
 | 2 | `cd .\Front-end\shop\` | Navigate to the front-end directory|
 | 3 | `npm install` | Install the front-end dependencies |
-| 4 | `django-react_redux_ts-ecommerce --> Front-end--> shop --> src --> endpoints --> endpoints.ts` | Go to the "endpoints.ts" file in the "endpoints" directory. |
+| 4 | `django-react_redux_ts-ecommerce --> Front-end --> shop --> src --> endpoints --> endpoints.ts` | Go to the "endpoints.ts" file in the "endpoints" directory. |
 
-To successfully run your server on localhost, it's essential to ensure that your endpoints are correctly configured to direct you to the intended destination.
+To successfully run your server on local host, it's essential to ensure that your endpoints are correctly configured to direct you to the intended destination.
 
-Ensure to designate any external server as marked and remove the marking from the localhost server as shown:
+Ensure to designate any external server as marked and remove the marking from the local host server as shown:
 
 ![image](https://user-images.githubusercontent.com/110463400/222989281-d7430ca6-ce1c-4292-8deb-6d3a425c63c1.png)
 

@@ -13,21 +13,6 @@
     position: absolute;
     transform: translateX(19px)
   }
-.wishlist-count2 {
-    background-color: yellow;
-    color: black;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    display: flex;
-    top: 18px;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    font-weight: bold;
-    position: absolute;
-    transform: translateX(19px)
-  }
   
 
   .figure:hover{

@@ -133,7 +133,7 @@ const MyNavbar = () => {
                         <Card.Text style={{ position: 'absolute', transform: 'translateX(8px) translateY(-45px)' }}>
                           <strong>
                             <Link to={`/single_product/${item.id}`} style={{ textDecoration: "none", color: "black", width: "100%"}}>
-                            {item.product_name.length > 17 ? `${item.product_name.substr(0, 17)}...` : item.product_name}
+                            {item.product_name.length > 14 ? `${item.product_name.substr(0, 14)}...` : item.product_name}
                             </Link>
                           </strong>
                         </Card.Text>
@@ -226,7 +226,7 @@ const MyNavbar = () => {
               {wishList.length > 0 ? (
                   <h4>
                     {" "}
-                    <FaHeart/><span className="wishlist-count2">{wishList.length}</span>{" "}
+                    <FaHeart/><span className="wishlist-count">{wishList.length}</span>{" "}
                   </h4>
                 ) : (
                   <h4>

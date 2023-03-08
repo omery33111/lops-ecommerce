@@ -1,4 +1,4 @@
-import { ListGroup } from 'react-bootstrap'
+import { Button, ListGroup } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { useAppSelector } from '../../app/hooks';
 import { selectSingleProfile } from '../admin_panel/panelSlice';
@@ -32,9 +32,13 @@ const AdminNavigator = () => {
                 <ListGroup.Item>All Profiles</ListGroup.Item>
               </Link>
 
-              <Link to={`/admin_panel/panel_main`} style={{ textDecoration: "none" }}>
-                <ListGroup.Item>BACK TO MAIN</ListGroup.Item>
+            <div style = {{height: "10px"}} />
+            
+            <Button variant="warning" style = {{width: "100%"}}>
+              <Link to="/admin_panel/panel_main" style={{ textDecoration: "none", color: "black" }}>
+                <b>BACK TO MENU</b>
               </Link>
+            </Button>
 
             </ListGroup>
           </div>
