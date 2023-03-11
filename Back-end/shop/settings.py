@@ -134,21 +134,21 @@ WSGI_APPLICATION = 'shop.wsgi.application'
 # }
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': '',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '3306',
-    }
-}
-
-
 # DATABASES = {
-#    "default": dj_database_url.parse("postgres://shop_db_y4i5_user:uowFkpqh1O3nFUstCCDgHbtDMF2si9cM@dpg-cg2hf2qk728relpel930-a.oregon-postgres.render.com/shop_db_y4i5")
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': '',
+#         'USER': 'root',
+#         'PASSWORD': '',
+#         'HOST': 'localhost',
+#         'PORT': '3306',
+#     }
 # }
+
+
+DATABASES = {
+   "default": dj_database_url.parse("postgres://shop_db_y4i5_user:uowFkpqh1O3nFUstCCDgHbtDMF2si9cM@dpg-cg2hf2qk728relpel930-a.oregon-postgres.render.com/shop_db_y4i5")
+}
 
 
 LOG_DIR = os.path.join(BASE_DIR, 'logs')
