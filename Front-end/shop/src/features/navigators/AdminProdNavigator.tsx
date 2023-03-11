@@ -24,11 +24,11 @@ const AdminProdNavigator = () => {
 
             <div style = {{height: "10px"}} />
 
+            <Link to="/admin_panel/panel_main" style={{ textDecoration: "none", color: "black" }}>
             <Button variant="warning" style = {{width: "100%"}}>
-              <Link to="/admin_panel/panel_main" style={{ textDecoration: "none", color: "black" }}>
                 <b>BACK TO MENU</b>
-              </Link>
             </Button>
+            </Link>
 
             </ListGroup>
           </div>

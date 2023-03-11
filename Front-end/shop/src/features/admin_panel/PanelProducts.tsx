@@ -92,7 +92,7 @@ const PanelProducts = () => {
   {products.slice(0, offset + limit).map((product: Product) => (
   <tr key={product.id}>
     <td style={{ textAlign: "center", verticalAlign: "middle", height: "100px"}}>{product.id}</td>
-    <td style={{ textAlign: "center", verticalAlign: "middle", height: "100px"}}><img src={myServer + product.picture} alt="product" height="100" width="120" /></td>
+    <td style={{ textAlign: "center", verticalAlign: "middle", height: "100px"}}><img src={myServer + product.picture} alt="product" height="130" width="130" /></td>
     <td style={{ textAlign: "center", verticalAlign: "middle", height: "100px"}}>{product.product_name}</td>
     <td style={{ textAlign: "center", verticalAlign: "middle", height: "100px"}}>{product.description}</td>
     <td style={{ textAlign: "center", verticalAlign: "middle", height: "100px"}}>{product.price}</td>

@@ -7,7 +7,7 @@ from rest_framework.permissions import BasePermission
 from profile_user.serializers import ProfileSerializer
 from shipping.serializers import ShippingSerializer
 from reviews.serializers import ReviewSerializer
-from order.serializers import OrderSerializer
+from order.serializers import GetOrderSerializer
 
 from profile_user.models import Profile
 from shipping.models import Shipping
@@ -131,7 +131,7 @@ def user_details_orders(request, pk = -1):
     try:
         user = User.objects.get(id = pk)
         orders = Order.objects.filter(user = user)
-        serializer = OrderSerializer(orders, many = True)
+        serializer = GetOrderSerializer(orders, many = True)
         return Response(serializer.data)
     except User.DoesNotExist:
         return Response(status = status.HTTP_404_NOT_FOUND)

@@ -1,12 +1,24 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { RootState } from '../../app/store';
-import { OrderState } from '../../models/Order';
+import { Order, OrderState } from '../../models/Order';
 import { getOrders, getOrdersUser, postOrder } from './orderAPI';
 
 
 
 const initialState: OrderState = {
-    single_order: { id: 0, user: 0, price: 0, amount: 0, product: 0, shipping_address: 0},
+    single_order: { id: 0, user: 0, price: 0, amount: 0, shipping_address:
+                                                          { first_name: '', 
+                                                            last_name: '', 
+                                                            address: "",
+                                                            city: "",
+                                                            state: "",
+                                                            postal_code: 0,
+                                                            country: "" },
+                                                          product:
+                                                          { id: "",
+                                                            picture: "",
+                                                            product_name: "",
+                                                            description: "" }},
     orders: [],
     orders_user: [],
     saveAddress: 0,
@@ -23,7 +35,6 @@ export const postOrderAsync = createAsyncThunk(
   }
 );
 
-
 export const getOrdersUserAsync = createAsyncThunk(
   'order/getOrdersUser',
   async () => {
@@ -31,6 +42,21 @@ export const getOrdersUserAsync = createAsyncThunk(
       return response.data;
   }
 )
+
+// export const getOrdersUserAsync = createAsyncThunk(
+//   'order/getOrdersUser',
+//   async () => {
+//       const response = await getOrdersUser();
+//       const orders = response.data.map((order: Order) => {
+//         const picture = order.product.picture;
+//         const product_name = order.product.product_name;
+//         const description = order.product.description;
+//         const single_order = {...order, picture, product_name, description };
+//         return single_order;
+//       });
+//       return orders;
+//   }
+// )
 
 
 export const getOrdersAsync = createAsyncThunk(

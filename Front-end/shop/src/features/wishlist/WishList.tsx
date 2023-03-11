@@ -99,7 +99,7 @@ const WishList = () => {
 </div>
   </Figure>
 
-    </div>)}</div>'
+    </div>)}</div>
     
     <div  style = {{height: "300px"}} />
 

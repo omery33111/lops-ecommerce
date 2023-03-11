@@ -204,7 +204,7 @@ const [showCart, setShowCart] = useState(false);
                         <Card.Text style={{ position: 'absolute', transform: 'translateX(8px) translateY(-45px)' }}>
                           <strong>
                             <Link to={`/single_product/${item.id}`} style={{ textDecoration: "none", color: "black", width: "100%"}}>
-                            {item.product_name.length > 17 ? `${item.product_name.substr(0, 17)}...` : item.product_name}
+                            {item.product_name.length > 14 ? `${item.product_name.substr(0, 14)}...` : item.product_name}
                             </Link>
                           </strong>
                         </Card.Text>
@@ -222,7 +222,7 @@ const [showCart, setShowCart] = useState(false);
                             Amount: {item.amount}
                           </small></small>
                           <Card.Text style={{ position: 'absolute', transform: 'translateX(8px) translateY(9px)' }}>
-                            {myCart.reduce((acc, item) => acc + item.price * item.amount, 0) > 50 ? (
+                            {myCart.reduce((acc, item) => acc + item.price * item.amount, 0) >= 50 ? (
                               <small>Free Shipping - $0!</small>
                             ) : (
                               <small>Express Shipping - $5<br/><small style={{ position: 'absolute', transform: 'translateX(-2px) translateY(-5px)' }}>(for the entire order)</small></small>
@@ -243,7 +243,7 @@ const [showCart, setShowCart] = useState(false);
               </Dropdown>
             </Card.Body>
             <Card.Footer style={{ backgroundColor: "#F0EAD6", color: 'color', textAlign: 'center' }}>
-              {myCart.reduce((acc, item) => acc + item.price * item.amount, 0) > 50 ? (
+              {myCart.reduce((acc, item) => acc + item.price * item.amount, 0) >= 50 ? (
                 <div>ORDERS OVER $50 DESERVE FREE SHIPPING TO THEIR HOUSE!</div>
               ) : (
                 <br/>

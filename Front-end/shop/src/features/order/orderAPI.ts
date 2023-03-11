@@ -21,6 +21,25 @@ export function postOrder(orderData: any, orderDetails: { product: number, amoun
 }
 
 
+// export function getOrdersUser() {
+//   const myToken = JSON.parse(localStorage.getItem("token") as string)
+//   const accessToken = myToken ? myToken.access : "";
+//   let config = {
+//       headers: { 'Authorization': `Bearer ${accessToken}` }
+//     }
+//   return new Promise<{ data: Order[] }>((resolve =>
+//       axios.get(`${orderURL}/orders_peruser/`, config)
+//       .then(res => {
+//           const orders = res.data.map((order: Order) => ({
+//               ...order,
+//               picture: order.product.picture,
+//               product_name: order.product.product_name,
+//               description: order.product.description
+//           }));
+//           resolve({ data: orders });
+//       })));
+// }
+
 export function getOrdersUser() {
   const myToken = JSON.parse(localStorage.getItem("token") as string)
   const accessToken = myToken ? myToken.access : "";
@@ -30,6 +49,7 @@ export function getOrdersUser() {
   return new Promise<{ data: Order[] }>((resolve =>
       axios.get(`${orderURL}/orders_peruser/`, config).then(res => resolve({ data: res.data }))))}
 
+      
 
 export function getOrders() {
   const myToken = JSON.parse(localStorage.getItem("token") as string)

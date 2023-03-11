@@ -151,7 +151,7 @@ const MyNavbar = () => {
                             Amount: {item.amount}
                           </small>
                           <Card.Text style={{ position: 'absolute', transform: 'translateX(8px) translateY(9px)' }}>
-                            {myCart.reduce((acc, item) => acc + item.price * item.amount, 0) > 50 ? (
+                            {myCart.reduce((acc, item) => acc + item.price * item.amount, 0) >= 50 ? (
                               <small>Free Shipping - $0!</small>
                             ) : (
                               <small>Express Shipping - $5<br/><small style={{ position: 'absolute', transform: 'translateX(-2px) translateY(-5px)' }}>(for the entire order)</small></small>
@@ -172,7 +172,7 @@ const MyNavbar = () => {
               </Dropdown>
             </Card.Body>
             <Card.Footer style={{ backgroundColor: 'black', color: 'white', textAlign: 'center' }}>
-              {myCart.reduce((acc, item) => acc + item.price * item.amount, 0) > 50 ? (
+              {myCart.reduce((acc, item) => acc + item.price * item.amount, 0) >= 50 ? (
                 <div>ORDERS OVER $50 DESERVE FREE SHIPPING TO THEIR HOUSE!</div>
               ) : (
                 <br/>

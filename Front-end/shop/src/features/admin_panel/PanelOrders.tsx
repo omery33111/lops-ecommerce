@@ -60,10 +60,10 @@ const PanelOrders = () => {
               <thead>
                 <tr style={{ backgroundColor: "#5A5A5A", color: "white" }}>
                   <th style={{ textAlign: "center"}}>Order ID</th>
-                  <th style={{ textAlign: "center"}}>Product ID</th>
+                  <th style={{ textAlign: "center"}}>Product Name</th>
                   <th style={{ textAlign: "center" }}>Price</th>
                   <th style={{ textAlign: "center" }}>Amount</th>
-                  <th style={{ textAlign: "center" }}>Address ID</th>
+                  <th style={{ textAlign: "center" }}>Address</th>
                 </tr>
               </thead>
               
@@ -78,10 +78,16 @@ const PanelOrders = () => {
                 {[...orders].reverse().map((order: Order) => (
                   <tr key={order.id} style={{ backgroundColor: "white" }}>
                     <td style={{ textAlign: "center", verticalAlign: "middle" }}>{order.id}</td>
-                    <td style={{ textAlign: "center", verticalAlign: "middle"  }}>{order.product}</td>
+                    <td style={{ textAlign: "center", verticalAlign: "middle"  }}>{order.product.product_name}</td>
                     <td style={{ textAlign: "center", verticalAlign: "middle"  }}>{order.price}</td>
                     <td style={{ textAlign: "center", verticalAlign: "middle"  }}>{order.amount}</td>
-                    <td style={{ textAlign: "center", verticalAlign: "middle"  }}>{order.shipping_address}</td>
+                    <td style={{ textAlign: "center", verticalAlign: "middle"  }}><small>{order.shipping_address.first_name}{" "}
+                                                                                   {order.shipping_address.last_name}{" "}<br/>
+                                                                                   {order.shipping_address.state}{" "}
+                                                                                   {order.shipping_address.country}{" "}
+                                                                                   {order.shipping_address.city}{" "}
+                                                                                   {order.shipping_address.address}{" "}
+                                                                                   {order.shipping_address.postal_code}{" "}</small></td>
                   </tr>
                 ))}
               </tbody>

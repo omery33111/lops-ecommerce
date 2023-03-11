@@ -49,9 +49,9 @@ const AllOrders = () => {
   <thead>
   <tr style={{ backgroundColor: "#5A5A5A", color: "white",  textAlign: "center", verticalAlign: "middle" }}>
       <th>User ID</th>
-      <th>Product ID</th>
+      <th>Product Name</th>
       <th>Price</th>
-      <th>Shipping ID</th>
+      <th>Address</th>
       <th>Amount</th>
     </tr>
   </thead>
@@ -67,9 +67,15 @@ const AllOrders = () => {
     {[...orders].reverse().map((order) => (
   <tr key={order.id} style = {{ textAlign: "center", verticalAlign: "middle"}}>
     <td>{order.user}</td>
-    <td>{order.product}</td>
+    <td>{order.product.product_name}</td>
     <td>${order.price}</td>
-    <td>{order.shipping_address}</td>
+    <td><small>{order.shipping_address.first_name}{" "}
+              {order.shipping_address.last_name}{" "}<br/>
+              {order.shipping_address.state}{" "}
+              {order.shipping_address.country}{" "}
+              {order.shipping_address.city}{" "}
+              {order.shipping_address.address}{" "}
+              {order.shipping_address.postal_code}{" "}</small></td>
     <td>{order.amount}</td>
   </tr>
 ))
