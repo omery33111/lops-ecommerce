@@ -9,10 +9,11 @@ import { BsTrash } from "react-icons/bs";
 import Stack from '@mui/material/Stack';
 import CircularProgress from '@mui/material/CircularProgress';
 import { FaHeart } from "react-icons/fa";
+import { FaRegHeart } from "react-icons/fa";
 import { BsCheckLg } from "react-icons/bs";
 import { HiArrowRight } from "react-icons/hi";
 import { BsFillPencilFill } from "react-icons/bs";
-import { addWish } from '../wishlist/wishListSlice';
+import { addWish, removeWish, selectWishList } from '../wishlist/wishListSlice';
 import { myServer } from '../../endpoints/endpoints';
 
 
@@ -23,6 +24,7 @@ const CategoryProducts = () => {
 
   const categoryProducts = useAppSelector(selectCategoryProducts);
   const single_category = useAppSelector(selectCategory);
+  const wishlist = useAppSelector(selectWishList);
   const storedIsStaff = JSON.parse(localStorage.getItem('is_staff') as string)
   
 
@@ -269,12 +271,14 @@ const CategoryProducts = () => {
       {product.product_name}<br/>
       <b>$ {product.price}</b>
       </Figure.Caption>
-      <div style={{ position: "absolute", transform: "translateX(220px) translateY(-32px)" }}>
-          <Button variant='none'>
-            <h5>
-              <FaHeart style={{ color: "red" }} onClick={() => dispatch(addWish({ item: product }))} />
-            </h5>
-          </Button>
+      <div style={{ position: "absolute", transform: "translateX(225px) translateY(-32px)" }}>
+        <button type="button" style={{ border: "none", backgroundColor: "transparent" }}>
+          <h5>
+            {wishlist.find((item) => String(item.id) === String(product.id))
+              ? <FaHeart style={{ color: "red" }} onClick={() => dispatch(removeWish({ item: product }))}/>
+              : <FaRegHeart onClick={() => dispatch(addWish({ item: product }))}/>}
+          </h5>
+        </button>
         </div>
     </Figure>
 
