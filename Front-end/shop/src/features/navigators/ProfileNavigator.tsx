@@ -16,10 +16,13 @@ const ProfileNavigator = () => {
       dispatch(reset());
       navigate("/");
     };
+
+    const isTablet = window.innerWidth >= 0 && window.innerWidth <= 1024;
+
  
   return (
 
-          <div style = {{ position: "fixed", width: "20%", right: "5%"}}>
+          <div style = {{ position: "fixed", width: isTablet ? "100%" : "20%", right: isTablet ? "0%" : "5%"}}>
             <ListGroup variant="flush">
               <Link to="/profile" style={{ textDecoration: "none" }}>
                 <ListGroup.Item><b>My profile</b></ListGroup.Item>

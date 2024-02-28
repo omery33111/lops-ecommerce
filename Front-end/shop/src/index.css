@@ -1,3 +1,6 @@
+
+
+
 .wishlist-count, .cart-count {
     background-color: yellow;
     color: black;
@@ -34,4 +37,9 @@ body {
 }
 
 
+@media (max-width: 1024px) {
+  body {
+    overflow-x: hidden;
+  }
+}
 

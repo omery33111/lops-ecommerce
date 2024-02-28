@@ -5,92 +5,84 @@ import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { selectUser } from "../authentication/authenticationSlice";
 import { getProfileAsync } from "./profileSlice";
 import { BsFillPencilFill } from "react-icons/bs";
-import ProfileNavigator from "../navigators/ProfileNavigator";
 import { myServer } from "../../endpoints/endpoints";
+import './profile.css';
+import ProfileNavigator from "../navigators/ProfileNavigator";
+import BurgerNav from "../navigators/BurgerNav";
 
 
 
 const Profile = () => {
-    const navigate = useNavigate();
-
+  const navigate = useNavigate();
   const dispatch = useAppDispatch();
-
   const username = useAppSelector(selectUser);
+  const { first_name, last_name, location, bio, picture } = useAppSelector((state) => state.profile);
+  const [isScrolling, setIsScrolling] = useState(false);
 
   useEffect(() => {
     dispatch(getProfileAsync());
   }, [dispatch]);
 
-  const { first_name, last_name, location, bio, picture } = useAppSelector((state) => state.profile);
-  
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolling(window.pageYOffset > 110);
+    };
 
+    window.addEventListener("scroll", handleScroll);
 
-  const [isScrolling, setIsScrolling] = useState(false);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
-useEffect(() => {
-  window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 110) {
-      setIsScrolling(true);
-    } else {
-      setIsScrolling(false);
-    }
-  });
-}, [dispatch]);
+  const isTablet = window.innerWidth >= 0 && window.innerWidth <= 1024;
 
   return (
-    <div>
-      <Container>
-        <Row>
-          <Col md={9}>
-            <br />
-            <br />
-            <h2>PROFILE</h2>
-            <br />
-            <br />
-            <h5>YOUR PROFILE</h5>
-            { isScrolling ? (<div style = {{position: "absolute", top: 299}}><ProfileNavigator /></div>) : (<div style = {{position: "absolute"}}><ProfileNavigator /></div>) }
-            <div style={{position: "absolute", transform: " translateX(805px) translateY(-25px) "}}>USERNAME: <b>{username}</b></div>
-            <Card style = {{ width: "970px", height: "250px", position: "absolute", transform: " translateX(0px) translateY(0px) "}}>
-                <Card.Body>
-                    <Row style = {{display: "flex", alignItems: "center", height: "100%"}}>
-                    <Col md={4}>
-                    {picture ? (<img alt="mypicture" height = {200} width = {200} src = {myServer + picture}/>) : ("UNKNOWN")}
-                    </Col>
-                    <Col md={4}>
-                    <ListGroup variant="flush">
-                        <ListGroup.Item><b>USERNAME:</b> {username}</ListGroup.Item>
-                        <ListGroup.Item><b>FIRST NAME:</b> {first_name? (`${first_name}`) : ("UNKNOWN")}</ListGroup.Item>
+    <Container>
 
-                        <ListGroup.Item><b>LAST NAME:</b> {last_name? (`${last_name}`) : ("UNKNOWN")}</ListGroup.Item>
-                        <ListGroup.Item><b>LOCATION:</b> {location? (`${location}`) : ("UNKNOWN")}</ListGroup.Item>
-                    </ListGroup>
-                        </Col>
-                        <Col md={4}>
-                        <ListGroup variant="flush">
-                        <ListGroup.Item><b>BIO:</b><hr/>
-                        {bio? (`${bio}`) : ("UNKNOWN")}</ListGroup.Item>
-                        
-                    </ListGroup>
-                    
-                        </Col>
-                    </Row>
-                </Card.Body>
-            </Card><br/>
-            <Button
-              onClick={() => navigate("/profile/profile_update")}
-              variant="warning"
-              style = {{ position: "absolute", transform: " translateX(912px) translateY(-13px) "}}
-            >
-             <h6> <BsFillPencilFill /> </h6>
-            </Button>
-          </Col>
+      {isTablet && (<BurgerNav />)}
 
+      <div style = {{height: "10rem"}}/>
+      <Row>
+        <Col md={9}>
+          <h2 className="mb-4">PROFILE</h2>
+          <h5>YOUR PROFILE</h5>
+          {!isTablet && (
+                      <div className={isScrolling ? "profile-navigator scrolling" : "profile-navigator"}>
+                      <ProfileNavigator />
+                    </div>
+          )}
 
-        </Row>
-        
-      </Container>
-    <div style = {{height: "470px"}}/>
-    </div>
+          <div className="username-info">USERNAME: <b>{username}</b></div>
+          <Card className="profile-card">
+            <Card.Body>
+              <Row className="align-items-center">
+                <Col md={4} className="text-center">
+                  {picture ? <img alt="mypicture" src={myServer + picture} className="profile-picture" /> : "UNKNOWN"}
+                </Col>
+                <Col md={4}>
+                  <ListGroup variant="flush">
+                    <ListGroup.Item><b>USERNAME:</b> {username}</ListGroup.Item>
+                    <ListGroup.Item><b>FIRST NAME:</b> {first_name ? first_name : "UNKNOWN"}</ListGroup.Item>
+                    <ListGroup.Item><b>LAST NAME:</b> {last_name ? last_name : "UNKNOWN"}</ListGroup.Item>
+                    <ListGroup.Item><b>LOCATION:</b> {location ? location : "UNKNOWN"}</ListGroup.Item>
+                  </ListGroup>
+                </Col>
+                <Col md={4}>
+                  <ListGroup variant="flush">
+                    <ListGroup.Item><b>BIO:</b><hr />{bio ? bio : "UNKNOWN"}</ListGroup.Item>
+                  </ListGroup>
+                </Col>
+              </Row>
+            </Card.Body>
+          </Card>
+          <Button onClick={() => navigate("/profile/profile_update")} variant="warning" className="edit-button">
+            <BsFillPencilFill />
+          </Button>
+          <div style = {{height: "20rem"}}/>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

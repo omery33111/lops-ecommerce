@@ -47,22 +47,25 @@ const MyNavbar = () => {
 
   const location = useLocation();
 
+  const isMobile = window.innerWidth <= 768;
+
   return (
     <div>
         <Navbar bg="black" variant="dark" style = {{height: "70px"}}>
-          <Container>
+          <Container style={{transform: isMobile ? "translateX(6rem) translateY(0rem)" : "translateX(0rem) translateY(0rem)"}}>
 
           
 
             <Nav>
             <Navbar.Brand>
               <Link to = "/">
-            <img style={{ height: '50px', position: "absolute", top: 10, left: 25, border: 0 }} src={require('../../images/LOPS.png')} alt="lops" />
+            <img style={{ height: storedIsStaff ? "35px" : '50px', position: "absolute", top: isMobile ? -15 : 0, left: -65, border: 0, transform: storedIsStaff && "translateY(8px) translateX(-8px)" }} src={require('../../images/LOPS.png')} alt="lops" />
               </Link>
             </Navbar.Brand>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               
-              <Nav.Link style = {{color: "white", position: "absolute", left: 200, top: 10}}>
-              <h4 onClick={() => setShowForm(!showForm)}><GoSearch/></h4>
+              <Nav.Link>
+                {!isMobile && (<h4 onClick={() => setShowForm(!showForm)}><GoSearch/></h4>)}
+              
               {showForm && (
 
                 <div style = {{width: "200px", position: "absolute", transform: " translateX(50px) translateY(-39px) "}}>
@@ -80,6 +83,7 @@ const MyNavbar = () => {
 
               
               </Nav.Link>
+              
             </Nav>
             
             
@@ -236,7 +240,7 @@ const MyNavbar = () => {
               </Nav.Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                {isLogged ? (
                <Nav.Link as = {Link} to = "/profile">
-                <div style = {{ color: "white", position: "absolute", transform: " translateX(-12px) translateY(-2px) "}}>
+                <div style = {{ color: "white", position: "absolute", transform: " translateX(-12px) translateY(-1px) "}}>
                 <h3><RiUserFill /></h3>
                 </div>
                 <div style = {{ color: "white", position: "absolute", transform: " translateX(22px) translateY(-4px) "}}>
@@ -253,7 +257,7 @@ const MyNavbar = () => {
                 )}
 
 {storedIsStaff && (
-<div style={{ color: 'white', position: "absolute", transform: 'translateX(-130px) translateY(-3px)'}}>
+<div style={{ color: 'white', position: "absolute", transform:  isMobile ? "translateX(-100px)" : 'translateX(-130px) translateY(-3px)'}}>
           <Nav.Link as={Link} to="/admin_panel/panel_main" style={{ color: 'white' }}>
           <h3><FaUserSecret /></h3>
           </Nav.Link>

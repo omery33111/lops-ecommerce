@@ -15,6 +15,7 @@ import { HiArrowRight } from "react-icons/hi";
 import { BsFillPencilFill } from "react-icons/bs";
 import { addWish, removeWish, selectWishList } from '../wishlist/wishListSlice';
 import { myServer } from '../../endpoints/endpoints';
+import './category.css';
 
 
 
@@ -126,6 +127,10 @@ const CategoryProducts = () => {
       }
     }, [myDivRef, limit]);
     
+
+    const isMobile = window.innerWidth <= 768;
+
+
     return (
       <div><br/><br/>
       <Carrousel />
@@ -256,33 +261,52 @@ const CategoryProducts = () => {
 </div></div>) : ("")}
       
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gridGap: "20px" }}>
-      {categoryProducts.slice(0, offset + limit).map((product) =>
-      <div key = {product.id}>
-      <Figure>
-      <button style = {{border: "none", background: "none", padding: 0}} onClick = {() => navigate("/single_product/" + product.id)}>
-      <Figure.Image
-        width={250}
-        height={280}
-        alt="180x280"
-        src={myServer + product.picture}
-      /></button>
-      <Figure.Caption>
-      {product.product_name}<br/>
-      <b>$ {product.price}</b>
-      </Figure.Caption>
-      <div style={{ position: "absolute", transform: "translateX(225px) translateY(-32px)" }}>
-        <button type="button" style={{ border: "none", backgroundColor: "transparent" }}>
-          <h5>
-            {wishlist.find((item) => String(item.id) === String(product.id))
-              ? <FaHeart style={{ color: "red" }} onClick={() => dispatch(removeWish({ item: product }))}/>
-              : <FaRegHeart onClick={() => dispatch(addWish({ item: product }))}/>}
-          </h5>
-        </button>
-        </div>
-    </Figure>
+<div className='brand-map-items'>
+  {categoryProducts.slice(0, offset + limit).map((product) =>
+    <div key={product.id} className="product-item">
+    <div>
+      <button style={{ border: "none", background: "none", padding: 0 }} onClick={() => navigate("/single_product/" + product.id)}>
+        <img
+          width={isMobile ? `150px` : `225px`}
+          height={isMobile ? `150px` : `225px`}
+          alt="picture1"
+          src={myServer + product.picture}
+        />
+      </button>
+      {isMobile ? (
+                <div>
+                <div style={{ fontSize: '0.9rem' }}>
+                  {product.product_name}<br />
+                  <b style={{ marginRight: "1rem" }}>${product.price}</b>
+                </div>
+                <button type="button" style={{ border: "none", backgroundColor: "transparent", marginRight: isMobile ? "9rem" : "3.8rem", marginTop: "-1rem" }}>
+                  <h5>
+                    {wishlist.find((item) => String(item.id) === String(product.id))
+                      ? <FaHeart style={{ color: "red" }} onClick={() => dispatch(removeWish({ item: product }))} />
+                      : <FaRegHeart onClick={() => dispatch(addWish({ item: product }))} />}
+                  </h5>
+                </button>
+              </div>
+      ) : (
+                <div style={{ display: "flex", justifyContent: isMobile ? "flex-start" : "space-between" }}>
+                <div style={{ fontSize: '0.9rem' }}>
+                  {product.product_name}<br />
+                  <b style={{ marginRight: "1rem" }}>${product.price}</b>
+                </div>
+                <button type="button" style={{ border: "none", backgroundColor: "transparent", marginRight: isMobile ? "9rem" : "3.8rem", marginTop: "-1rem" }}>
+                  <h5>
+                    {wishlist.find((item) => String(item.id) === String(product.id))
+                      ? <FaHeart style={{ color: "red" }} onClick={() => dispatch(removeWish({ item: product }))} />
+                      : <FaRegHeart onClick={() => dispatch(addWish({ item: product }))} />}
+                  </h5>
+                </button>
+              </div>
+      )}
 
-      </div>)}</div><br/><br/>
+    </div>
+  </div>
+  )}
+</div><br/><br/>
       
       {categoryProducts.length >= offset + limit && (
   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '25vh' }}>

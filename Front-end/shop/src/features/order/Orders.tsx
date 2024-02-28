@@ -108,12 +108,200 @@ const Orders = () => {
     setShowModal(false);
   };
   
+  const isTablet = window.innerWidth >= 0 && window.innerWidth <= 1024;
 
   return (
     <div>
       
-          
-      <Container>
+      {isTablet ? (
+              <Container>
+                        <div style={{height: "2rem"}}/>
+              <Row>
+                <Col xs={12}>
+                  <h2>CHECKOUT</h2>
+                  <h5>CART</h5>
+                  {ifLogged ? null : (
+                    <Alert variant="info">
+                      <Alert.Heading>You're signed out right now.</Alert.Heading>
+                      <b>In order to have the ability to continue the process, <Link to="/login">sign in</Link>.</b>
+                    </Alert>
+                  )}
+                  {cart.map((item) => (
+                    <Card key={item.id} style={{ marginBottom: "10px" }}>
+                      <Card.Body>
+                        <Row>
+                          <Col xs={12} md={4}>
+                            <img src={myServer + item.picture} alt="orderpic" style={{ maxWidth: "100%", marginBottom: "20px" }} />
+                          </Col>
+                          <Col xs={12} md={4}>
+                            <Link to={`/single_product/${item.id}`} style={{ textDecoration: "none", color: "black" }}>
+                              <p style={{ fontWeight: "bold", margin: "0" }}>{item.product_name}</p>
+                            </Link>
+                            <p>x {item.amount}</p>
+                            <p>${item.price} each</p>
+                          </Col>
+                          <Col xs={12} md={4} className="text-md-right">
+                            <p style={{ fontWeight: "bold" }}>${item.amount * item.price}</p>
+                          </Col>
+                        </Row>
+                      </Card.Body>
+                    </Card>
+                  ))}
+                </Col>
+                <Col xs={12}>
+                  <h5>SHIPPING ADDRESS</h5>
+                  <Accordion>
+                    {addresses.map((address) => (
+                      <Accordion.Item key={address.id} eventKey={address.id.toString()}>
+                        <Accordion.Header>{address.first_name} {address.last_name}</Accordion.Header>
+                        <Accordion.Body>
+                          <p>{address.address}, {address.city}, {address.state}, {address.country} {address.postal_code}</p>
+                          {selectedAddress === address.id && <p className="text-warning">Selected</p>}
+                          <Button variant="link" onClick={() => address.id && dispatch(deleteAddressAsync(address.id))}>
+                            Delete
+                          </Button>
+                        </Accordion.Body>
+                      </Accordion.Item>
+                    ))}
+                    <Accordion.Item eventKey="newAddress">
+                      <Accordion.Header style={{ color: "orange" }}>CREATE NEW ADDRESS</Accordion.Header>
+                      <Accordion.Body>
+                        <Form onSubmit={handleSubmit}>
+                          <Row>
+                            <Col xs={12} md={6}>
+                              <Form.Group controlId="formFirstName">
+                                <Form.Label>First Name</Form.Label>
+                                <Form.Control type="text" onChange={(event) => setFirstName(event.target.value)} required />
+                              </Form.Group>
+                          <Form.Group controlId="formAddress">
+                            <Form.Label>Address</Form.Label>
+                            <Form.Control
+                              type="text"
+                              value={address}
+                              onChange={(event) => setAddress(event.target.value)}
+                              required
+                            />
+                          </Form.Group>
+                          <Form.Group controlId="formCity">
+                            <Form.Label>City</Form.Label>
+                            <Form.Control
+                              type="text"
+                              value={city}
+                              onChange={(event) => setCity(event.target.value)}
+                              required
+                            />
+                          </Form.Group>
+                        </Col>
+                        <Col md={6}>
+                          <Form.Group controlId="formLastName">
+                            <Form.Label>Last Name</Form.Label>
+                            <Form.Control
+                              type="text"
+                              onChange={(event) => setLastName(event.target.value)}
+                              required
+                            />
+                          </Form.Group>
+                          <Form.Group controlId="formState">
+                            <Form.Label>State</Form.Label>
+                            <Form.Control
+                              type="text"
+                              onChange={(event) => setState(event.target.value)}
+                              required
+                            />
+                          </Form.Group>
+                          <Form.Group controlId="formPostalCode">
+                            <Form.Label>Postal Code</Form.Label>
+                            <Form.Control
+                              type="number"
+                              onChange={(event) =>
+                                setPostalCode(Number(event.target.value))
+                              }
+                              required
+                            />
+                          </Form.Group>
+                        </Col>
+                      </Row>
+                      <Row >
+                      <Col xs={12} className="mt-3">
+                          <Form.Group controlId="formCountry">
+                            <Form.Label>Country</Form.Label>
+                            <Form.Control
+                              type="text"
+                              onChange={(event) => setCountry(event.target.value)}
+                              required
+                            />
+                          </Form.Group>
+                        </Col>
+                      </Row>
+                      <Row className="justify-content-center mt-3">
+                        <Button
+                          variant="warning"
+                          type="submit"
+        
+                        >
+                          CREATE NEW ADDRESS
+                        </Button>
+                        <br />
+                        <br />
+                          
+                        </Row>
+                        </Form>
+        
+        
+                          </Accordion.Body>
+                        </Accordion.Item>
+                      </Accordion>
+        
+                      
+                    </Col>
+        
+                
+                  
+        
+              
+                    
+                      
+                    <Card style = {{transform: "translateY(2rem)"}}>
+                        <Card.Body>
+                            <FormGroup>
+                              <Link to="/order/order_post">
+                              <div>
+            </div>
+        
+            <Button disabled={!selectedAddress} variant="warning" onClick={handleButtonClick} style = {{width: "100%"}}>COMPLETE CHECKOUT</Button><br/><br/>
+        
+                      <Modal show={showModal} onHide={handleModalClose}>
+                        <Modal.Header closeButton>
+                          <Modal.Title>
+                            Checkout
+                            </Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+                          <Button style={{ width: "100%" }} variant="warning" type="submit" onClick={(event) => handleOrderSubmit(event)} disabled={!selectedAddress}>CHECKOUT</Button><br/><br/>
+                          <PaypalButton />
+                        </Modal.Body>
+                        <Modal.Footer>
+                          <Button variant="secondary" onClick={handleModalClose}>Close</Button>
+                        </Modal.Footer>
+                      </Modal>
+                              </Link>
+                            </FormGroup>
+                          <Card.Title><h5>Total of {cart.length} items.</h5></Card.Title>
+                          <Card.Text><b>Total price: {total + (total >= 50 ? 0 : 5)}$</b></Card.Text>
+                          <hr />
+                          <Card.Text>
+                            <b>Items price: {total}$</b>
+                          </Card.Text>
+                          <Card.Text>
+                            <b>Shipping price: {total >= 50 ? 0 : 5}$ {total >= 50 ? "(order over 50$!)" : ""}</b>
+                          </Card.Text>
+                        </Card.Body>
+                      </Card>
+        
+                      </Row>
+              </Container>
+      ) : (
+        <Container>
         <Row>
           <Col xs = {4}>
             <br />
@@ -317,6 +505,9 @@ const Orders = () => {
 
               </Row>
       </Container>
+      )}
+          
+
       
       <div style = {{height: "350px"}}/>
     </div>

@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import ProfileNavigator from "../navigators/ProfileNavigator";
 import { deleteAddressAsync, getAddressesAsync, selectAddress } from "./shippingSlice";
+import BurgerNav from "../navigators/BurgerNav";
 
 const Shipping = () => {
   const dispatch = useAppDispatch();
@@ -30,8 +31,12 @@ const Shipping = () => {
     });
   }, [dispatch]);
 
+  const isTablet = window.innerWidth >= 0 && window.innerWidth <= 1024;
+
+
   return (
     <div>
+            {isTablet && (<BurgerNav />)}
       <Container>
         <br />
         <br />
@@ -39,7 +44,13 @@ const Shipping = () => {
         <br />
         <br />
         <h5>ADDRESSES</h5>
-        { isScrolling ? (<div style = {{position: "absolute", top: 299}}><ProfileNavigator /></div>) : (<div style = {{position: "absolute"}}><ProfileNavigator /></div>) }
+
+        {!isTablet && (
+        <div>
+        { isScrolling ? (
+        <div style = {{position: "absolute", top: 299}}><ProfileNavigator /></div>) : (<div style = {{position: "absolute"}}><ProfileNavigator /></div>) }
+        </div>)}
+
         <Row>
           <Col xs={9}>
           <Button
@@ -70,20 +81,16 @@ const Shipping = () => {
               ) : ("")}
               <tbody>
                 {addresses.map((address) => (
-                  <tr key={address.id} style={{ backgroundColor: "white" }}>
-                    <td style={{ textAlign: "center" }}>
-                      {address.first_name}
-                    </td>
-                    <td style={{ textAlign: "center" }}>{address.last_name}</td>
-                    <td style={{ textAlign: "center" }}>{address.address}</td>
-                    <td style={{ textAlign: "center" }}>{address.city}</td>
-                    <td style={{ textAlign: "center" }}>{address.state}</td>
-                    <td style={{ textAlign: "center" }}>{address.country}</td>
-                    <td style={{ textAlign: "center" }}>
-                      {address.postal_code}
-                    </td>
-                    <td style={{ textAlign: "center" }}>
-                      <button
+                  <tr key={address.id}>
+                  <td>{address.first_name}</td>
+                  <td>{address.last_name}</td>
+                  <td>{address.address}</td>
+                  <td>{address.city}</td>
+                  <td>{address.state}</td>
+                  <td>{address.country}</td>
+                  <td>{address.postal_code}</td>
+                  <td>
+                  <button
                         style={{
                           color: "blue",
                           border: "none",
@@ -106,8 +113,8 @@ const Shipping = () => {
                       >
                         Delete
                       </a>
-                    </td>
-                  </tr>
+                  </td>
+                </tr>
                 ))}
               </tbody>
             </Table>

@@ -11,6 +11,7 @@ import Stack from '@mui/material/Stack';
 import CircularProgress from '@mui/material/CircularProgress';
 import { myServer } from '../../endpoints/endpoints'
 import { addWish, removeWish, selectWishList } from '../wishlist/wishListSlice'
+import './product.css';
 
 
 const Products = () => {
@@ -89,7 +90,7 @@ const Products = () => {
     }
   }, [myDivRef, limit]);
 
- 
+  const isMobile = window.innerWidth <= 768;
 
   return (
     <div><br/><br/>
@@ -105,10 +106,10 @@ const Products = () => {
       <div>
       <Button variant = "warning" onClick={() => setShowForm(!showForm)}>Add Product</Button><br/><br/><hr/><br/>
       {showForm && (
-      <Row className="justify-content-center mt-3">
+      <Row>
         <Col md={7}>
           <Form onSubmit={handleSubmit} encType="multipart/form-data">
-          <Row className="justify-content-center align-items-center mt-3">
+          <Row>
 
             <Col md={6}>
             <Form.Group controlId="formCategory">
@@ -159,7 +160,7 @@ const Products = () => {
                 </Col>
               </Row>
               
-              <Row className="justify-content-center mt-3">
+              <Row>
                 <Button variant="warning" type="submit">
                   Create New Product
                 </Button><br/><br/>
@@ -172,33 +173,49 @@ const Products = () => {
       )}
 </div>) : ("")}
       
-<div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gridGap: "20px" }}>
+<div className='brand-map-items'>
   {products.slice(0, offset + limit).map((product) =>
-    <div key={product.id}>
-      <Figure>
+    <div key={product.id} className="product-item">
+      <div>
         <button style={{ border: "none", background: "none", padding: 0 }} onClick={() => navigate("/single_product/" + product.id)}>
-          <Figure.Image
-            width={270}
-            height={250}
+          <img
+            width={isMobile ? `150px` : `225px`}
+            height={isMobile ? `150px` : `225px`}
             alt="picture1"
             src={myServer + product.picture}
           />
         </button>
-        <Figure.Caption>
-          {product.product_name}<br/>
-          <b>$ {product.price}</b>
-        </Figure.Caption>
-        <div style={{ position: "absolute", transform: "translateX(245px) translateY(-32px)" }}>
-        <button type="button" style={{ border: "none", backgroundColor: "transparent" }}>
-          <h5>
-            {wishlist.find((item) => String(item.id) === String(product.id))
-              ? <FaHeart style={{ color: "red" }} onClick={() => dispatch(removeWish({ item: product }))}/>
-              : <FaRegHeart onClick={() => dispatch(addWish({ item: product }))}/>}
-          </h5>
-        </button>
+        {isMobile ? (
+                  <div>
+                  <div style={{ fontSize: '0.9rem' }}>
+                    {product.product_name}<br />
+                    <b style={{ marginRight: "1rem" }}>${product.price}</b>
+                  </div>
+                  <button type="button" style={{ border: "none", backgroundColor: "transparent", marginRight: isMobile ? "9rem" : "3.8rem", marginTop: "-1rem" }}>
+                    <h5>
+                      {wishlist.find((item) => String(item.id) === String(product.id))
+                        ? <FaHeart style={{ color: "red" }} onClick={() => dispatch(removeWish({ item: product }))} />
+                        : <FaRegHeart onClick={() => dispatch(addWish({ item: product }))} />}
+                    </h5>
+                  </button>
+                </div>
+        ) : (
+                  <div style={{ display: "flex", justifyContent: isMobile ? "flex-start" : "space-between" }}>
+                  <div style={{ fontSize: '0.9rem' }}>
+                    {product.product_name}<br />
+                    <b style={{ marginRight: "1rem" }}>${product.price}</b>
+                  </div>
+                  <button type="button" style={{ border: "none", backgroundColor: "transparent", marginRight: isMobile ? "9rem" : "3.8rem", marginTop: "-1rem" }}>
+                    <h5>
+                      {wishlist.find((item) => String(item.id) === String(product.id))
+                        ? <FaHeart style={{ color: "red" }} onClick={() => dispatch(removeWish({ item: product }))} />
+                        : <FaRegHeart onClick={() => dispatch(addWish({ item: product }))} />}
+                    </h5>
+                  </button>
+                </div>
+        )}
 
-        </div>
-      </Figure>
+      </div>
     </div>
   )}
 </div>

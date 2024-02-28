@@ -6,6 +6,7 @@ import { Address } from "../../models/Shipping";
 import { logoutAsync, reset } from "../authentication/authenticationSlice";
 import ProfileNavigator from "../navigators/ProfileNavigator";
 import { postAddressAsync } from "./shippingSlice";
+import BurgerNav from "../navigators/BurgerNav";
 
 
 
@@ -63,9 +64,11 @@ const ShippingAdd = () => {
     });
   }, []);
 
+  const isTablet = window.innerWidth >= 0 && window.innerWidth <= 1024;
 
   return (
     <div>
+      {isTablet && (<BurgerNav />)}
       <Container>
         <br />
         <br />
@@ -73,8 +76,11 @@ const ShippingAdd = () => {
         <br />
         <br />
         <h5>CREATE ADDRESSES</h5>
-        { isScrolling ? (<div style = {{position: "absolute", top: 299}}><ProfileNavigator /></div>) : (<div style = {{position: "absolute"}}><ProfileNavigator /></div>) }
-        <Row className="justify-content-left mt-3">
+        {!isTablet && (
+        <div>
+        { isScrolling ? (
+        <div style = {{position: "absolute", top: 299}}><ProfileNavigator /></div>) : (<div style = {{position: "absolute"}}><ProfileNavigator /></div>) }
+        </div>)}        <Row className="justify-content-left mt-3">
           <Col md={7}>
             <Form onSubmit={handleSubmit}>
               <Row className="justify-content-center">
@@ -160,11 +166,11 @@ const ShippingAdd = () => {
                 <br />
                 <br />
                 <Link to="/shipping"><br />
-                  <Button
+                <Button
                     variant="secondary"
-                    style={{ float: "right", transform: " translateX(-338px) " }}
+                    style={{ justifyContent: "center", textAlign: "center" }}
                   >
-                    CANCLE
+                    CANCEL
                   </Button>
                   
                 </Link>

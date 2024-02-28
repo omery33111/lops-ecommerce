@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Alert, Button, Card, Container, Form, ListGroup } from 'react-bootstrap';
+import { Alert, Button, Card, Col, Container, Form, ListGroup, Row } from 'react-bootstrap';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { getOrdersUserAsync, selectOrdersUser, selectSingleOrder} from './orderSlice';
 import { Rating } from '@mui/material';
@@ -7,11 +7,12 @@ import { postReviewAsync } from '../reviews/reviewsSlice';
 import ProfileNavigator from '../navigators/ProfileNavigator';
 import { Order } from '../../models/Order';
 import { Link } from 'react-router-dom';
+import BurgerNav from '../navigators/BurgerNav';
 
 
 
 const OrdersUser = () => {
-    const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch();
 
   const user_orders = useAppSelector(selectOrdersUser);
   const singleOrder = useAppSelector(selectSingleOrder);
@@ -73,9 +74,12 @@ useEffect(() => {
 }, [dispatch]);
 
 
+const isTablet = window.innerWidth >= 0 && window.innerWidth <= 1024;
+
 
   return (
     <div>
+            {isTablet && (<BurgerNav />)}
       <Container>
         <br />
         <br />
@@ -83,7 +87,13 @@ useEffect(() => {
         <br />
         <br />
         <h5>YOUR ORDERS</h5>
-        { isScrolling ? (<div style = {{position: "absolute", top: 299}}><ProfileNavigator /></div>) : (<div style = {{position: "absolute"}}><ProfileNavigator /></div>) }
+
+        {!isTablet && (
+        <div>
+        { isScrolling ? (
+        <div style = {{position: "absolute", top: 299}}><ProfileNavigator /></div>) : (<div style = {{position: "absolute"}}><ProfileNavigator /></div>) }
+        </div>)}
+
         {user_orders.length === 0 ? ("") : (<div style={{ position: "absolute", float: "left", transform: "translateX(780px) translateY(-30px)", width: "40.5%"}}>CLICK TO POST REVIEW</div>)}
         <div style={{ width: "75%" }}>
           
@@ -100,7 +110,7 @@ useEffect(() => {
     <a href = "#reviews" style = {{textDecoration: "none", color: "black"}}>
     <Card
       key={order.id}
-      style={{ marginBottom: "20px", width: "75%" }}
+      style={{ marginBottom: "20px", width: "100%" }}
       onClick={() => {
         handleProductSelect(order.product.id);
         setShowReviews(true);
@@ -119,6 +129,8 @@ useEffect(() => {
           cursor: "pointer",
         }}
       >
+        <Row>
+          <Col>
         <Link to={`/single_product/${order.product.id}`} style={{ textDecoration: "none", color: "black"}}>
         <div style={{ display: "flex", alignItems: "center" }}>
           <img
@@ -136,32 +148,42 @@ useEffect(() => {
 
             <div style={{ height: "10px" }} />
 
-            <div style={{ width: "40%" }}>
-              {order.product.description.length > 170
-                ? `${order.product.description.substr(0, 170)}...`
+            <div>
+              {order.product.description.length > 50
+                ? `${order.product.description.substr(0, 50)}...`
                 : order.product.description}
             </div>
           </div>
         </div>
         </Link>
+        </Col>
 
-        <ListGroup
-          variant="flush"
-          style={{ position: "absolute", right: 155, width: "20%" }}
-        >
-          <ListGroup.Item>
-            {order.shipping_address.first_name}{" "}
-            {order.shipping_address.last_name}
-          </ListGroup.Item>
-          <ListGroup.Item>{order.shipping_address.state}</ListGroup.Item>
-          <ListGroup.Item>{order.shipping_address.country}</ListGroup.Item>
-          <ListGroup.Item>{order.shipping_address.city}</ListGroup.Item>
-          <ListGroup.Item>{order.shipping_address.postal_code}</ListGroup.Item>
-        </ListGroup>
+              <Col className="d-flex align-items-center">
 
-        <div style={{ position: "absolute", bottom: 10, right: 20 }}>
-          <strong>$ {order.price}</strong>
-        </div>
+              <ListGroup variant="flush">
+                        <ListGroup.Item>{order.shipping_address.first_name} {order.shipping_address.last_name}</ListGroup.Item>
+                        <ListGroup.Item>{order.shipping_address.state}</ListGroup.Item>
+                        <ListGroup.Item>{order.shipping_address.country}</ListGroup.Item>
+                        <ListGroup.Item>{order.shipping_address.city}</ListGroup.Item>
+                        <ListGroup.Item>{order.shipping_address.postal_code}</ListGroup.Item>
+                      </ListGroup>
+            </Col>
+
+            
+            {isTablet ? (
+                                      <Col className="d-flex align-items-center" style = {{direction: "rtl", justifyContent: "center", textAlign: "center"}}>
+                                      <div>
+                                  total: <b>₪{order.price}</b>
+                                  </div>
+                                  </Col>
+            ) : (
+                <Col className="d-flex align-items-center" style = {{direction: "rtl"}}>
+                <div>
+                total:  <b>₪{order.price}</b>
+            </div>
+            </Col>
+            )}
+            </Row>
       </Card.Body>
     </Card>
     </a>

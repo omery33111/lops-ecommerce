@@ -1,0 +1,36 @@
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .profile-navigator {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+  }
+  .scrolling .profile-navigator {
+    top: 60px;
+  }
+  .profile-card {
+    width: 100%;
+  }
+  .username-info {
+    margin-top: 60px;
+  }
+  .edit-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+/* Common Styles */
+.profile-navigator {
+  position: absolute;
+}
+
+.profile-picture {
+  width: 200px;
+  height: auto;
+}
+
+.edit-button {
+  position: absolute;
+}

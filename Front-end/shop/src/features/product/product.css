@@ -1,0 +1,23 @@
+.brand-map-items {
+  max-width: 1300px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(220px, 1fr));
+}
+
+
+.product-item {
+  padding: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .brand-map-items {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .brand-map-items {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}

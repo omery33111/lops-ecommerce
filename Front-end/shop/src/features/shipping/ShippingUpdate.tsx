@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import ProfileNavigator from "../navigators/ProfileNavigator";
 import { getSingleAddressAsync, patchAddressAsync, selectSingleAddress } from "./shippingSlice";
+import BurgerNav from "../navigators/BurgerNav";
 
 const ShippingUpdate = () => {
   const dispatch = useAppDispatch();
@@ -70,8 +71,12 @@ useEffect(() => {
   });
 }, []);
 
+const isTablet = window.innerWidth >= 0 && window.innerWidth <= 1024;
+
+
   return (
     <div>
+      {isTablet && (<BurgerNav />)}
       <Container>
         <br />
         <br />
@@ -79,8 +84,11 @@ useEffect(() => {
         <br />
         <br />
         <h5>EDIT ADDRESS</h5>
-        { isScrolling ? (<div style = {{position: "absolute", top: 299}}><ProfileNavigator /></div>) : (<div style = {{position: "absolute"}}><ProfileNavigator /></div>) }
-        <Row className="justify-content-left mt-3">
+        {!isTablet && (
+        <div>
+        { isScrolling ? (
+        <div style = {{position: "absolute", top: 299}}><ProfileNavigator /></div>) : (<div style = {{position: "absolute"}}><ProfileNavigator /></div>) }
+        </div>)}        <Row className="justify-content-left mt-3">
           <Col md={7}>
             <Form onSubmit={handleSubmit}>
               <Row>
@@ -174,9 +182,9 @@ useEffect(() => {
                   <br />
                   <Button
                     variant="secondary"
-                    style={{ float: "right", transform: " translateX(-315px) translateX(-20px)" }}
+                    style={{ justifyContent: "center", textAlign: "center" }}
                   >
-                    CANCLE
+                    CANCEL
                   </Button>
                 </Link>
 

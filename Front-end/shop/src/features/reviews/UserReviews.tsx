@@ -8,6 +8,7 @@
   import { BsFillPencilFill } from "react-icons/bs";
 import ProfileNavigator from '../navigators/ProfileNavigator';
 import { myServer } from '../../endpoints/endpoints';
+import BurgerNav from '../navigators/BurgerNav';
 
 
 
@@ -42,9 +43,11 @@ import { myServer } from '../../endpoints/endpoints';
     });
   }, [dispatch]);
 
+  const isTablet = window.innerWidth >= 0 && window.innerWidth <= 1024;
 
     return (
   <div>
+    {isTablet && (<BurgerNav />)}
     <Container>
         <br />
         <br />
@@ -52,8 +55,11 @@ import { myServer } from '../../endpoints/endpoints';
         <br />
         <br />
         <h5>YOUR RATINGS <BsStarFill/></h5>
-        { isScrolling ? (<div style = {{position: "absolute", top: 299}}><ProfileNavigator /></div>) : (<div style = {{position: "absolute"}}><ProfileNavigator /></div>) }
-  <div style = {{width: "75%"}}>
+        {!isTablet && (
+        <div>
+        { isScrolling ? (
+        <div style = {{position: "absolute", top: 299}}><ProfileNavigator /></div>) : (<div style = {{position: "absolute"}}><ProfileNavigator /></div>) }
+        </div>)}  <div style = {{width: "75%"}}>
     {user_reviews.length === 0 ? (
       <Alert variant="info" className="d-none d-lg-block">
         <Alert.Heading>You haven't posted any reviews yet. </Alert.Heading>

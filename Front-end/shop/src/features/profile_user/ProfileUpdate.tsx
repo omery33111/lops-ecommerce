@@ -5,10 +5,10 @@ import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { logoutAsync, reset, selectUser } from "../authentication/authenticationSlice";
 import ProfileNavigator from "../navigators/ProfileNavigator";
 import { patchProfileAsync } from "./profileSlice";
+import BurgerNav from "../navigators/BurgerNav";
 
 const ProfileUpdate = () => {
   const username = useAppSelector(selectUser);
-
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
@@ -32,116 +32,85 @@ const ProfileUpdate = () => {
     dispatch(patchProfileAsync(formData));
   };
 
-
   const handlePictureChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setPicture(event.target.files ? event.target.files[0] : undefined);
   }
-
 
   const [isScrolling, setIsScrolling] = useState(false);
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 110) {
-        setIsScrolling(true);
-      } else {
-        setIsScrolling(false);
-      }
+      setIsScrolling(window.pageYOffset > 110);
     });
-  }, [dispatch]);
+  }, []);
 
+  const isTablet = window.innerWidth >= 0 && window.innerWidth <= 1024;
+
+  
   return (
-    <div>
-      <Container>
-        <Row>
-          <Col md={9}>
-            <br />
-            <br />
-            <h2>YOUR PROFILE</h2>
-            <br />
-            <br />
-            <h5>PROFILE DETAILS</h5>
-            { isScrolling ? (<div style = {{position: "absolute", top: 299}}><ProfileNavigator /></div>) : (<div style = {{position: "absolute"}}><ProfileNavigator /></div>) }
-            <div style={{textAlign: 'right', position: "absolute", transform: " translateX(805px) translateY(-25px) "}}>USERNAME: <b>{username}</b></div>
-            <Card style = {{ width: "970px", height: "250px", position: "absolute", transform: " translateX(0px) translateY(0px) "}}>
-              <Form onSubmit={handleSubmit}>
-                <Card.Body>
-                  <Row
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      height: "100%",
-                    }}
-                  >
-                    <Col md={4}>
+    <Container>
+            {isTablet && (<BurgerNav />)}
+
+            <div style = {{height: "10rem"}}/>
+      <Row>
+        <Col md={9}>
+          <h2 className="mb-4">YOUR PROFILE</h2>
+          <h5>PROFILE DETAILS</h5>
+          {!isTablet && (
+                      <div className={isScrolling ? "profile-navigator scrolling" : "profile-navigator"}>
+                      <ProfileNavigator />
+                    </div>
+          )}
+          <div className="username-info">USERNAME: <b>{username}</b></div>
+          <Card className="profile-card">
+            <Form onSubmit={handleSubmit}>
+              <Card.Body>
+                <Row className="align-items-center">
+                  <Col md={4}>
                     <Form.Group controlId="formPicture">
-                    <Form.Label>Picture</Form.Label>
-                    <Form.Control
-                      type="file"
-                      onChange = {handlePictureChange}
-                    />
-                  </Form.Group>
-                    </Col>
-                    <Col md={4}>
-                      <ListGroup variant="flush">
-                        <ListGroup.Item>
-                          <b>FIRST NAME:</b>{" "}
-                          <input type="text" onChange={(event) => setFirstName(event.target.value)} />
-                        </ListGroup.Item>
-                        <ListGroup.Item>
-                          <b>LAST NAME:</b>{" "}
-                          <input type="text" onChange={(event) => setLastName(event.target.value)} />
-                        </ListGroup.Item>
-                        <ListGroup.Item>
-                          <b>LOCATION:</b>{" "}
-                          <input type="text" onChange={(event) => setLocation(event.target.value)} />
-                        </ListGroup.Item>
-                      </ListGroup>
-                    </Col>
-                    <Col md={4}>
-                      <ListGroup variant="flush" >
-                        <ListGroup.Item>
-                          <b>BIO:</b>
-                          <hr />
-                          <input type="text" onChange={(event) => setBio(event.target.value)} />
-                        </ListGroup.Item>
-                      </ListGroup>
-                    </Col>
-                  </Row>
-                </Card.Body>
-                <br />
-            <br />
-            <div>
-              <Button
-                onClick={() => {
-                  window.location.href = "/profile";
-                }}
-                variant="warning"
-                type="submit"
-                style={{ float: "right", transform: "translateY(-30px)" }}
-              >
-                COMPLETE EDITING
-              </Button>
-            </div>
-            <Link to="/profile">
-                  <br />
-                  <Button
-                    variant="secondary"
-                    style={{ float: "right", transform: "translateY(-54px) translateX(-15px)" }}>
-                    CANCEL
-                  </Button>
+                      <Form.Label>Picture</Form.Label>
+                      <Form.Control type="file" onChange={handlePictureChange} />
+                    </Form.Group>
+                  </Col>
+                  <Col md={4}>
+                    <ListGroup variant="flush">
+                      <ListGroup.Item>
+                        <b>FIRST NAME:</b>{" "}
+                        <input type="text" onChange={(event) => setFirstName(event.target.value)} />
+                      </ListGroup.Item>
+                      <ListGroup.Item>
+                        <b>LAST NAME:</b>{" "}
+                        <input type="text" onChange={(event) => setLastName(event.target.value)} />
+                      </ListGroup.Item>
+                      <ListGroup.Item>
+                        <b>LOCATION:</b>{" "}
+                        <input type="text" onChange={(event) => setLocation(event.target.value)} />
+                      </ListGroup.Item>
+                    </ListGroup>
+                  </Col>
+                  <Col md={4}>
+                    <ListGroup variant="flush">
+                      <ListGroup.Item>
+                        <b>BIO:</b>
+                        <hr />
+                        <input type="text" onChange={(event) => setBio(event.target.value)} />
+                      </ListGroup.Item>
+                    </ListGroup>
+                  </Col>
+                </Row>
+              </Card.Body>
+              <div className="buttons-wrapper">
+                <Button variant="warning" type="submit">COMPLETE EDITING</Button>
+                <Link to="/profile">
+                  <Button variant="secondary">CANCEL</Button>
                 </Link>
-
-                </Form>
-            </Card>
-            
-          </Col>
-
-          </Row>
-      </Container>
-      <div style = {{height: "500px"}}/>
-    </div>
-
+              </div>
+            </Form>
+          </Card>
+          <div style = {{height: "20rem"}}/>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

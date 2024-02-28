@@ -73,7 +73,9 @@ const Product = () => {
     setPrice(event.target.value);
   };
   
+  const isTablet = window.innerWidth <= 0 || window.innerWidth <= 1024;
 
+  const isLaptop = window.innerWidth >= 1024 && window.innerWidth <= 1440;
 
   return (
 <div>
@@ -83,8 +85,8 @@ const Product = () => {
             <Col>
               <br /><br /><br /><br />
               <img
-                  width={600}
-                  height={600}
+                        width={isTablet || isLaptop ? "340px" : "550"}
+                        height={isTablet || isLaptop ? "340px" : "550"}
                   alt="600x600"
                   src={myServer + single_product.picture}>
                 </img>

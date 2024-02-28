@@ -8,14 +8,11 @@ import { FaMinus } from "react-icons/fa";
 import { Link } from 'react-router-dom'
 import { myServer } from '../../endpoints/endpoints'
 
-
-
 const Cart = () => {
   const myCart = useAppSelector(selectCart);
   const isLogged = useAppSelector(selectIsLogged);
   const [total, setTotal] = useState(0);
   const dispatch = useAppDispatch();
-
 
   useEffect(() => {
     let tempTotal = 0;
@@ -25,7 +22,6 @@ const Cart = () => {
     const roundedTotal = Math.round((tempTotal + Number.EPSILON) * 100) / 100;
     setTotal(roundedTotal);
   }, [myCart]);
-
 
   const [isScrolling, setIsScrolling] = useState(false);
 
@@ -37,164 +33,84 @@ const Cart = () => {
         setIsScrolling(false);
       }
     });
-  }, [dispatch]);
-  
-      
+  }, []);
+
+  const isTablet = window.innerWidth >= 0 && window.innerWidth <= 1024;
 
   return (
-    <div>
-      
-        <Container><br/><br/>
-        <h2>SHOPPING CART</h2><br/>
-
-        {isLogged ? ("") : 
-        <Alert variant="info" className="d-none d-lg-block" style = {{width: "66.9%"}}>
-    <Alert.Heading>You're signed out right now.</Alert.Heading>
-    <b>
-      To save your items or have the ability to continue in the process, <a href = "/login">sign in</a>.
-      </b>
-    </Alert>}<br/>
-
-    {myCart.length === 0 ? (
-    <Alert variant="info" className="d-none d-lg-block" style = {{width: "66.9%"}}>
-    <Alert.Heading>Your cart seems to be empty. </Alert.Heading>
-    <b>In order to have items in shopping cart, you are welcome to browse the site and look for the products you are interested in.</b>
-    </Alert>
-    ) : (
-    <Container>
-       <Row style={{ display: "flex" }}>
-       <Col xs={12} md={7}>
-        <div style={{ width: "900px" }}>
-    {myCart.map((product) =>
-    <div key = {product.id}>
-        <Card style = {{width: "95%", height: "220px"}}>
-        <Row style = {{display: "flex", alignItems: "center", height: "100%"}}>
-        <Col xs={4}>
-        
-          <div style = {{position: "absolute", transform: " translateX(40px) translateY(-84px) "}}>
-          
-          <Link to={`/single_product/${product.id}`} style={{ textDecoration: "none", color: "black"}}>
-        <Card.Img height = {170} src={myServer + product.picture} />
-        </Link>
-        </div>
-        </Col>
-        <Col xs={2}>
-  <Card.Title>
-    <Link to={`/single_product/${product.id}`} style={{ textDecoration: "none", color: "black"}}>
-      {product.product_name}
-    </Link>
-  </Card.Title>
-  <Card.Text>
-    <small>
-    <Link to={`/single_product/${product.id}`} style={{ textDecoration: "none", color: "black"}}>
-      {product.description.length > 50 ? `${product.description.substr(0, 50)}...` : product.description}
-      </Link>
-    </small>
-  </Card.Text>
-</Col>
-<Col xs={3}>
-  <Card.Title className="d-flex justify-content-center">
-    <Button variant="warning" onClick={() => dispatch(addProduct({ item: product, amount: 1 }))}>
-      <h6><BsPlusLg /></h6>
-    </Button>
-    &nbsp;&nbsp;&nbsp;<h2>{product.amount}</h2>&nbsp;&nbsp;&nbsp;
-    <Button variant="warning" onClick={() => dispatch(deleteProduct({ item: product, amount: 1 }))}>
-      <h6><FaMinus /></h6>
-    </Button>
-  </Card.Title>
-</Col>
-
-        <Col xs={3}>
-        <Card.Title><h2>{product.price} $</h2></Card.Title>
-        </Col>
+    <Container style={{ marginTop: '20px' }}>
+      <h2 className="text-center">SHOPPING CART</h2>
+      <br />
+      {!isLogged && (
+        <Alert variant="info">
+          <Alert.Heading>You're signed out right now.</Alert.Heading>
+          <b>
+            To save your items or have the ability to continue in the process, <Link to="/login">sign in</Link>.
+          </b>
+        </Alert>
+      )}
+      {myCart.length === 0 ? (
+        <Alert variant="info">
+          <Alert.Heading>Your cart seems to be empty. </Alert.Heading>
+          <b>In order to have items in the shopping cart, you are welcome to browse the site and look for the products you are interested in.</b>
+        </Alert>
+      ) : (
+        <Row>
+          <Col xs={12} lg={8}>
+            {myCart.map((product) => (
+              <Card key={product.id} className="mb-3">
+                <Row className="align-items-center">
+                  <Col xs={4}>
+                    <Link to={`/single_product/${product.id}`}>
+                      <Card.Img src={myServer + product.picture} />
+                    </Link>
+                  </Col>
+                  <Col xs={8}>
+                    <Card.Body>
+                      <Card.Title>
+                        <Link style = {{textDecoration: "none", color: "black"}} to={`/single_product/${product.id}`}>{product.product_name}</Link>
+                      </Card.Title>
+                      <Card.Text>
+                        <small>{product.description.length > 150 ? `${product.description.substr(0, 150)}...` : product.description}</small>
+                      </Card.Text>
+                      <div className="d-flex align-items-center">
+                        <Button variant="warning" onClick={() => dispatch(addProduct({ item: product, amount: 1 }))}><BsPlusLg /></Button>
+                        <h5 className="mx-3">{product.amount}</h5>
+                        <Button variant="warning" onClick={() => dispatch(deleteProduct({ item: product, amount: 1 }))}><FaMinus /></Button>
+                        <h5 className="ml-auto">&nbsp;&nbsp;${product.price}</h5>
+                      </div>
+                    </Card.Body>
+                  </Col>
+                </Row>
+                <Button variant="warning" className="position-absolute bottom-0 right-0 m-3" onClick={() => dispatch(removeProduct({ item: product }))}>Delete</Button>
+              </Card>
+            ))}
+          </Col>
+          <Col xs={12} lg={4}>
+            <Card style={{ width: '100%', maxWidth: '416px' }}>
+              <Card.Body>
+                <Link to="/order/order_post">
+                  <Button variant="warning">GO TO CHECKOUT</Button>
+                </Link>
+                <Card.Title className="mt-3">Total of {myCart.length} items.</Card.Title>
+                <Card.Text>
+                  <b>Total price: {total + (total >= 50 ? 0 : 5)}$</b>
+                </Card.Text>
+                <hr />
+                <Card.Text>
+                  <b>Items price: {total}$</b>
+                </Card.Text>
+                <Card.Text>
+                  <b>Shipping price: {total >= 50 ? 0 : 5}${total >= 50 ? " (order over 50$!)" : ""}</b>
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
         </Row>
-
-        
-       
-        <Col xs={3}>
-        <Button style={{position: "absolute", bottom: "0", right: "0", margin: "15px"}} variant="warning" onClick={() => dispatch(removeProduct({ item: product }))}>Delete</Button>
-        </Col>
-        </Card><br/>
-        </div>)}
-        </div>
-        </Col>
-
-
-        <Col xs={4}>
-          {isScrolling? (
-            
-
-            <Card style={{ position: "fixed", width: "25%", right: "5%", top: 273 }}>
-      <Card.Body>
-        <Link to="/order/order_post">
-          <Button style={{ width: "100%" }} variant="warning">
-            GO TO CHECKOUT
-          </Button>
-          <br />
-          <br />
-        </Link>
-        <Card.Title>
-          <h5>Total of {myCart.length} items.</h5>
-        </Card.Title>
-        <Card.Text>
-          <b>Total price: {total + (total >= 50 ? 0 : 5)}$</b>
-        </Card.Text>
-        <hr />
-        <Card.Text>
-          <b>Items price: {total}$</b>
-        </Card.Text>
-        <Card.Text>
-          <b>
-            Shipping price: {total >= 50 ? 0 : 5}$
-            {total >= 50 ? "(order over 50$!)" : ""}
-          </b>
-        </Card.Text>
-      </Card.Body>
-    </Card>
-
-          ) : 
-          
-          
-          (<Card style={{ position: "fixed", width: "25%", right: "5%" }}>
-      <Card.Body>
-        <Link to="/order/order_post">
-          <Button style={{ width: "100%" }} variant="warning">
-            GO TO CHECKOUT
-          </Button>
-          <br />
-          <br />
-        </Link>
-        <Card.Title>
-          <h5>Total of {myCart.length} items.</h5>
-        </Card.Title>
-        <Card.Text>
-          <b>Total price: {total + (total >= 50 ? 0 : 5)}$</b>
-        </Card.Text>
-        <hr />
-        <Card.Text>
-          <b>Items price: {total}$</b>
-        </Card.Text>
-        <Card.Text>
-          <b>
-            Shipping price: {total >= 50 ? 0 : 5}$
-            {total >= 50 ? "(order over 50$!)" : ""}
-          </b>
-        </Card.Text>
-      </Card.Body>
-    </Card>)}
-
-  </Col>
-</Row>
-        
-        </Container>
-)}
-
-
-</Container>
-<div style = {{height: "350px"}}/>
-    </div>
+      )}
+      {isTablet && (<div style = {{height: "2rem"}}/>)}
+    </Container>
   )
 }
 
 export default Cart
-

@@ -6,6 +6,7 @@ import { Rating } from '@mui/material';
 import { patchReviewAsync } from "./reviewsSlice";
 import { getSingleReviewAsync, selectSingleUserReview } from "../admin_panel/panelSlice";
 import ProfileNavigator from "../navigators/ProfileNavigator";
+import BurgerNav from "../navigators/BurgerNav";
 
 
 
@@ -57,10 +58,12 @@ const ReviewUpdate = () => {
     });
   }, [dispatch]);
   
+  const isTablet = window.innerWidth >= 0 && window.innerWidth <= 1024;
 
 
   return (
     <div>
+      {isTablet && (<BurgerNav />)}
       <Container>
             <br />
             <br />
@@ -68,8 +71,11 @@ const ReviewUpdate = () => {
             <br />
             <br />
             <h5>REVIEW DETAILS</h5>
-            { isScrolling ? (<div style = {{position: "absolute", top: 299}}><ProfileNavigator /></div>) : (<div style = {{position: "absolute"}}><ProfileNavigator /></div>) }
-        <Row className="justify-content-left mt-3">
+            {!isTablet && (
+        <div>
+        { isScrolling ? (
+        <div style = {{position: "absolute", top: 299}}><ProfileNavigator /></div>) : (<div style = {{position: "absolute"}}><ProfileNavigator /></div>) }
+        </div>)}        <Row className="justify-content-left mt-3">
           <Col md={7}>
           <Form onSubmit={handleSubmit} style={{ width: "43%" }}><br/>
             <div style={{ position: "absolute", transform: " translateX(0px) translateY(-30px) " }}>
