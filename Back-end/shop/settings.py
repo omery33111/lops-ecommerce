@@ -125,12 +125,12 @@ WSGI_APPLICATION = 'shop.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
  
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'shop.sqlite3'
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'shop.sqlite3'
+#     }
+# }
 
 
 # DATABASES = {
@@ -145,9 +145,9 @@ DATABASES = {
 # }
 
 
-# DATABASES = {
-#    "default": dj_database_url.parse("postgres://shop_db_y4i5_user:uowFkpqh1O3nFUstCCDgHbtDMF2si9cM@dpg-cg2hf2qk728relpel930-a.oregon-postgres.render.com/shop_db_y4i5")
-# }
+DATABASES = {
+   "default": dj_database_url.parse("postgres://shop_db_y4i5_user:uowFkpqh1O3nFUstCCDgHbtDMF2si9cM@dpg-cg2hf2qk728relpel930-a.oregon-postgres.render.com/shop_db_y4i5")
+}
 
 
 LOG_DIR = os.path.join(BASE_DIR, 'logs')
