@@ -2,6 +2,8 @@ from datetime import timedelta
 import os
 from pathlib import Path
 
+import dj_database_url
+
 
 
  
@@ -146,7 +148,7 @@ WSGI_APPLICATION = 'shop.wsgi.application'
 
 
 DATABASES = {
-   "default": dj_database_url.parse("postgres://shop_db_y4i5_user:uowFkpqh1O3nFUstCCDgHbtDMF2si9cM@dpg-cg2hf2qk728relpel930-a.oregon-postgres.render.com/shop_db_y4i5")
+   "default": dj_database_url.parse("postgres://lops_database_user:vXGQiOwf7VeZAFmOzNU1OmHbh322OQsq@dpg-cnitr9nsc6pc73d2l600-a.oregon-postgres.render.com/lops_database")
 }
 
 
