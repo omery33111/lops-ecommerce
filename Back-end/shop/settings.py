@@ -148,7 +148,7 @@ WSGI_APPLICATION = 'shop.wsgi.application'
 
 
 DATABASES = {
-   "default": dj_database_url.parse("postgres://lops_database_user:vXGQiOwf7VeZAFmOzNU1OmHbh322OQsq@dpg-cnitr9nsc6pc73d2l600-a.oregon-postgres.render.com/lops_database")
+   "default": dj_database_url.parse("postgres://lops_database_mep1_user:t1YtoI6UDIfXeLXCmjmlRODedxwlOAcY@dpg-cniu3sgl6cac739asn6g-a.oregon-postgres.render.com/lops_database_mep1")
 }
 
 
